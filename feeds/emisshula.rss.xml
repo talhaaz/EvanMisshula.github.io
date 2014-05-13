@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 24 Jan 2014 15:02:00 -0500</lastBuildDate><item><title>PRI-resources</title><link>/pri-reentry-resources-myc.html</link><description>&lt;h1&gt;Resource map&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 08 May 2014 15:02:00 -0400</lastBuildDate><item><title>CecilyMcMillan</title><link>/CecilyMcMillan.html</link><description>&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
+pointlessness of &lt;a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor/?mg%3Dblogs-wsj&amp;amp;url%3Dhttp%25253A%25252F%25252Fblogs.wsj.com%25252Fmetropolis%25252F2014%25252F05%25252F12%25252Fcity-council-members-call-for-leniency-for-occupy-wall-street-protestor"&gt;incarceration of the harmless&lt;/a&gt;. #MasssIncarceration
+ #Justice4Cecily #NoMoreDrugWar&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="../images/jury.png" width="600px" alt="img" title="jury.png"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 08 May 2014 15:02:00 -0400</pubDate><guid>tag:,2014-05-08:CecilyMcMillan.html</guid><category>overcriminalization</category><category>occupy</category></item><item><title>Tubman Yortzight</title><link>/tubman-yortzight.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;"Most that I have done and suffered in the service of our cause has
+been in public, and I have received much encouragement at every step
+of the way. You, on the other hand, have labored in a private way. I
+have wrought in the day—you in the night. … The midnight sky and the
+silent stars have been the witnesses of your devotion to freedom and
+of your heroism.” ~Fredrick Douglas (on Harriet Tubman)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../images/tubman.jpg" width="650px" alt="img" title="tubman.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 08 May 2014 15:02:00 -0400</pubDate><guid>tag:,2014-05-08:tubman-yortzight.html</guid><category>slavery</category><category>heroes</category></item><item><title>PRI-resources</title><link>/pri-reentry-resources-nyc.html</link><description>&lt;h1&gt;Resource map&lt;/h1&gt;
 &lt;p&gt;The amazing Sheyla Delgado and I did some mapping for the &lt;a href="http://johnjayresearch.org/pri/"&gt;Prisoner
 Reentry Institute&lt;/a&gt;. This map has
 some resources for returning prisoners.&lt;/p&gt;
-&lt;iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&amp;output=embed" width="660" height="480"&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 24 Jan 2014 15:02:00 -0500</pubDate><guid>tag:,2014-01-24:pri-reentry-resources-myc.html</guid><category>Prisoner Reentry</category><category>maps</category></item><item><title>Emacs IPython Notebook and "ESS in the Cloud"</title><link>/emacs-ipython-notebook-and-ess-in-the-cloud.html</link><description>&lt;h1&gt;My usage history&lt;/h1&gt;
+&lt;iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&amp;output=embed" width="660" height="480"&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 24 Jan 2014 15:02:00 -0500</pubDate><guid>tag:,2014-01-24:pri-reentry-resources-nyc.html</guid><category>Prisoner Reentry</category><category>maps</category></item><item><title>Emacs IPython Notebook and "ESS in the Cloud"</title><link>/emacs-ipython-notebook-and-ess-in-the-cloud.html</link><description>&lt;h1&gt;My usage history&lt;/h1&gt;
 &lt;p&gt;Back in 2009, one of the first advantages that made me play around
 with &lt;a href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; again when I went back to graduate school was
 &lt;a href="http://ess.r-project.org/index.php?Section%3Dhome"&gt;Emacs-Speaks-Statistics&lt;/a&gt;. It allowed me to avoid the pain of using the

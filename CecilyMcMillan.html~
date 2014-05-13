@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Introduction</title>
+        <title>CecilyMcMillan</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -20,35 +20,36 @@
                     <li><a href="/pages/bio.html">Bio</a></li>
                     <li><a href="/pages/academic.html">Academic</a></li>
                     <li><a href="/pages/contact.html">Contact</a></li>
-                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
-                    <li class="active"><a href="/category/tutorials.html">Tutorials</a></li>
+                    <li class="active"><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/introduction.html" rel="bookmark"
-           title="Permalink to Introduction">Introduction</a></h1>
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="EMisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+        <a href="/CecilyMcMillan.html" rel="bookmark"
+           title="Permalink to CecilyMcMillan">CecilyMcMillan</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="@emisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2010-12-02T13:13:00">
-                Published: Thu 02 December 2010
+        <abbr class="published" title="2014-01-24T15:02:00">
+                Published: Fri 24 January 2014
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
         </address>
-<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
-<p>tags: <a href="/tag/software.html">software</a> <a href="/tag/justice.html">justice</a> </p>
-</footer><!-- /.post-info -->      <p>This is the first issue so it is worth saying what I would like to
-cover. I am interested in increasing labor market participation and
-public safety. I believe that this is done through life long learning and
-remediation. I am particularly interested in using mathematics to
-decide what is a threat and what is not.</p>
+<p>In <a href="/category/criminal-justice.html">Criminal Justice</a>. </p>
+<p>tags: <a href="/tag/overcriminalization.html">overcriminalization</a> <a href="/tag/occupy.html">occupy</a> </p>
+</footer><!-- /.post-info -->      <p>The Judge would be wise to listen to a <a href="http://www.scribd.com/doc/222954383/Jury-Letter">jury</a> that understands the
+pointlessness of <a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor">incarceration of the harmless</a>. #MasssIncarceration
+\#NoMoreDrugWar #Justice4Cecily</p>
+<p><img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"></p>
+
+<p><img src="../images/jury.png" width="600px" alt="img" title="jury.png"></p>
     </div><!-- /.entry-content -->
 
   </article>
