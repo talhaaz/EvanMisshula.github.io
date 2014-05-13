@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Evan's site</title>
+        <title>Evan Misshula</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -15,124 +15,284 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="/">Evan's site </a></h1>
+                <h1><a href="/">Evan Misshula </a></h1>
                 <nav><ul>
+                    <li><a href="/pages/bio.html">Bio</a></li>
                     <li><a href="/pages/academic.html">Academic</a></li>
-                    <li><a href="/pages/bio.html">Bio page</a></li>
                     <li><a href="/pages/contact.html">Contact</a></li>
-                    <li><a href="/category/articles.html">articles</a></li>
+                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/python-dev-env.html">Python Dev Env</a></h1>
+                    <h1 class="entry-title"><a href="/pri-reentry-resources-myc.html">PRI-resources</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-01-07T20:10:47">
-                Published: Tue 07 January 2014
+        <abbr class="published" title="2014-01-24T15:02:00">
+                Published: Fri 24 January 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/criminal-justice.html">Criminal Justice</a>. </p>
+<p>tags: <a href="/tag/prisoner-reentry.html">Prisoner Reentry</a> <a href="/tag/maps.html">maps</a> </p>
+</footer><!-- /.post-info --><h1>Resource map</h1>
+<p>The amazing Sheyla Delgado and I did some mapping for the <a href="http://johnjayresearch.org/pri/">Prisoner
+Reentry Institute</a>. This map has
+some resources for returning prisoners.</p>
+<iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&output=embed" width="660" height="480"></iframe>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/python-dev-env.html" rel="bookmark"
+                           title="Permalink to Python Dev Env">Python Dev Env</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-01-20T20:10:47">
+                Published: Mon 20 January 2014
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/evan-misshula.html">Evan Misshula</a>
         </address>
-<p>In <a href="/category/articles.html">articles</a>. </p>
-<p>tags: <a href="/tag/python.html">Python</a> <a href="/tag/environments.html">environments</a> <a href="/tag/virtualization.html">virtualization</a> </p>
-</footer><!-- /.post-info --><p>Ubuntu: Set up a virtual environment with IPython, numpy and pandas
-Posted on January 20, 2014        </p>
-<p>So this is a much needed update for an earlier post on setting up a
-virtual environment. The original post was based on one I found
-<a href="http://technomilk.wordpress.com/2011/07/27/setting-up-our-django-site-environment-with-pythonbrew-and-virtualenv/">http://technomilk.wordpress.com/2011/07/27/setting-up-our-django-site-environment-with-pythonbrew-and-virtualenv/</a>. My prior post is <a href="http://mofj.commons.gc.cuny.edu/2013/06/25/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas/">http://mofj.commons.gc.cuny.edu/2013/06/25/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas/</a>. Most of the time you read about setting up virtual environments, it is in the context of web development. But the same benefits hold for analysis and research software. You want to be able to reproduce results. It also increases security not to be adding all
-the unverified libraries with root level privileges. This post is a
-minor modification of the outstanding tutorial I have been using for
-the last few months. There are three reasons why this needs to be updated:</p>
-<ul>
-<li>there is another version of python</li>
-<li>it does not cover IPython</li>
-<li>pythonbrew which managed the versions of python is longer maintained</li>
-</ul>
-<p>I will repeat the steps here. First install the c libraries that python needs to function.</p>
-<p>I use apt-get in ubuntu so type</p>
-<p>$ cd ~</p>
-<p>$ sudo apt-get install libsqlite3-dev libbz2-dev libxml2-dev libxslt-dev curl</p>
-<p>Get a non-system version of python</p>
-<p>Then install the pyenv scripts from source. Here is the link for pyenv <a href="https://github.com/yyuu/pyenv#basic-github-checkout">https://github.com/yyuu/pyenv#basic-github-checkout</a>. Pyenv is in many ways more
-sophsticated than pythonbrew. It is written in <a href="http://en.wikipedia.org/wiki/Bash_shell">http://en.wikipedia.org/wiki/Bash_shell</a> not any particular version of python. The advantage is that it is not
-dependent on anything in the language itself. The disadvantage is that it is much harder
-to read the code and understand the nature of a bug. As my advisor always used to tell
-me there was nothing more brain-dead than a shell, I have spent most of my time avoiding them. I use the Bourne Again Shell that comes with Ubuntu. The syntax is tricky because everything is a string. Variable definitions can’t have any spaces. There are some good tutorials which I will include later. For now, here are three links that can tell you
-the differences between bash and an interpreted language like Python.</p>
-<ul>
-<li><a href="http://askubuntu.com/questions/110907/python-compared-to-bash">http://askubuntu.com/questions/110907/python-compared-to-bash</a></li>
-<li><a href="http://superuser.com/questions/414965/when-to-use-bash-and-when-to-use-perl-python-ruby">http://superuser.com/questions/414965/when-to-use-bash-and-when-to-use-perl-python-ruby</a></li>
-<li><a href="http://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement">http://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement</a></li>
-</ul>
-<p>I am assuming you have git installed. If not, <a href="https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04">https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04</a> is a good tutorial for installing git.</p>
-<p>$ cd ~
-$ git clone git://github.com/yyuu/pyenv.git .pyenv</p>
-<p>Define environment variable PYENV<sub>ROOT</sub> to point to the path where
-pyenv repo is cloned and add $PYENV<sub>ROOT</sub>/bin to your $PATH for access
-to the pyenv command-line utility.</p>
-<p>$ echo ‘export PYENV<sub>ROOT</sub>=”$HOME/.pyenv”‘ &gt;&gt; ~/.bashrc
-$ echo ‘export PATH=”$PYENV<sub>ROOT</sub>/bin:$PATH”‘ &gt;&gt; ~/.bashrc</p>
-<p>Add pyenv init to your shell to enable shims and autocompletion. Shims and binstubs are worth knowing about.  You can read up on them <a href="https://github.com/yyuu/pyenv#understanding-shims">https://github.com/yyuu/pyenv#understanding-shims</a>.</p>
-<p>$ echo ‘eval “$(pyenv init -)”‘ &gt;&gt; ~/.bashrc</p>
-<p>Restart your shell so the path changes take effect. You can now begin using pyenv.</p>
-<p>$ exec $SHELL</p>
-<p>Install Python versions into $PYENV<sub>ROOT</sub>/versions. For example, to install Python 2.7.5, download and unpack the source, then run:</p>
-<p>$ pyenv install 2.7.5
-$ pyenv rehash</p>
-<p>And now we have to tell the system to use this new version of python</p>
-<p>$ pyenv local 2.7.5</p>
-<p>Install virtualenv</p>
-<p>We are going to do two tricky things we are going to install
-virtualenv in the version of python AND install the pyenv plugin virtualenv.</p>
-<p>$ pip install virtualenv</p>
-<p>and to install the pyenv plugin.</p>
-<p>$ git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv</p>
-<p>You are now ready to create a virtual environment in a non-system version of python. I don’t understand why this will not work if you are anywhere else.</p>
-<p>$ cd ~/.pyenv/versions/2.7.5
-$ pyenv virtualenv</p>
-<p>We can list all of the virtual environments. Change directory to the
-one you want to work in and in my case the virtual environment is
-no-more-drug-war:</p>
-<p>$ pyenv shell no-more-drug-war:</p>
-<p>We can list the virtualenvs:</p>
-<p>$ pyenv virtualenvs
-dssg (created from /usr)
-lc (created from /usr)</p>
-<h1>no-more-drug-war (created from /usr)</h1>
-<p>scrp (created from /usr)
-seek (created from /usr)</p>
-<p>We can activate the virtual environment with the following command.</p>
-<p>$ pyenv activate no-more-drug-war</p>
-<p>You can deactivate the activate’d virtualenv by pyenv deactivate.</p>
-<p>$ pyenv deactivate</p>
-<p>So, in order to know what packages we have installed at any time, we install yolk.</p>
-<p>$ pip install yolk</p>
-<p>Do not type sudo! To see what it installed at any time:</p>
-<p>$ yolk -l</p>
-<p>A list of further packages for IPython are available here. Type these individually and they each may take a few minutes to install.</p>
-<p>$ pip install jinja2</p>
-<p>$ pip install pyzmq</p>
-<p>$ pip install pygments</p>
-<p>$ pip install tornado</p>
-<p>$ pip install nose</p>
-<p>$ pip install numpy</p>
-<p>$ pip install scipy</p>
-<p>$ pip install matplotlib</p>
-<p>$ pip install pandas</p>
-<p>$ pip install ipython</p>
-<p>Turning it on and off</p>
-<p>Now to get out of your virtual environment, just type</p>
-<p>$ pyenv deactivate</p>
-<p>To get back in, type:</p>
-<p>$ pyenv activate no-more-drug-war</p>
-<p>Good luck!</p>
-<p>I will try to send a pull request to add some of this to pyenv and correct my question on stack overlfow.</p>                </article>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/python.html">Python</a> <a href="/tag/environments.html">environments</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->                <p>Set up</p>
+                <a class="readmore" href="/python-dev-env.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/emacs-ipython-notebook-and-ess-in-the-cloud.html" rel="bookmark"
+                           title="Permalink to Emacs IPython Notebook and "ESS in the Cloud"">Emacs IPython Notebook and "ESS in the Cloud"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-07-12T02:41:00">
+                Published: Fri 12 July 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/emacs.html">emacs</a> <a href="/tag/python.html">python</a> <a href="/tag/ipython.html">IPython</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
+</footer><!-- /.post-info -->                <h1>My usage history</h1>
+<p>Back in 2009, one of the first advantages that made me play around
+with <a href="http://www.gnu.org/software/emacs/">Emacs</a> again when I went back to graduate school was
+<a href="http://ess.r-project.org/index.php?Section%3Dhome">Emacs-Speaks-Statistics</a>. It allowed me to avoid the pain of using the
+R-console which was frankly a miserable experience. The deficiencies
+of that interface ...</p>
+                <a class="readmore" href="/emacs-ipython-notebook-and-ess-in-the-cloud.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/emacs-ipython-notebook-and-the-shaving-of-a-yak.html" rel="bookmark"
+                           title="Permalink to Emacs IPython Notebook and the shaving of a Yak">Emacs IPython Notebook and the shaving of a Yak</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-25T09:02:00">
+                Published: Tue 25 June 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/big-data.html">big data</a> <a href="/tag/emacs.html">Emacs</a> <a href="/tag/emacs-ipython-notebook.html">emacs-ipython-notebook</a> <a href="/tag/ipython.html">ipython</a> <a href="/tag/programmer-humor.html">programmer-humor</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/emacs.html">emacs</a> <a href="/tag/ipython.html">IPython</a> <a href="/tag/linux.html">linux</a> <a href="/tag/statistics.html">statistics</a> </p>
+</footer><!-- /.post-info -->                <h1>Motivation</h1>
+<p>It was this week during the project pitch exercise here at the <a href="http://dssg.io/">Data
+Science For Social Good</a> that I fell down a rabbit hole. I wanted to
+get summary statistics on foreclosures and land values for each of
+Chicago's 50 wards.  Of course I was not doing that ...</p>
+                <a class="readmore" href="/emacs-ipython-notebook-and-the-shaving-of-a-yak.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html" rel="bookmark"
+                           title="Permalink to Setting up a virtual environment with Ipython, numpy and pandas">Setting up a virtual environment with Ipython, numpy and pandas</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-25T00:56:00">
+                Published: Tue 25 June 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/ipython.html">IPython</a> <a href="/tag/virtual-env.html">virtual env</a> <a href="/tag/linux.html">linux</a> </p>
+</footer><!-- /.post-info -->                <p>Most of the time you read about setting up virtual environments, it is
+for web development. But the same benefits hold for analysis and
+research software. You want to be able to reproduce results. It also
+increases security not to be adding all the unverified libraries with
+machine level privileges ...</p>
+                <a class="readmore" href="/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/emacs-ipython-notebook-installation-tutorial.html" rel="bookmark"
+                           title="Permalink to Emacs-IPython-Notebook Installation Tutorial">Emacs-IPython-Notebook Installation Tutorial</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-24T23:37:00">
+                Published: Mon 24 June 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/emacs-ipython-notebook.html">emacs-ipython-notebook</a> <a href="/tag/ipython.html">ipython</a> <a href="/tag/tutorial.html">tutorial</a> </p>
+</footer><!-- /.post-info -->                <h1>Packages</h1>
+<p>The Emacs package system is far from perfect. The most proficient
+users of Emacs are unaffected by this flaw. Many users of Emacs are
+experts who live at the bleeding edge of the linux kernel and gcc
+compiler.  This guide is for the mere mortals who have used Emacs ...</p>
+                <a class="readmore" href="/emacs-ipython-notebook-installation-tutorial.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/resources-on-django-and-d3.html" rel="bookmark"
+                           title="Permalink to Resources on Django and D3">Resources on Django and D3</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-04-02T11:27:00">
+                Published: Tue 02 April 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/d3.html">D3</a> <a href="/tag/django.html">Django</a> <a href="/tag/linux.html">linux</a> </p>
+</footer><!-- /.post-info -->                <p>It is no secret that I have been working on delivering d3 over django.
+I am a novice to both of these technologies, I have been scouring the
+internet for FREE resources. Of what I have found. Here are my
+impressions. On Django, there seem to be few full tutorials ...</p>
+                <a class="readmore" href="/resources-on-django-and-d3.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/learning-environments-for-data-analysis-software.html" rel="bookmark"
+                           title="Permalink to Learning environments for data analysis software">Learning environments for data analysis software</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-02-02T23:32:00">
+                Published: Sat 02 February 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/configuration.html">configuration</a> <a href="/tag/docview.html">docview</a> <a href="/tag/emacs.html">emacs</a> <a href="/tag/internet-pedagogy.html">internet pedagogy</a> <a href="/tag/linux.html">linux</a> <a href="/tag/statistics.html">statistics</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->                <h1>Welcome to my blog</h1>
+<p>This is my first blog post using the IPython notebook. I am very excited
+about the things it can do. </p>
+<h2>Here is what I want to cover</h2>
+<ol>
+<li>Who I am</li>
+<li>What the blog will cover</li>
+<li>Why I named it Measure of Justice</li>
+</ol>
+<h1>Evan Misshula</h1>
+<p>I am ...</p>
+                <a class="readmore" href="/learning-environments-for-data-analysis-software.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/intro-and-ipython.html" rel="bookmark"
+                           title="Permalink to Intro and iPython">Intro and iPython</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-01-02T21:05:00">
+                Published: Wed 02 January 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/org-mode.html">org-mode</a> <a href="/tag/reproducible-research.html">reproducible research</a> </p>
+</footer><!-- /.post-info -->                <p>So I was able to get this to post to my <a href="http://EvanMisshula.github.io">blog</a>. However I was not
+able to get it to work here. Since then, to my surprise I have found
+myself working less with the visually amazing, but temperamental iPython
+and more with <a href="http://orgmode.org/">Emacs org-mode</a>.</p>
+<p>The ability to toggle ...</p>
+                <a class="readmore" href="/intro-and-ipython.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/two-important-news-pieces-on-cybercrime.html" rel="bookmark"
+                           title="Permalink to Two important news pieces on cybercrime">Two important news pieces on cybercrime</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-01-28T08:19:00">
+                Published: Fri 28 January 2011
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/criminal-justice.html">Criminal Justice</a>. </p>
+<p>tags: <a href="/tag/cracking.html">cracking</a> <a href="/tag/security.html">security</a> <a href="/tag/vulnerablity.html">vulnerablity</a> <a href="/tag/hacking.html">hacking</a> </p>
+</footer><!-- /.post-info -->                <ol>
+<li>The FBI is executing warrants against the Wiki-leaks
+    supporters.I had long suspected that most of these guys were
+    not as tricky (sophisticated) as they thought they
+    were. <a href="http://www.mcclatchydc.com/2011/01/27/107589/fbi-serves-40-warrants-in-search.html">details</a></li>
+<li>Another article on government picking at your electronic
+    data. Who gets picked for this is a crapshoot. The problem is
+    not ...</li></ol>
+                <a class="readmore" href="/two-important-news-pieces-on-cybercrime.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 1
+    Page 1 / 2
+        <a href="/index2.html">&raquo;</a>
 </p>
-            </aside><!-- /#featured -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>
@@ -162,10 +322,10 @@ seek (created from /usr)</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a></p>
         </footer><!-- /#contentinfo -->
 
 </body>

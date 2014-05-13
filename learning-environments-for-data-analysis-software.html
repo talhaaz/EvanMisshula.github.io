@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Learning environments for data analysis software</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<a href="http://github.com/EvanMisshula/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Evan Misshula </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/bio.html">Bio</a></li>
+                    <li><a href="/pages/academic.html">Academic</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li class="active"><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/learning-environments-for-data-analysis-software.html" rel="bookmark"
+           title="Permalink to Learning environments for data analysis software">Learning environments for data analysis software</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="@emisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-02-02T23:32:00">
+                Published: Sat 02 February 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/configuration.html">configuration</a> <a href="/tag/docview.html">docview</a> <a href="/tag/emacs.html">emacs</a> <a href="/tag/internet-pedagogy.html">internet pedagogy</a> <a href="/tag/linux.html">linux</a> <a href="/tag/statistics.html">statistics</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->      <h1>Welcome to my blog</h1>
+<p>This is my first blog post using the IPython notebook. I am very excited
+about the things it can do. </p>
+<h2>Here is what I want to cover</h2>
+<ol>
+<li>Who I am</li>
+<li>What the blog will cover</li>
+<li>Why I named it Measure of Justice</li>
+</ol>
+<h1>Evan Misshula</h1>
+<p>I am a PhD student in Criminal Justice. I try to use social networks and
+data mining to help people make rational decisions about public safety.
+I care passionately about people that the world writes off. It is no
+shock. There have been many times when I have been written off.</p>
+<h1>Math, Computing, Causality, Networks, Security and Ethics</h1>
+<p>Early in my graduate career, I was struck that we spend a great deal of
+effort policing minority communities for drug use which has little
+effect on the non-involved but spend way less effort protecting the
+banking system from hackers. I also thought that there was a lot to
+learn about managing threats from inside by looking at both intrusion
+detection and counter- intelligence. Not suprisingly, I believe in
+second chances. Who gets those chances and when they come are an area of
+great interest.</p>
+<h1>What's in a name?</h1>
+<p>When I studied Stochastic Control, Girsanov's Theorem governed which
+measures were deformable into each other. Two measures needed to have
+the same sets of measure zero, to equivilent. In other words it is
+what we think that is impossible, not unlikely that is important.</p>
+<h1>My favorite new toy</h1>
+<p>I am excited about blogging again because I can now put code and math in
+the blog. I have spent a lot of time in graduate school learning new
+tools. This blog will hopefully document some of the challenges and help
+others find their way. Others blogs have certainly helped me.</p>
+<p>We can assign variables in the ipython notebook.</p>
+<div class="highlight"><pre><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">print</span> <span class="n">a</span>
+
+<span class="mi">5</span>
+
+<span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">9</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+
+
+<p>But you can also reach into the operating system and execute bash
+commands.</p>
+<div class="highlight"><pre><span class="n">pwd</span>
+
+<span class="n">u</span><span class="err">&#39;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">ipython</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="n">blog</span><span class="err">&#39;</span>
+
+<span class="n">ls</span>
+
+<span class="mi">120907</span><span class="o">-</span><span class="n">Blogging</span> <span class="n">with</span> <span class="n">the</span> <span class="n">IPython</span> <span class="n">Notebook</span><span class="p">.</span><span class="n">ipynb</span> <span class="n">EvanNB1</span><span class="p">.</span><span class="n">html</span> <span class="n">old</span><span class="o">/</span>
+<span class="mi">121120</span><span class="o">-</span><span class="n">Back</span> <span class="n">from</span> <span class="n">PyCon</span> <span class="n">Canada</span> <span class="mf">2012.</span><span class="n">ipynb</span> <span class="n">EvanNB1</span><span class="p">.</span><span class="n">ipynb</span> <span class="n">EvanNB1_header</span><span class="p">.</span><span class="n">html</span> <span class="n">fig</span><span class="o">/</span>
+</pre></div>
+
+
+<h1>This is a markdown cell</h1>
+<p>You can <em>italicize</em> and use <strong>boldface</strong>. It allows us to comment code
+and create interactive presentations. You can build lists of your
+favorite tools. Here are mine.
+-   linux
+-   emacs
+-   r statistical language
+-   Emacs Speaks Statistics
+-   Org-mode
+-   LaTeX
+-   Sweave
+-   Ggplot</p>
+<p>What is most important is to LaTeX support. My favorite math equation
+is [ e^{i\pi}+1=0 ]. It can also render math numbered equations:</p>
+<h1>The browser displays</h1>
+<p>The program can display the numeric or character output of programs.</p>
+<div class="highlight"><pre><span class="n">print</span> <span class="s">&quot;hi Doug&quot;</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">3</span>
+
+<span class="n">hi</span> <span class="n">Doug</span>
+
+<span class="n">x</span>
+
+<span class="mi">3</span>
+</pre></div>
+
+
+<p>It can also display graphs:</p>
+<div class="highlight"><pre><span class="c">%pylab inline</span>
+<span class="n">plot</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">pylab</span><span class="p">,</span> <span class="n">a</span> <span class="n">matplotlib</span><span class="o">-</span><span class="n">based</span> <span class="n">Python</span> <span class="n">environment</span> <span class="p">[</span><span class="n">backend</span><span class="p">:</span> <span class="n">module</span><span class="p">:</span><span class="o">//</span><span class="n">IPython</span><span class="p">.</span><span class="n">zmq</span><span class="p">.</span><span class="n">pylab</span><span class="p">.</span><span class="n">backend_inline</span><span class="p">].</span>
+<span class="n">For</span> <span class="n">more</span> <span class="n">information</span><span class="p">,</span> <span class="n">type</span> <span class="s">&#39;help(pylab)&#39;</span><span class="p">.</span>
+
+<span class="p">[</span><span class="n">Line2D</span><span class="p">(</span><span class="n">_line0</span><span class="p">)]</span>
+
+<span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="p">=</span><span class="n">r</span><span class="o">&#39;</span>$<span class="o">\</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>$<span class="s">&#39;) plot(x, cos(x), &#39;</span><span class="n">ro</span><span class="o">&#39;</span><span class="p">,</span> <span class="n">label</span><span class="p">=</span><span class="n">r</span><span class="o">&#39;</span>$<span class="o">\</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>$<span class="s">&#39;) title(r&#39;</span><span class="n">Two</span> <span class="n">familiar</span> <span class="n">functions</span><span class="o">&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+</pre></div>
+
+
+<h1>Symbolic Manipulation</h1>
+<p>The IPython notebook can also make symbolic calculations and solve
+complex algebraic equations:</p>
+<div class="highlight"><pre><span class="c">%load_ext sympyprinting import sympy as sym</span>
+<span class="n">from</span> <span class="n">sympy</span> <span class="n">import</span> <span class="o">*</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">=</span> <span class="n">sym</span><span class="p">.</span><span class="n">symbols</span><span class="p">(</span>&quot;<span class="n">x</span> <span class="n">y</span> <span class="n">z</span>&quot;<span class="p">)</span>
+
+<span class="n">The</span> <span class="n">sympyprinting</span> <span class="n">extension</span> <span class="n">is</span> <span class="n">already</span> <span class="n">loaded</span><span class="p">.</span> <span class="n">To</span> <span class="n">reload</span> <span class="n">it</span><span class="p">,</span> <span class="n">use</span><span class="p">:</span>
+<span class="c">%reload_ext sympyprinting</span>
+
+<span class="n">Rational</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">pi</span> <span class="o">+</span> <span class="nb">exp</span><span class="p">(</span><span class="n">I</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">eq</span> <span class="p">=</span> <span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="n">eq</span>
+
+<span class="o">\\</span><span class="n">left</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">\\</span><span class="n">right</span><span class="p">)</span> <span class="o">\\</span><span class="n">left</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">\\</span><span class="n">right</span><span class="p">)</span>^<span class="p">{</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="n">expand</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Ipython can even calculate the derivative!!</p>
+<div class="highlight"><pre><span class="n">diff</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<p>It can also display pictures and videos&#x2026;</p>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">IPython</span><span class="p">.</span><span class="n">display</span> <span class="n">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="err">&#39;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Pictures</span><span class="o">/</span><span class="n">Evan</span><span class="p">.</span><span class="n">jpg</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img src="../images/Evan.jpg" width="300px" alt="img" title="Evan"></p>
+
+<div class="highlight"><pre><span class="n">from</span> <span class="n">IPython</span><span class="p">.</span><span class="n">display</span> <span class="n">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="err">&#39;</span><span class="n">ystkKXzt9Wk</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/ystkKXzt9Wk" frameborder="0" allowfullscreen></iframe>
+
+<h1>We can even use other languages (including R)!!</h1>
+<p>This is because ipython communicates between the kernel and the
+browser so it knows how to send data to another interpreter.</p>
+<p>So we can process code from Ruby:</p>
+<div class="highlight"><pre><span class="c">%%ruby puts &quot;Hello from Ruby #{RUBY_VERSION}&quot;</span>
+
+<span class="n">Hello</span> <span class="n">from</span> <span class="n">Ruby</span> <span class="mf">1.9</span><span class="p">.</span><span class="mi">3</span>
+</pre></div>
+
+
+<p>We can run bash scripts:</p>
+<div class="highlight"><pre><span class="c">%%bash echo &quot;hello from $BASH&quot;</span>
+
+<span class="n">hello</span> <span class="n">from</span> <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+</pre></div>
+
+
+<p>We can interact with an R environment:    </p>
+<div class="highlight"><pre><span class="n">import</span> <span class="n">rpy2</span><span class="p">;</span>
+<span class="n">from</span> <span class="n">rpy2</span> <span class="n">import</span> <span class="n">robjects</span><span class="p">;</span> <span class="n">robjects</span><span class="p">.</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;version&quot;</span><span class="p">)</span>
+
+<span class="n">platform</span> <span class="n">x86_64</span><span class="o">-</span><span class="n">unknown</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span>
+<span class="n">arch</span> <span class="n">x86_64</span>
+<span class="n">os</span> <span class="n">linux</span><span class="o">-</span><span class="n">gnu</span>
+<span class="n">system</span> <span class="n">x86_64</span><span class="p">,</span> <span class="n">linux</span><span class="o">-</span><span class="n">gnu</span>
+<span class="n">status</span>
+<span class="n">major</span> <span class="mi">2</span>
+<span class="n">minor</span> <span class="mf">15.2</span>
+<span class="n">year</span> <span class="mi">2012</span>
+<span class="n">month</span> <span class="mi">10</span>
+<span class="n">day</span> <span class="mi">26</span>
+<span class="n">svn</span> <span class="n">rev</span> <span class="mi">61015</span>
+<span class="n">language</span> <span class="n">R</span>
+<span class="n">version</span><span class="p">.</span><span class="n">string</span> <span class="n">R</span> <span class="n">version</span> <span class="mf">2.15.2</span> <span class="p">(</span><span class="mi">2012</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">nickname</span> <span class="n">Trick</span> <span class="n">or</span> <span class="n">Treat</span>
+
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">rmagic</span>
+
+<span class="n">The</span> <span class="n">rmagic</span> <span class="n">extension</span> <span class="n">is</span> <span class="n">already</span> <span class="n">loaded</span><span class="p">.</span> <span class="n">To</span> <span class="n">reload</span> <span class="n">it</span><span class="p">,</span> <span class="n">use</span><span class="o">:</span> <span class="o">%</span><span class="n">reload_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+
+<p>We can return R objects to python</p>
+<div class="highlight"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="o">%%</span><span class="n">R</span> <span class="o">-</span><span class="n">i</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">-</span><span class="n">o</span> <span class="n">XYcoef</span>
+<span class="n">XYlm</span> <span class="o">=</span> <span class="n">lm</span><span class="p">(</span><span class="n">Y</span><span class="o">~</span><span class="n">X</span><span class="p">)</span>
+<span class="n">XYcoef</span> <span class="o">=</span> <span class="n">coef</span><span class="p">(</span><span class="n">XYlm</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">XYlm</span><span class="p">))</span>
+<span class="n">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">XYlm</span><span class="p">)</span>
+
+<span class="nl">Call:</span>
+<span class="n">lm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">~</span> <span class="n">X</span><span class="p">)</span>
+
+<span class="nl">Residuals:</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>
+<span class="o">-</span><span class="mf">0.2</span> <span class="mf">0.9</span> <span class="o">-</span><span class="mf">1.0</span> <span class="mf">0.1</span> <span class="mf">0.2</span>
+
+<span class="nl">Coefficients:</span>
+<span class="n">Estimate</span> <span class="n">Std</span><span class="p">.</span> <span class="n">Error</span> <span class="n">t</span> <span class="n">value</span> <span class="n">Pr</span><span class="p">(</span><span class="o">&gt;|</span><span class="n">t</span><span class="o">|</span><span class="p">)</span>
+<span class="p">(</span><span class="n">Intercept</span><span class="p">)</span> <span class="mf">3.2000</span> <span class="mf">0.6164</span> <span class="mf">5.191</span> <span class="mf">0.0139</span> <span class="o">*</span>
+<span class="n">X</span> <span class="mf">0.9000</span> <span class="mf">0.2517</span> <span class="mf">3.576</span> <span class="mf">0.0374</span> <span class="o">*</span>
+<span class="o">---</span>
+<span class="n">Signif</span><span class="p">.</span> <span class="n">codes</span><span class="o">:</span> <span class="mi">0</span> <span class="err">‘</span><span class="o">***</span><span class="err">’</span> <span class="mf">0.001</span> <span class="err">‘</span><span class="o">**</span><span class="err">’</span> <span class="mf">0.01</span> <span class="err">‘</span><span class="o">*</span><span class="err">’</span> <span class="mf">0.05</span> <span class="err">‘</span><span class="p">.</span><span class="err">’</span> <span class="mf">0.1</span> <span class="err">‘</span> <span class="err">’</span> <span class="mi">1</span>
+
+<span class="n">Residual</span> <span class="n">standard</span> <span class="n">error</span><span class="o">:</span> <span class="mf">0.7958</span> <span class="n">on</span> <span class="mi">3</span> <span class="n">degrees</span> <span class="n">of</span> <span class="n">freedom</span>
+<span class="n">Multiple</span> <span class="n">R</span><span class="o">-</span><span class="n">squared</span><span class="o">:</span> <span class="mf">0.81</span><span class="p">,</span>   <span class="n">Adjusted</span> <span class="n">R</span><span class="o">-</span><span class="n">squared</span><span class="o">:</span> <span class="mf">0.7467</span>
+<span class="n">F</span><span class="o">-</span><span class="n">statistic</span><span class="o">:</span> <span class="mf">12.79</span> <span class="n">on</span> <span class="mi">1</span> <span class="n">and</span> <span class="mi">3</span> <span class="n">DF</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="o">:</span> <span class="mf">0.03739</span>
+</pre></div>
+
+
+<p>There is more to come. Ipython does d3 interactive graphs but I have
+not been able to get them to work. It also handles cython (python
+wrapped c-code) and mpi parallel code. More later. It is time for bed.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://juanreyero.com/about/">juan reyero</a></li>
+                            <li><a href="http://sachachua.com/blog/">Sasha Chua</a></li>
+                            <li><a href="http://orgmode.org/worg/org-tutorials/index.html">org-mode tutorials</a></li>
+                            <li><a href="http://emacsnyc.org">emacsnyc.org</a></li>
+                            <li><a href="http://bzg.fr/index.en.html">Bastien Guerry</a></li>
+                            <li><a href="http://ianbarton.net/">ian barton</a></li>
+                            <li><a href="http://blog.fperez.org/">Fernando Perez</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/emisshula">twitter</a></li>
+                            <li><a href="https://github.com/EvanMisshula">github</a></li>
+                            <li><a href="http://www.linkedin.com/pub/evan-misshula/20/5b/810‎">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Evan Misshula - tools</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<a href="http://github.com/EvanMisshula/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Evan Misshula </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/academic.html">Academic</a></li>
+                    <li><a href="/pages/bio.html">Bio</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/articles.html">articles</a></li>
+                    <li><a href="/category/d3-django-linux.html">D3, Django, linux</a></li>
+                    <li><a href="/category/emacs-ipython-linux-uncategorized.html">emacs, IPython, linux, Uncategorized</a></li>
+                    <li><a href="/category/prisoner-reentry-maps.html">Prisoner Reentry, maps</a></li>
+                    <li><a href="/category/software-justice.html">software, justice</a></li>
+                    <li class="active"><a href="/category/tools.html">tools</a></li>
+                    <li><a href="/category/uncategorized.html">Uncategorized</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/emacs-ipython-notebook-and-ess-in-the-cloud.html">Emacs IPython Notebook and "ESS in the Cloud"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-07-12T02:41:00">
+                Published: Fri 12 July 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tools.html">tools</a>. </p>
+<p>tags: <a href="/tag/emacs.html">emacs</a> <a href="/tag/python.html">python</a> <a href="/tag/ipython.html">IPython</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
+</footer><!-- /.post-info --><h1>My usage history</h1>
+<p>Back in 2009, one of the first advantages that made me play around
+with <a href="http://www.gnu.org/software/emacs/">Emacs</a> again when I went back to graduate school was
+<a href="http://ess.r-project.org/index.php?Section%3Dhome">Emacs-Speaks-Statistics</a>. It allowed me to avoid the pain of using the
+R-console which was frankly a miserable experience. The deficiencies
+of that interface stood in stark contrast to the enormous benefits to
+be had by using a <a href="http://www.fsf.org/about/">FREE</a> and open source statistical computing
+environment where each function could be examined and verified. Data
+analysis was no longer tied to a machine with a working license
+server. I could now work from home or even on my lengthy commute from
+Coney Island to school in Manhattan.  Three dead hours of my day now
+became my most productive time. Although I do not have the resources
+to donate to the project I have cited it in my scientific work and
+encourage others who have used it to do the same.</p>
+<h1>R vs Python</h1>
+<p>Although R has continued to improve since I started using it. The
+Python Data community has truly blossomed, albeit from a much lower
+base. Tools like numpy, scipy networkx, NLTK, sympy, pandas, rpy2 and
+particularly IPython have made Python a formidable competitor in the
+scientific computing space. In fact I am not going to give links to
+the source code because best practice is to install them in a virtual
+environment using pip.  The best instructions I have found for Linux
+are <a href="http://technomilk.wordpress.com/2011/07/27/setting-up-our-django-site-environment-with-pythonbrew-and-virtualenv/">here</a>.  I will write a tutorial for Mac and Windows next week. The
+reason why IPython has had such a profound impact are human rather
+than technical.  IPython prints detailed error messages where as R
+prints error messages that are cryptic at best. Python has a vibrant
+community with numerous initiatives to reach under-served,
+under-computed and under-represented groups including <a href="http://www.pyladies.com/">PyLadies</a> and
+<a href="http://wiki.python.org/moin/DiversityInPython">other-groups</a>. R help is notoriously caustic.</p>
+<h1>How caustic?</h1>
+<p>Funny you should ask.  Trey Causey a PhD student at University of
+Washington (where R. Doug Martin used to teach statistics and owned
+the R predecessor language <a href="http://en.wikipedia.org/wiki/S-PLUS">S+</a>) wrote a <a href="http://badhessian.org/2013/04/has-r-help-gotten-meaner-over-time-and-what-does-mancur-olson-have-to-say-about-it/">blog-post</a> asking whether R-help
+had gotten meaner.  There are 20 comments on his post and it generated
+a response article by Columbia's <a href="http://andrewgelman.com/2013/07/10/please-send-all-comments-to-devripley/">Andrew-Gelman</a> who has an 35,174
+citations and h-index of 63. (That is 63 papers cited at least 63
+times.) I took a less sophisticated approach. I read their
+<a href="http://www.r-project.org/posting-guide.html">posting-guide</a> and answers and I vowed to never ask a question. If I
+want to be abused like that I will go find a job on a trading desk.
+But searching the archives and other sources, I got by.</p>
+<h1>IPython Notebook</h1>
+<p>I discovered the notebook from this post on R-bloggers back in
+November 2012. The browser was a great way to show work across
+various operating systems. But whoa, did this mean I actually had
+to edit in the browser. Christ! It was like using Word, or
+Notepad++.  Surely we can do better. Well I couldn’t, but Takafumi
+Arakaki could.  He made the IPython Notebook a mode in Emacs. A
+powerful editor, the ability to work interactively and display the
+results in the browser where bosses, students and PI’s feel at
+home. If you have not set it up, please read my tutorial. But at
+the <a href="http://dssg.io/">Data Science for Social Good</a> Fellowship.I am looking at data
+that is simply to big for my laptop. I needed to run IPython
+remotely on an amazon ec2 instance but edit the interactive session
+locally.  These servers have no windowing software (x11) and it
+violates the terms of service to install it. There were a few
+choices.
+1.  Run IPython remotely (on the instance) and edit it a local
+    non-window version of Emacs.
+2.  Run IPython remotely on a public ip over http. (This is a
+    <strong>really</strong> bad idea for reasons I will explain.)
+3.  Run IPython remotely on a public ip over SSL/TLS with a
+    password.(A somewhat less bad idea bad idea.)
+4.  Run IPython remotely on a port on the remote localhost, 127.0.0.1
+    and forward that port to our local localhost (no typo there) via
+    ssh. Then we can pick it when we open the notebook list in
+    Emacs. The command is M-x ein:notebooklist-open. 'M' here, is
+    'Meta' which on Linux or Windows is mapped to the Alt key and on
+    Mac is mapped to the command key.</p>
+<h1>Why everything sucks but the last option.</h1>
+<ol>
+<li>If you edit on the remote machine you are using Emacs inside the
+    bash shell. Any extended key-bindings don't work including the
+    bindings for the emacs-ipython notebook (ein). Everytime I wanted
+    to execute a cell I had to type <code>M-x
+         ein:notebook-execute-and-goto-next</code> insteand of M-RET. <strong>That sucks!</strong></li>
+<li>Run IPython remotely on a public ip over http. Whoa, now we have a
+    process listening that can execute linux commands on a shared
+    remote computer that is completely unsecured. <strong>That sucks!</strong></li>
+<li>Run IPython remotely on a public ip over SSL/TLS with a
+    password. Ok, so this is what the IPython documentation
+    suggests. Here is the <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">link</a> and you should also check out this
+    github <a href="https://github.com/ipython/ipython-in-depth/blob/master/notebooks/Running%2520a%2520Secure%2520Public%2520Notebook.ipynb">repo</a>. The difference is what they name the key and
+    certificate but the first set of instructions did not work for me
+    while the second did. Choose a good password it probably is no
+    worse than buying a book at Amazon. But it still leaves you
+    editing in the browser. <strong>That sucks!</strong></li>
+<li>Finally the fourth option is confusing but it gets done what we
+    want. The important thing to understand is that we need to forward
+    the remote machine's local port to our localhost using -L option
+    in ssh. The best explanation I could find is <a href="http://www.kirsle.net/blog/kirsle/ssh-port-forwarding">here</a> in the section
+    on Forwarding Local Ports to Remote. This is hard, but <strong>it does
+    not suck!</strong></li>
+</ol>
+<h1>Instructions</h1>
+<p>Start on your machine. Set up a .ssh/config file where you define the 
+host and identity. Good directions are <a href="http://blog.i-evaluation.com/2012/11/19/ec2-ssh-configuration-with-pem-keys/">here</a>. It is worth stating, the
+<strong>local</strong> machine is your laptop and the <strong>remote</strong> is the server you are
+using. The result is that establishing an ssh connection should be as
+easy as:</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">ssh</span> <span class="n">myServer</span>
+</pre></div>
+
+
+<ul>
+<li>Here is a sample config file based on my own. This will not work
+    on your machine.</li>
+</ul>
+<p><img src="../images/Screenshot-from-2013-07-12-094118-300x191.png" width="300px" alt="img" title="pem"></p>
+
+<ul>
+<li>
+<p>Configure ein. See my <a href="https://github.com/tkf/emacs-ipython-notebook/issues/created_by/EvanMisshula?state%3Dopen">issue</a> on the ein repo to set your
+    <code>ein:console args</code> I set up a profile locally rather than used
+    sshfs as Takafumi suggested. The directions are in this <a href="https://github.com/ipython/ipython-in-depth/blob/master/notebooks/Running%2520a%2520Secure%2520Public%2520Notebook.ipynb">repo</a>. If
+    you are using a virtual environment, the configuration will be
+    in: <code>~/.config/ipython</code></p>
+</li>
+<li>
+<p>Make a directory on the remote machine to put your notebook
+    files. Start the server normally.</p>
+<p>$ ipython notebook --pylab=inline --no-browser --port=6000</p>
+</li>
+</ul>
+<p><img src="../images/server-300x191.png" width="300px" alt="img" title="server"></p>
+
+<ul>
+<li>
+<p>From another terminal on your local machine:</p>
+<p>$ ssh -N -f -L 7000:127.0.0.1:6000 myServer</p>
+</li>
+</ul>
+<p><img src="../images/bothTerminals-300x168.png" width="300px" alt="img" title="both-terminals"></p>
+
+<ul>
+<li>Open emacs. Type: <code>M-x ein:notebooklist-open</code>. When Emacs asks
+    which port say 7000.</li>
+</ul>
+<p>Congratulations, you now have an ssh connection to your notebook on a
+remote server in local emacs. And you know what, that my friend, <strong>does
+not suck at all.</strong></p>
+<p><img src="../images/emacsEditingRemoteNotebook-300x168.png" width="300px" alt="img" title="emacsEditingRemoteNotebook"></p>
+
+<p>You can download the R-language by following this <a href="http://cran.us.r-project.org/">R-link</a> and Vincent
+Goulet generously makes <a href="http://vgoulet.act.ulaval.ca/en/emacs/">Emacs with ESS</a> available through his website
+for both Mac OS X and Windows.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/emacs-ipython-notebook-installation-tutorial.html" rel="bookmark"
+                           title="Permalink to Emacs-IPython-Notebook Installation Tutorial">Emacs-IPython-Notebook Installation Tutorial</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-24T23:37:00">
+                Published: Mon 24 June 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tools.html">tools</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/emacs-ipython-notebook.html">emacs-ipython-notebook</a> <a href="/tag/ipython.html">ipython</a> <a href="/tag/tutorial.html">tutorial</a> </p>
+</footer><!-- /.post-info -->                <h1>Packages</h1>
+<p>The Emacs package system is far from perfect. The most proficient
+users of Emacs are unaffected by this flaw. Many users of Emacs are
+experts who live at the bleeding edge of the linux kernel and gcc
+compiler.  This guide is for the mere mortals who have used Emacs ...</p>
+                <a class="readmore" href="/emacs-ipython-notebook-installation-tutorial.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/learning-environments-for-data-analysis-software.html" rel="bookmark"
+                           title="Permalink to Learning environments for data analysis software">Learning environments for data analysis software</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-02-02T23:32:00">
+                Published: Sat 02 February 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tools.html">tools</a>. </p>
+<p>tags: <a href="/tag/configuration.html">configuration</a> <a href="/tag/docview.html">docview</a> <a href="/tag/emacs.html">emacs</a> <a href="/tag/internet-pedagogy.html">internet pedagogy</a> <a href="/tag/linux.html">linux</a> <a href="/tag/statistics.html">statistics</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->                <h1>Welcome to my blog</h1>
+<p>This is my first blog post using the IPython notebook. I am very excited
+about the things it can do. </p>
+<h2>Here is what I want to cover</h2>
+<ol>
+<li>Who I am</li>
+<li>What the blog will cover</li>
+<li>Why I named it Measure of Justice</li>
+</ol>
+<h1>Evan Misshula</h1>
+<p>I am ...</p>
+                <a class="readmore" href="/learning-environments-for-data-analysis-software.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/intro-and-ipython.html" rel="bookmark"
+                           title="Permalink to Intro and iPython">Intro and iPython</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-01-02T21:05:00">
+                Published: Wed 02 January 2013
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tools.html">tools</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/org-mode.html">org-mode</a> <a href="/tag/reproducible-research.html">reproducible research</a> </p>
+</footer><!-- /.post-info -->                <p>So I was able to get this to post to my <a href="http://EvanMisshula.github.io">blog</a>. However I was not
+able to get it to work here. Since then, to my surprise I have found
+myself working less with the visually amazing, but temperamental iPython
+and more with <a href="http://orgmode.org/">Emacs org-mode</a>.</p>
+<p>The ability to toggle ...</p>
+                <a class="readmore" href="/intro-and-ipython.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://juanreyero.com/about/">juan reyero</a></li>
+                            <li><a href="http://sachachua.com/blog/">Sasha Chua</a></li>
+                            <li><a href="http://orgmode.org/worg/org-tutorials/index.html">org-mode tutorials</a></li>
+                            <li><a href="http://emacsnyc.org">emacsnyc.org</a></li>
+                            <li><a href="http://bzg.fr/index.en.html">Bastien Guerry</a></li>
+                            <li><a href="http://ianbarton.net/">ian barton</a></li>
+                            <li><a href="http://blog.fperez.org/">Fernando Perez</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/emisshula">twitter</a></li>
+                            <li><a href="https://github.com/EvanMisshula">github</a></li>
+                            <li><a href="http://www.linkedin.com/pub/evan-misshula/20/5b/810‎">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
