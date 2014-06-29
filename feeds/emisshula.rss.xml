@@ -1,25 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 18 May 2014 23:37:00 -0400</lastBuildDate><item><title>No More War...on Drugs</title><link>/no-more-drug-war.html</link><description>&lt;p&gt;The War on Drugs is killing our communities. Please share #NoMoreDrugWar&lt;/p&gt;
-&lt;iframe width="560" height="315" src="http://youtu.be/embed/EmBHnk78Q_4?autoplay=1" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 21 May 2014 23:37:00 -0400</lastBuildDate><item><title>LSE recommends ending Drug Wars</title><link>/lse-ernie.html</link><description>&lt;p&gt;My collaborator and friend Ernie Drucker was recently at the London
+School of Economics where he joined the expert panel on how to end the
+unproductive and wasteful drug wars. You can see his talk below.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/wys4j&lt;sub&gt;74o7a&lt;/sub&gt;&amp;ouput=embed" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;CLICK &lt;a href="http://bit.ly/1kXYMN6"&gt;HERE&lt;/a&gt; TO TELL CONGRESS TO ACT:&lt;/p&gt;
-&lt;p&gt;Every day, more Americans agree the War on Drugs has failed and must
-change. The Smarter Sentencing Act will save billions of dollars and
-ease dangerous overcrowding in prisons by reducing sentences for
-non-violent drug offenders. It will also help strengthen communities
-and reduce racial injustice. Ask your members of Congress to pass the
-Smarter Sentencing Act. It's a vital first step.&lt;/p&gt;
-&lt;p&gt;Learn more about the issues:&lt;/p&gt;
+&lt;p&gt;The complete report is available here as a (&lt;a href="http://www.lse.ac.uk/IDEAS/publications/reports/pdf/LSE-IDEAS-DRUGS-REPORT-FINAL-WEB.pdf"&gt;pdf&lt;/a&gt;).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 21 May 2014 23:37:00 -0400</pubDate><guid>tag:,2014-05-21:lse-ernie.html</guid><category>Documentaries</category><category>short</category></item><item><title>intro to r and ess</title><link>/r-intro.html</link><description>&lt;h1&gt;credit&lt;/h1&gt;
+&lt;p&gt;I am trying to explain the ethos and social convention of
+FREE software.  People have created software and they let you 
+use it and modify it for free.  Is only polite to extend them
+&lt;p&gt;&lt;img src="../../images/the-good-artist-banksy.jpg" width="3000px" alt="steal" style="float:left" title="banksy.jpg"&gt;&lt;/p&gt;
+academic courtesy and cite them for their contribution.  Also it 
+makes sense because you point your audience to original sources for 
+reference.  With links instead of or in addition to bibliographic 
+citations you actually make it easy to learn and dive deeper.&lt;/p&gt;
+&lt;h1&gt;Our intellectual heritage&lt;/h1&gt;
+&lt;h1&gt;what is r?&lt;/h1&gt;
+&lt;p&gt;a flexible, free tool for the description, exploration and analysis of
+data.
+-   a calculator
+-   statistical libraries
+-   graphing program
+-   a domain specific programming language
+-   a means of simulating phenomena of interest
+-   a means of creating reproducible results&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 19 May 2014 00:00:00 -0400</pubDate><guid>tag:,2014-05-19:r-intro.html</guid><category>emacs</category><category>rstats</category><category>ess</category></item><item><title>Intro to R with Emacs-Speaks-Statistics</title><link>/r-tutorial.html</link><description>&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;A number of my colleagues need to analyze data and are learning a
+programming language for the first time.  It does not need to be said,
+this is a very heavy lift and occurs in the presence of a wide diversity
+of well intentioned opinion.  It also occurs in the presence of academic
+bullshit.  This is not well intentioned.  It is designed to sell books and 
+software licenses.  It is my opinion that the appropriate first scripting 
+language to learn for the aspiring social scientist is &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt;. Arguements could 
+be made for perl, python or lisp.  I think these great languages can be learned
+later.  For describing relationships with data and graphing results, &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt; has a great
+set of libraries.&lt;/p&gt;
+&lt;h1&gt;R Front ends&lt;/h1&gt;
+&lt;p&gt;There are a number of front-ends for &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt;.  The most popular of which is
+R-studio. I think it leaves much to be desired.  It is also produced
+by a company that sells enhancements to &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt; that most users will never
+need.  I find the better and more cost effective solution to be
+&lt;a href="http://ess.r-project.org/"&gt;Emacs-Speaks-Statistics (ESS)&lt;/a&gt;. Much of the power of the language comes
+from being able to read from files and streams.  Combining this with 
+the uber editor &lt;a href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; only makes sense.  For many data manipulation 
+problems the student can solve it either with either tool.&lt;/p&gt;
+&lt;p&gt;Here is our introduction:&lt;/p&gt;
+&lt;h3&gt;Course blueprint&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.thehouseilivein.org"&gt;The House I Live In&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.drugpolicy.org"&gt;Drug Policy Alliance&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.sentencingproject.org"&gt;The Sentencing Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Introduction&lt;/li&gt;
+&lt;li&gt;Foundations&lt;/li&gt;
+&lt;li&gt;functions&lt;/li&gt;
+&lt;li&gt;packages&lt;/li&gt;
+&lt;li&gt;graphics&lt;/li&gt;
+&lt;li&gt;data&lt;/li&gt;
+&lt;li&gt;variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Part 2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;power&lt;/li&gt;
+&lt;li&gt;web/online&lt;/li&gt;
+&lt;li&gt;bayes (multilevel, hierarchical)&lt;/li&gt;
+&lt;li&gt;spatial&lt;/li&gt;
+&lt;li&gt;meta-analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More to come&amp;#x2026;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 19 May 2014 00:00:00 -0400</pubDate><guid>tag:,2014-05-19:r-tutorial.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>No More War...on Drugs</title><link>/no-more-drug-war.html</link><description>&lt;p&gt;The War on Drugs is killing our communities. Please share #NoMoreDrugWar&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/EmBHnk78Q_4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Every day, more americans agree the war on drugs has failed and must
+change. the smarter sentencing act will save billions of dollars and
+ease dangerous overcrowding in prisons by reducing sentences for
+non-violent drug offenders. it will also help strengthen communities
+and reduce racial injustice. ask your members of congress to pass the
+smarter sentencing act. it's a vital first step.&lt;/p&gt;
+&lt;p&gt;learn more about the issues:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.thehouseilivein.org"&gt;the house i live in&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.drugpolicy.org"&gt;drug policy alliance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.sentencingproject.org"&gt;the sentencing project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sun, 18 May 2014 23:37:00 -0400</pubDate><guid>tag:,2014-05-18:no-more-drug-war.html</guid><category>Documentaries</category><category>short</category></item><item><title>Emacs-IPython-Update</title><link>/emacsnyc-IPython.html</link><description>&lt;h1&gt;Update&lt;/h1&gt;
 &lt;p&gt;On May 5, I gave a lightning talk at the Emacsnyc meetup on the state
 of the Emacs IPthon notebook.  A big thank you to &lt;a href="http://www.tabfugni.cc"&gt;Eric&lt;/a&gt; from
 &lt;a href="http://emacsnyc.org"&gt;http://emacsnyc.org&lt;/a&gt; for his extraordinary linux vs audio-visual
 equipment efforts.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/dgcBKz03lK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 14 May 2014 23:37:00 -0400</pubDate><guid>tag:,2014-05-14:emacsnyc-IPython.html</guid><category>Emacs</category><category>emacs-ipython-notebook</category><category>ipython</category><category>tutorial</category></item><item><title>CecilyMcMillan</title><link>/CecilyMcMillan.html</link><description>&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
+&lt;iframe width="560" height="315" src="&lt;http://www.youtube.com/embed/dgcBKz03lK8&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 14 May 2014 23:37:00 -0400</pubDate><guid>tag:,2014-05-14:emacsnyc-IPython.html</guid><category>Emacs</category><category>emacs-ipython-notebook</category><category>ipython</category><category>tutorial</category></item><item><title>CecilyMcMillan</title><link>/CecilyMcMillan.html</link><description>&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
 pointlessness of &lt;a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor/?mg%3Dblogs-wsj&amp;amp;url%3Dhttp%25253A%25252F%25252Fblogs.wsj.com%25252Fmetropolis%25252F2014%25252F05%25252F12%25252Fcity-council-members-call-for-leniency-for-occupy-wall-street-protestor"&gt;incarceration of the harmless&lt;/a&gt;. #MasssIncarceration
  #Justice4Cecily #NoMoreDrugWar&lt;/p&gt;
 &lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;
@@ -35,7 +96,7 @@ of your heroism.” ~Fredrick Douglas (on Harriet Tubman)&lt;/p&gt;
 &lt;p&gt;&lt;img src="../images/tubman.jpg" width="650px" alt="img" title="tubman.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 08 May 2014 15:02:00 -0400</pubDate><guid>tag:,2014-05-08:tubman-yortzight.html</guid><category>slavery</category><category>heroes</category></item><item><title>Arrest tweets</title><link>/arrest-tweet.html</link><description>&lt;p&gt;Of course, one reason why it might be unprecedented is that other
 police forces might find it prurient, ludicrous, voyeuristic, perverse
 or merely a monstrous waste of time, money and a cell
-phone. Arrgh! #TweetingArrests &lt;a href="http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/"&gt;http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/&lt;/a&gt; &lt;/p&gt;
+phone. #TweetingArrests &lt;a href="http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/"&gt;http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="../images/george0.png" width="650px" alt="img" title="george0.png"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 02 May 2014 15:02:00 -0400</pubDate><guid>tag:,2014-05-02:arrest-tweet.html</guid><category>policing</category><category>public-shame</category><category>sex-workers</category></item><item><title>Ban the box</title><link>/ban-the-box.html</link><description>&lt;p&gt;NYC is considering banning private employers from asking about
 criminal convictions on employment applications.  If NYC passes this,
 it is a game changer.  Once again Jumaane Williams is leading the
