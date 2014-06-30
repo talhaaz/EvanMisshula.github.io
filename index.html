@@ -28,7 +28,80 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/r-tutorial.html">Intro to R with Emacs-Speaks-Statistics</a></h1>
+                    <h1 class="entry-title"><a href="/r-tutorial-emacs-basics.html">Intro to basic Emacs for statistics</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-06-30T00:00:00">
+                Published: Mon 30 June 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/r-course.html">R-course</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
+</footer><!-- /.post-info --><h1>Emacs</h1>
+<blockquote>
+<p>What I cannot build, I do not understand. — Richard Feynman</p>
+</blockquote>
+<h2>Why Emacs?</h2>
+<ul>
+<li>This section is borrows heavily from <a href="http://www.damtp.cam.ac.uk/user/sje30/ess11/">Stephen Elgen</a> and <a href="http://web.psung.name/emacs/2009/part1.html">Phil Sung</a></li>
+</ul>
+<h3>The long answer (though still far from complete)</h3>
+<p>Emacs provides the same editing commands available for each language
+you are using.  This is a big advantage if you are using a variety of
+tools to solve a given problem. Right now you care about using R.
+Soon you will realize that you may need a database.  Databases don't
+naturally speak R.  They speak Structured Querey Language (SQL).
+Emacs can speak SQL.  You may need to create a web program.  You will
+need to speak Python or Ruby.  Emacs can speak python or ruby.</p>
+<p>Instead of a graph, you may want to create an interactive
+vizualization using d3.js.  Again Emacs can edit javascript.  You may
+need to turn your report into a LaTex report, again Emacs speaks Latex
+or HTML.  </p>
+<p>Otherwise you might use R-studio for R, Eclipse for python,
+Gedit or Notepad++ for LaTex, Webstorm for Javascript, Netbeans for
+Java, phpMyAdmin for SQL.  You don't want to learn a new editor every
+time you use a new tool.</p>
+<p>Also, as we will see, there are a large set of tools available at all
+times. Emacs lets us move text between tasks easily.  Because Emacs
+exposes its source code, it easy to extend.  There is also a facillity
+for creating macros to accomplish one off tasks.  The language Emacs
+is written in, Elisp, allows us to add new features. These new
+features don't require you to restart Emacs, it is a fully dynamic
+environment.</p>
+<h3>The short answer</h3>
+<p>Emacs is an editor for code. Emacs is an Integrated Development
+Environment (IDE) for any language you will ever need (including R).
+Emacs is a terminal emulator. Emacs is a file manager.  And Emacs can
+show the differences between files and integrate with all version control
+systems.  If you want to build something, then Emacs is the right environment</p>
+<h2>History of Emacs</h2>
+<h2>Moving around</h2>
+<h2>Cut and paste</h2>
+<h2>Loading/saving files</h2>
+<h2>Windows</h2>
+<h2>Search and replace</h2>
+<h2>Macros</h2>
+<h2>Modes</h2>
+<h2>Completion</h2>
+<h2>Getting help</h2>
+<h2>libraries</h2>
+<h2>Hooks</h2>
+<h2>Philosophy</h2>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/r-tutorial.html" rel="bookmark"
+                           title="Permalink to Intro to R with Emacs-Speaks-Statistics">Intro to R with Emacs-Speaks-Statistics</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-06-29T00:00:00">
                 Published: Sun 29 June 2014
@@ -39,98 +112,14 @@
         </address>
 <p>In <a href="/category/r-course.html">R-course</a>. </p>
 <p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
-</footer><!-- /.post-info --><h1>Intro</h1>
+</footer><!-- /.post-info -->                <h1>Intro</h1>
 <p>A number of my colleagues need to analyze data and are learning a
 programming language for the first time.  It does not need to be said,
 this is a very heavy lift and occurs in the presence of a wide diversity
-of well intentioned opinion.  It also occurs in the presence of academic
-bullshit.  This is not well intentioned.  It is designed to sell books and 
-software licenses.  It is my opinion that the appropriate first scripting 
-language to learn for the aspiring social scientist is <a href="http://www.r-project.org/">R</a>. Arguements could 
-be made for perl, python or lisp.  I think these great languages can be learned
-later.  For describing relationships with data and graphing results, <a href="http://www.r-project.org/">R</a> has a great
-set of libraries.</p>
-<h1>R Front ends</h1>
-<p>There are a number of front-ends for <a href="http://www.r-project.org/">R</a>.  The most popular of which is
-R-studio. I think it leaves much to be desired.  It is also produced
-by a company that sells enhancements to <a href="http://www.r-project.org/">R</a> that most users will never
-need.  I find the better and more cost effective solution to be
-<a href="http://ess.r-project.org/">Emacs-Speaks-Statistics (ESS)</a>. Much of the power of the language comes
-from being able to read from files and streams.  Combining this with 
-the uber editor <a href="http://www.gnu.org/software/emacs/">Emacs</a> only makes sense.  For many data manipulation 
-problems the student can solve it either with either tool.</p>
-<p>The intellectual history of this tutorial is taken from Charles
-DiMaggio's excellent <a href="http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/styled-4/styled-6/">introduction to R</a> and two brilliant tutorials
-from Stephen Elgen <a href="http://web.warwick.ac.uk/statsdept/user2011/tutorials/Eglen.html">An introduction to ESS from 2011</a> and <a href="http://sje30.github.io/2014-01-07-cam/">Caimbridge R
-bootcamp</a>.</p>
-<p>Here is our introduction:</p>
-<h3>Emacs</h3>
-<ul>
-<li>Why Emacs</li>
-<li>History of Emacs</li>
-<li>Moving around</li>
-<li>Cut and paste</li>
-<li>Loading/saving files</li>
-<li>Windows</li>
-<li>Search and replace</li>
-<li>Macros</li>
-<li>Modes</li>
-<li>Completion</li>
-<li>Getting help</li>
-<li>libraries</li>
-<li>Hooks</li>
-<li>Philosophy</li>
-</ul>
-<h3>ESS</h3>
-<ul>
-<li>Why ESS?</li>
-<li>History of ESS</li>
-<li>ESS Installation</li>
-<li>Editing and viewing R code</li>
-<li>Making comments</li>
-<li>Indenting your code.</li>
-<li>Viewing help files</li>
-<li>Making help files (.Rd)</li>
-<li>Inferior ESS Processes (<code>*R*</code>)</li>
-<li>Which version of R will it find?</li>
-<li>What can I do in <code>*R*</code>?</li>
-<li>What is emacsclient?</li>
-<li>Transcripts</li>
-<li>How many versions of R can I run?</li>
-<li>Sending code from an R buffer to <code>*R*</code></li>
-<li>Customizing ESS</li>
-<li>When things go wrong with ESS</li>
-</ul>
-<h3>Org Mode</h3>
-<ul>
-<li>intro</li>
-<li>exporting to LaTeX or html</li>
-<li>R examples</li>
-</ul>
-<h3>R language</h3>
-<ul>
-<li>Introduction</li>
-<li>Foundations</li>
-<li>functions</li>
-<li>packages</li>
-<li>graphics</li>
-<li>data</li>
-<li>variables</li>
-</ul>
-<h3>Advanced stats</h3>
-<ul>
-<li>power</li>
-<li>web/online</li>
-<li>bayes (multilevel, hierarchical)</li>
-<li>spatial</li>
-<li>meta-analysis</li>
-</ul>
-<p>More to come&#x2026;</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+of well intentioned opinion.  It also occurs in ...</p>
+                <a class="readmore" href="/r-tutorial.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -346,32 +335,6 @@ charge on behalf of the working poor.</p>
 watch the watchers?</p>
 <p><img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"></p>
                 <a class="readmore" href="/IG-defanged-at-doj.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/pri-reentry-resources-nyc.html" rel="bookmark"
-                           title="Permalink to PRI-resources">PRI-resources</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-01-24T15:02:00">
-                Published: Fri 24 January 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
-        </address>
-<p>In <a href="/category/criminal-justice.html">Criminal Justice</a>. </p>
-<p>tags: <a href="/tag/prisoner-reentry.html">Prisoner Reentry</a> <a href="/tag/maps.html">maps</a> </p>
-</footer><!-- /.post-info -->                <h1>Resource map</h1>
-<p>The amazing Sheyla Delgado and I did some mapping for the <a href="http://johnjayresearch.org/pri/">Prisoner
-Reentry Institute</a>. This map has
-some resources for returning prisoners.</p>
-<iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&output=embed" width="660" height="480"></iframe>
-                <a class="readmore" href="/pri-reentry-resources-nyc.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

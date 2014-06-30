@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2014-06-29T00:00:00-04:00</updated><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="/r-tutorial.html" rel="alternate"></link><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-06-29:r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2014-06-30T00:00:00-04:00</updated><entry><title>Intro to basic Emacs for statistics</title><link href="/r-tutorial-emacs-basics.html" rel="alternate"></link><updated>2014-06-30T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-06-30:r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why Emacs?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This section is borrows heavily from &lt;a href="http://www.damtp.cam.ac.uk/user/sje30/ess11/"&gt;Stephen Elgen&lt;/a&gt; and &lt;a href="http://web.psung.name/emacs/2009/part1.html"&gt;Phil Sung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The long answer (though still far from complete)&lt;/h3&gt;
+&lt;p&gt;Emacs provides the same editing commands available for each language
+you are using.  This is a big advantage if you are using a variety of
+tools to solve a given problem. Right now you care about using R.
+Soon you will realize that you may need a database.  Databases don't
+naturally speak R.  They speak Structured Querey Language (SQL).
+Emacs can speak SQL.  You may need to create a web program.  You will
+need to speak Python or Ruby.  Emacs can speak python or ruby.&lt;/p&gt;
+&lt;p&gt;Instead of a graph, you may want to create an interactive
+vizualization using d3.js.  Again Emacs can edit javascript.  You may
+need to turn your report into a LaTex report, again Emacs speaks Latex
+or HTML.  &lt;/p&gt;
+&lt;p&gt;Otherwise you might use R-studio for R, Eclipse for python,
+Gedit or Notepad++ for LaTex, Webstorm for Javascript, Netbeans for
+Java, phpMyAdmin for SQL.  You don't want to learn a new editor every
+time you use a new tool.&lt;/p&gt;
+&lt;p&gt;Also, as we will see, there are a large set of tools available at all
+times. Emacs lets us move text between tasks easily.  Because Emacs
+exposes its source code, it easy to extend.  There is also a facillity
+for creating macros to accomplish one off tasks.  The language Emacs
+is written in, Elisp, allows us to add new features. These new
+features don't require you to restart Emacs, it is a fully dynamic
+environment.&lt;/p&gt;
+&lt;h3&gt;The short answer&lt;/h3&gt;
+&lt;p&gt;Emacs is an editor for code. Emacs is an Integrated Development
+Environment (IDE) for any language you will ever need (including R).
+Emacs is a terminal emulator. Emacs is a file manager.  And Emacs can
+show the differences between files and integrate with all version control
+systems.  If you want to build something, then Emacs is the right environment&lt;/p&gt;
+&lt;h2&gt;History of Emacs&lt;/h2&gt;
+&lt;h2&gt;Moving around&lt;/h2&gt;
+&lt;h2&gt;Cut and paste&lt;/h2&gt;
+&lt;h2&gt;Loading/saving files&lt;/h2&gt;
+&lt;h2&gt;Windows&lt;/h2&gt;
+&lt;h2&gt;Search and replace&lt;/h2&gt;
+&lt;h2&gt;Macros&lt;/h2&gt;
+&lt;h2&gt;Modes&lt;/h2&gt;
+&lt;h2&gt;Completion&lt;/h2&gt;
+&lt;h2&gt;Getting help&lt;/h2&gt;
+&lt;h2&gt;libraries&lt;/h2&gt;
+&lt;h2&gt;Hooks&lt;/h2&gt;
+&lt;h2&gt;Philosophy&lt;/h2&gt;</summary><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="/r-tutorial.html" rel="alternate"></link><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-06-29:r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;A number of my colleagues need to analyze data and are learning a
 programming language for the first time.  It does not need to be said,
 this is a very heavy lift and occurs in the presence of a wide diversity
@@ -69,8 +118,8 @@ bootcamp&lt;/a&gt;.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3&gt;R language&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Introduction&lt;/li&gt;
-&lt;li&gt;Foundations&lt;/li&gt;
+&lt;li&gt;introduction&lt;/li&gt;
+&lt;li&gt;foundations&lt;/li&gt;
 &lt;li&gt;functions&lt;/li&gt;
 &lt;li&gt;packages&lt;/li&gt;
 &lt;li&gt;graphics&lt;/li&gt;
