@@ -332,13 +332,14 @@ languages.
 <p>It also lists cool packages (or libraries) you can add to Emacs 
 to make it do more.</p>
 <h2>libraries</h2>
-<ul>
-<li>
 <p>Emacs' <code>load-path</code> controls which directories are searched.</p>
-<p>(locate-library "ess")
-(add-to-list 'load-path "~/langs/emacs/org-mode/lisp")</p>
-</li>
-</ul>
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_ess</span> <span class="p">()</span>
+<span class="s">&quot;initialize ess&quot;</span>
+<span class="p">(</span><span class="n">locate</span><span class="o">-</span><span class="n">library</span> <span class="s">&quot;ess&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">&#39;</span><span class="n">load</span><span class="o">-</span><span class="n">path</span> <span class="s">&quot;~/langs/emacs/org-mode/lisp&quot;</span><span class="p">))</span>
+</pre></div>
+
+
 <p>Or to look up the definition of a function, try:</p>
 <div class="highlight"><pre><span class="nx">M</span><span class="o">-</span><span class="nx">x</span> <span class="nx">find</span><span class="o">-</span><span class="kd">function</span> <span class="nx">ess</span><span class="o">-</span><span class="nx">dirs</span>
 </pre></div>
@@ -346,26 +347,26 @@ to make it do more.</p>
 
 <h2>Hooks</h2>
 <p>Hooks are usually the way you set up Emacs to act on a file you
-want to behave in a certain way.
--   Hooks are run e.g. after major-mode has been created.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">emacs</span><span class="o">-</span><span class="n">lisp</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">eldoc</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+want to behave in a certain way.</p>
+<p>Hooks are run e.g. after major-mode has been created.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_eldoc</span><span class="p">()</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">emacs</span><span class="o">-</span><span class="n">lisp</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">eldoc</span><span class="o">-</span><span class="n">mode</span><span class="p">))</span>
 </pre></div>
 
 
-<ul>
-<li>
 <p>Compare the following two versions:</p>
-<h2>version 1</h2>
-<p>(defun my-ess-hook ()
-  "Add my keybindings to ESS mode."
-  (local-set-key (kbd "C-j") 'ess-eval-line-and-step))</p>
-<p>(add-hook 'R-mode-hook 'my-ess-hook)</p>
-<h2>version 2</h2>
-<p>(add-hook 'R-mode-hook
-          '(lambda ()  (local-set-key (kbd "M-RET")
-                                      'ess-R-use-this-dir)))</p>
-</li>
-</ul>
+<div class="highlight"><pre><span class="p">;;</span> <span class="n">version</span> <span class="mi">1</span>
+<span class="p">(</span><span class="n">defun</span> <span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span> <span class="p">()</span>
+  <span class="s">&quot;Add my keybindings to ESS mode.&quot;</span>
+  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">eval</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">and</span><span class="o">-</span><span class="n">step</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span><span class="p">)</span>
+
+<span class="p">;;</span> <span class="n">version</span> <span class="mi">2</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span>
+          <span class="err">&#39;</span><span class="p">(</span><span class="n">lambda</span> <span class="p">()</span>  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;M-RET&quot;</span><span class="p">)</span>
+                                      <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">use</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="n">dir</span><span class="p">)))</span>
+</pre></div>
     </div><!-- /.entry-content -->
 
   </article>

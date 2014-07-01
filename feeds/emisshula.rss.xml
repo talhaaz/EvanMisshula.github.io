@@ -286,13 +286,14 @@ languages.
 &lt;p&gt;It also lists cool packages (or libraries) you can add to Emacs 
 to make it do more.&lt;/p&gt;
 &lt;h2&gt;libraries&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
 &lt;p&gt;Emacs' &lt;code&gt;load-path&lt;/code&gt; controls which directories are searched.&lt;/p&gt;
-&lt;p&gt;(locate-library "ess")
-(add-to-list 'load-path "~/langs/emacs/org-mode/lisp")&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defun&lt;/span&gt; &lt;span class="n"&gt;init_ess&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;initialize ess&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;locate&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;ess&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;~/langs/emacs/org-mode/lisp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Or to look up the definition of a function, try:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="nx"&gt;find&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;dirs&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -300,26 +301,48 @@ to make it do more.&lt;/p&gt;
 
 &lt;h2&gt;Hooks&lt;/h2&gt;
 &lt;p&gt;Hooks are usually the way you set up Emacs to act on a file you
-want to behave in a certain way.
--   Hooks are run e.g. after major-mode has been created.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;lisp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eldoc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+want to behave in a certain way.&lt;/p&gt;
+&lt;p&gt;Hooks are run e.g. after major-mode has been created.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defun&lt;/span&gt; &lt;span class="n"&gt;init_eldoc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;lisp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eldoc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;ul&gt;
-&lt;li&gt;
 &lt;p&gt;Compare the following two versions:&lt;/p&gt;
-&lt;h2&gt;version 1&lt;/h2&gt;
-&lt;p&gt;(defun my-ess-hook ()
-  "Add my keybindings to ESS mode."
-  (local-set-key (kbd "C-j") 'ess-eval-line-and-step))&lt;/p&gt;
-&lt;p&gt;(add-hook 'R-mode-hook 'my-ess-hook)&lt;/p&gt;
-&lt;h2&gt;version 2&lt;/h2&gt;
-&lt;p&gt;(add-hook 'R-mode-hook
-          '(lambda ()  (local-set-key (kbd "M-RET")
-                                      'ess-R-use-this-dir)))&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate><guid>tag:,2014-07-01:r-tutorial-emacs-basics.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to R with Emacs-Speaks-Statistics</title><link>/r-tutorial.html</link><description>&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;;;&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;defun&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="s"&gt;&amp;quot;Add my keybindings to ESS mode.&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;C-j&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eval&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;and&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="p"&gt;;;&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt;
+          &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lambda&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;M-RET&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                                      &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dir&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate><guid>tag:,2014-07-01:r-tutorial-emacs-basics.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to Emacs Speaks Statistics</title><link>/r-tutorial-intro-ess.html</link><description>&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
+&lt;p&gt;ESS is a library (package) for Emacs which allows it to interact with
+a number of statistical packages including S+, R, SaS, SPSS and Stata.
+For the purpose of these notes.  We will only deal with R.  It allows
+the command history to be searchable and modifiable.  It allows for the 
+command line completion of both filenames and objects.  It creates Hot-
+keys for commonly used commands in R.  It records a complete transcript 
+of our R session.  It provides a interface to the help system.  It allows
+us to edit R objects/data structures.  When we edit code in ESS, it provides
+indentation and highlighting which makes code easier to read and understand.
+Ess allows us to evaluate arbitrary regions of a file.  Finally it allows
+us to load files into R for evaluation.&lt;/p&gt;
+&lt;h1&gt;History outline&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;3 branches: S-mode, SAS-mode, Stata-mode&lt;/li&gt;
+&lt;li&gt;S-mode: 1989, 2 groups managing the project before (Bates/F
+    Ritter/E Kademan, M Meyer, DM Smith).
+    R added in 1995 (Rossini/Maechler)&lt;/li&gt;
+&lt;li&gt;SAS: '94, Tom Cook ('92, John Sall, SAS).  Integrated '95-6, Rossini&lt;/li&gt;
+&lt;li&gt;Stata-mode: 1997, Thomas Lumley. Added 1997 (Rossini).&lt;/li&gt;
+&lt;li&gt;1997: last major restructuring (``grand unification'')&lt;/li&gt;
+&lt;li&gt;2004: switch leaders: Maechler takes over&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate><guid>tag:,2014-07-01:r-tutorial-intro-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to R with Emacs-Speaks-Statistics</title><link>/r-tutorial.html</link><description>&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;A number of my colleagues need to analyze data and are learning a
 programming language for the first time.  It does not need to be said,
 this is a very heavy lift and occurs in the presence of a wide diversity

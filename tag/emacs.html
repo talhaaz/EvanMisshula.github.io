@@ -326,13 +326,14 @@ languages.
 <p>It also lists cool packages (or libraries) you can add to Emacs 
 to make it do more.</p>
 <h2>libraries</h2>
-<ul>
-<li>
 <p>Emacs' <code>load-path</code> controls which directories are searched.</p>
-<p>(locate-library "ess")
-(add-to-list 'load-path "~/langs/emacs/org-mode/lisp")</p>
-</li>
-</ul>
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_ess</span> <span class="p">()</span>
+<span class="s">&quot;initialize ess&quot;</span>
+<span class="p">(</span><span class="n">locate</span><span class="o">-</span><span class="n">library</span> <span class="s">&quot;ess&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">&#39;</span><span class="n">load</span><span class="o">-</span><span class="n">path</span> <span class="s">&quot;~/langs/emacs/org-mode/lisp&quot;</span><span class="p">))</span>
+</pre></div>
+
+
 <p>Or to look up the definition of a function, try:</p>
 <div class="highlight"><pre><span class="nx">M</span><span class="o">-</span><span class="nx">x</span> <span class="nx">find</span><span class="o">-</span><span class="kd">function</span> <span class="nx">ess</span><span class="o">-</span><span class="nx">dirs</span>
 </pre></div>
@@ -340,31 +341,57 @@ to make it do more.</p>
 
 <h2>Hooks</h2>
 <p>Hooks are usually the way you set up Emacs to act on a file you
-want to behave in a certain way.
--   Hooks are run e.g. after major-mode has been created.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">emacs</span><span class="o">-</span><span class="n">lisp</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">eldoc</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+want to behave in a certain way.</p>
+<p>Hooks are run e.g. after major-mode has been created.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_eldoc</span><span class="p">()</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">emacs</span><span class="o">-</span><span class="n">lisp</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">eldoc</span><span class="o">-</span><span class="n">mode</span><span class="p">))</span>
 </pre></div>
 
 
-<ul>
-<li>
 <p>Compare the following two versions:</p>
-<h2>version 1</h2>
-<p>(defun my-ess-hook ()
-  "Add my keybindings to ESS mode."
-  (local-set-key (kbd "C-j") 'ess-eval-line-and-step))</p>
-<p>(add-hook 'R-mode-hook 'my-ess-hook)</p>
-<h2>version 2</h2>
-<p>(add-hook 'R-mode-hook
-          '(lambda ()  (local-set-key (kbd "M-RET")
-                                      'ess-R-use-this-dir)))</p>
-</li>
-</ul>                </article>
+<div class="highlight"><pre><span class="p">;;</span> <span class="n">version</span> <span class="mi">1</span>
+<span class="p">(</span><span class="n">defun</span> <span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span> <span class="p">()</span>
+  <span class="s">&quot;Add my keybindings to ESS mode.&quot;</span>
+  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">eval</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">and</span><span class="o">-</span><span class="n">step</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span><span class="p">)</span>
+
+<span class="p">;;</span> <span class="n">version</span> <span class="mi">2</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span>
+          <span class="err">&#39;</span><span class="p">(</span><span class="n">lambda</span> <span class="p">()</span>  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;M-RET&quot;</span><span class="p">)</span>
+                                      <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">use</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="n">dir</span><span class="p">)))</span>
+</pre></div>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <hr />
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/r-tutorial-intro-ess.html" rel="bookmark"
+                           title="Permalink to Intro to Emacs Speaks Statistics">Intro to Emacs Speaks Statistics</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-07-01T00:00:00">
+                Published: Tue 01 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/r-course.html">R-course</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
+</footer><!-- /.post-info -->                <h1>Emacs Speaks Statistics (ESS)</h1>
+<p>ESS is a library (package) for Emacs which allows it to interact with
+a number of statistical packages including S+, R, SaS, SPSS and Stata.
+For the purpose of these notes.  We will only deal with R.  It allows
+the command history to be searchable and ...</p>
+                <a class="readmore" href="/r-tutorial-intro-ess.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -575,38 +602,6 @@ users of Emacs are unaffected by this flaw. Many users of Emacs are
 experts who live at the bleeding edge of the linux kernel and gcc
 compiler.  This guide is for the mere mortals who have used Emacs ...</p>
                 <a class="readmore" href="/emacs-ipython-notebook-installation-tutorial.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/learning-environments-for-data-analysis-software.html" rel="bookmark"
-                           title="Permalink to Learning environments for data analysis software">Learning environments for data analysis software</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-02-02T23:32:00">
-                Published: Sat 02 February 2013
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
-        </address>
-<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
-<p>tags: <a href="/tag/configuration.html">configuration</a> <a href="/tag/docview.html">docview</a> <a href="/tag/emacs.html">emacs</a> <a href="/tag/internet-pedagogy.html">internet pedagogy</a> <a href="/tag/linux.html">linux</a> <a href="/tag/statistics.html">statistics</a> <a href="/tag/windows.html">windows</a> </p>
-</footer><!-- /.post-info -->                <h1>Welcome to my blog</h1>
-<p>This is my first blog post using the IPython notebook. I am very excited
-about the things it can do. </p>
-<h2>Here is what I want to cover</h2>
-<ol>
-<li>Who I am</li>
-<li>What the blog will cover</li>
-<li>Why I named it Measure of Justice</li>
-</ol>
-<h1>Evan Misshula</h1>
-<p>I am ...</p>
-                <a class="readmore" href="/learning-environments-for-data-analysis-software.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
