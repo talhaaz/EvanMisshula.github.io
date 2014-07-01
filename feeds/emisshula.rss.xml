@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 30 Jun 2014 00:00:00 -0400</lastBuildDate><item><title>Intro to basic Emacs for statistics</title><link>/r-tutorial-emacs-basics.html</link><description>&lt;h1&gt;Emacs&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 01 Jul 2014 00:00:00 -0400</lastBuildDate><item><title>Intro to basic Emacs for statistics</title><link>/r-tutorial-emacs-basics.html</link><description>&lt;h1&gt;Emacs&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -37,18 +37,289 @@ Emacs is a terminal emulator. Emacs is a file manager.  And Emacs can
 show the differences between files and integrate with all version control
 systems.  If you want to build something, then Emacs is the right environment&lt;/p&gt;
 &lt;h2&gt;History of Emacs&lt;/h2&gt;
+&lt;h3&gt;Brief outline&lt;/h3&gt;
+&lt;p&gt;The chief architect of Emacs is Richard Stallman (&lt;a href="https://www.fsf.org/about/staff-and-board"&gt;RMS&lt;/a&gt;).  He is the
+founder of the Free Software foundation. Richard developed a number of
+widely used software components of GNU, including the original Emacs,
+the GNU Compiler Collection, the GNU symbolic debugger (gdb), GNU
+Emacs, and various other programs for the GNU operating system. He
+invented the idea of copyleft and licenses that allow for copying.
+When he invented it, he and the other principal inventor &lt;a href="https://labs.oracle.com/pls/apex/f?p%3Dlabs:bio:0:120"&gt;Guy Steele&lt;/a&gt;
+were in researchers at the artificial intelligence lab at MIT, &lt;a href="http://www.csail.mit.edu/"&gt;CSAIL&lt;/a&gt;.
+They were both graduate students of Gerald J Sussman (&lt;a href="http://groups.csail.mit.edu/mac/users/gjs/biography.html"&gt;GJS&lt;/a&gt;) who was
+working with lisp variant languages to solve decision problems.&lt;/p&gt;
+&lt;p&gt;Emacs has evolved from a terminal only editor to one with a rich
+graphical support.  Emacs is capable through (tramp mode) of editing
+files on remote machines.  This means that you can edit files that
+need to run on a machine that you share such as an Amazon cluster
+(AWS) or a super computer. Don't worry we will start much smaller!&lt;/p&gt;
+&lt;p&gt;Emacs development has been undergoing a renissaince since the
+development of org-mode.  Prior development cycles had been slow.  As
+of this writing, the latest Emacs version is 24.3 and org-mode is
+8.2.5.  Prior development cycles had been slow.  Also in the 1990's
+Emacs split with more graphic support being available &lt;a href="http://www.xemacs.org/"&gt;XEmacs&lt;/a&gt;.  At
+least two other variants are still maintained &lt;a href="http://aquamacs.org/"&gt;Aquamacs&lt;/a&gt; for Mac OS X and
+&lt;a href="http://ergoemacs.org/"&gt;Ergo-Emacs&lt;/a&gt; which claims to be easier on your fingers.  The inventor of
+Ergo-Emacs, &lt;a href="http://xahlee.org/"&gt;Xah Lee&lt;/a&gt;, is a prolific contributor of tutorials and other
+resources to the Emacs community.&lt;/p&gt;
+&lt;h2&gt;Where do your documents live?&lt;/h2&gt;
+&lt;p&gt;Your documents live on Disk.  However if you use a modern graphical 
+user interface it is not always easy to find out where the document 
+you care about is.  Your docuents folder is a subdirectory.  My 
+user name is 'evan'. In linux, my documents are in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;evan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Documents&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In Mac OS X and Windows 8, my documents are in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;evan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Documents&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You create a document by asking Emacs to find a document that does not
+exist yet.  Before we can do this you have to understand the instructions
+this tutorial is going to give.  So we need to define certain keystrokes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TAB&lt;/code&gt; is the TAB (indent) key.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RET&lt;/code&gt; is the Return (carriage return, enter) key.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-h&lt;/code&gt; means press control key AND ``h'' together&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ESC-h&lt;/code&gt; means press ESC key THEN ``h''&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M-h&lt;/code&gt; means press ALT or Meta key AND ``h'' together.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M-C-h&lt;/code&gt; means press Meta or Alt while pressing  h and control key.  OR
+    (if no meta/alt): ESC THEN (control and h keys together).&lt;/li&gt;
+&lt;li&gt;Older keyboards (and sometimes older Macs) without ALT or Meta
+    lead to confusion between ESC and Meta, but ideally they should
+    be different.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To do this start Emacs and find the file ``practice.org''.  So if you are 
+on Linux:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;evan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Documents&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;practice&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are on Windows or Mac:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;evan&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Documents&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;practice&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you see a blank screen, you have done it right.&lt;/p&gt;
+&lt;h2&gt;Every time you press a key&amp;#x2026;you call a function&lt;/h2&gt;
+&lt;p&gt;This is going to seem pedantic but I am betting you will refer back to
+this.  It is easy to get lost with keypresses, keystrokes and
+keybindings. When you type the letter "a", that is called a &lt;em&gt;keystroke&lt;/em&gt;.
+A &lt;em&gt;keybinding&lt;/em&gt; is the function that is bound to a combiantion of
+&lt;em&gt;keystrokes&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;One of the most important keybindings is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;M-x&lt;/code&gt; is bound to execute-extended-command, which allows you to run a
+    command by name (there are many commands that are not bound to
+    keys).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Rember that the &lt;code&gt;M-x&lt;/code&gt; is probably &lt;code&gt;Alt-x&lt;/code&gt; on your machine.) Another
+important keystroke combination is &lt;code&gt;C-g&lt;/code&gt; is bound to Quit which will
+end the command.  If you have typed &lt;code&gt;M-x&lt;/code&gt; now, then type &lt;code&gt;C-g&lt;/code&gt; to
+Quit.  Mapping between keybindings and commands is flexible; can
+change on fly.&lt;/p&gt;
 &lt;h2&gt;Moving around&lt;/h2&gt;
+&lt;p&gt;I find this picture from Phil Sung helps me remember how to move:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/EvAtWork.png" width="300px" alt="img" title="arrows.png"&gt;&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;C&lt;span class="o"&gt;-&lt;/span&gt;v    Move forward one screenful
+M&lt;span class="o"&gt;-&lt;/span&gt;v    Move backward one screenful
+C&lt;span class="o"&gt;-&lt;/span&gt;l    Clear and redraw screen
+M&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  Meta&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;right&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; moves forward a word
+M&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;  Meta&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;left&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; moves back a word
+M&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;   Meta&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;up&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; move up a paragraph
+M&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;   Meta&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;down&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; move down a paragraph
+M&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;   Meta&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;less than&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; move to file start
+M&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt;   Meta&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;greater than&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; move to file end
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Instead of the squiggly brace &lt;code&gt;{&lt;/code&gt; or &lt;code&gt;}&lt;/code&gt; the up or down arrow will work
+as well.&lt;/p&gt;
 &lt;h2&gt;Cut and paste&lt;/h2&gt;
+&lt;p&gt;Instead of &lt;code&gt;C-c&lt;/code&gt; to copy and &lt;code&gt;C-v&lt;/code&gt; to paste, Emacs has older
+keybindings. This seems strange&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;    &lt;span class="n"&gt;Delete&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;    &lt;span class="n"&gt;Kill&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;cursor&lt;/span&gt; &lt;span class="n"&gt;position&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt;
+       &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;    &lt;span class="n"&gt;Recover&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Paste&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Yank&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;killed&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;
+       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;repeat&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;    &lt;span class="n"&gt;recover&lt;/span&gt; &lt;span class="n"&gt;former&lt;/span&gt; &lt;span class="n"&gt;killed&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+       &lt;span class="n"&gt;Repeat&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt; &lt;span class="n"&gt;back&lt;/span&gt; &lt;span class="n"&gt;through&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;u&lt;/span&gt;  &lt;span class="n"&gt;_U_ndo&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;multiple&lt;/span&gt; &lt;span class="n"&gt;undo&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;redo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here is the payoff:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;point&lt;/em&gt; is current location of cursor&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;mark&lt;/em&gt; &lt;code&gt;C-SPC&lt;/code&gt; to define another point&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;region&lt;/em&gt; is text between mark and point&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-w&lt;/code&gt; kills from point to mark.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-y&lt;/code&gt; yanks that text back.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;Loading/saving files&lt;/h2&gt;
+&lt;p&gt;Now we can look at the commands to find files and see the buffers
+we have loaded into Emacs.  Emacs actually does not save all of your
+changes to the file.  Emacs makes a copy of your file on disk to a
+copy, called a &lt;em&gt;buffer&lt;/em&gt;. You make all of your changes to the buffer and 
+when you write the file to disk, it replaces the file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;  &lt;span class="n"&gt;_F_ind&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;  &lt;span class="n"&gt;_S_ave&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;  &lt;span class="n"&gt;_W_rite&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
+&lt;span class="n"&gt;If&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;remains&lt;/span&gt; &lt;span class="n"&gt;inside&lt;/span&gt; &lt;span class="n"&gt;Emacs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;You&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="k"&gt;switch&lt;/span&gt; &lt;span class="n"&gt;back&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;finding&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt;
+&lt;span class="n"&gt;again&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;  &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;way&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt;
+&lt;span class="n"&gt;quite&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;number&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt; &lt;span class="n"&gt;inside&lt;/span&gt; &lt;span class="n"&gt;Emacs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Windows&lt;/h2&gt;
+&lt;p&gt;Here is how you work with the buffers that you have loaded into Emacs:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;      &lt;span class="n"&gt;Move&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;windows&lt;/span&gt;
+           &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Oh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;Zero&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;      &lt;span class="n"&gt;One&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;
+           &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.,&lt;/span&gt; &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="n"&gt;other&lt;/span&gt; &lt;span class="n"&gt;windows&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;      &lt;span class="n"&gt;Split&lt;/span&gt; &lt;span class="n"&gt;horizontally&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;      &lt;span class="n"&gt;Split&lt;/span&gt; &lt;span class="n"&gt;vertically&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;      &lt;span class="n"&gt;Switch&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;_b_uffer&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;    &lt;span class="n"&gt;List&lt;/span&gt; &lt;span class="n"&gt;_b_uffers&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Search and replace&lt;/h2&gt;
+&lt;p&gt;Here are the commands for searching and replacing:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;then&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;
+           &lt;span class="n"&gt;Replace&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;then&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;
+           &lt;span class="n"&gt;Will&lt;/span&gt; &lt;span class="n"&gt;ask&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;really&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;replace&lt;/span&gt;
+           &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;old&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;        &lt;span class="n"&gt;_S_earch&lt;/span&gt; &lt;span class="n"&gt;forward&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;repeat&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt;
+           &lt;span class="n"&gt;reuse&lt;/span&gt; &lt;span class="n"&gt;past&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt; &lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;        &lt;span class="n"&gt;Search&lt;/span&gt; &lt;span class="n"&gt;_R_everse&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;repeat&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt;
+           &lt;span class="n"&gt;reuse&lt;/span&gt; &lt;span class="n"&gt;past&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt; &lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Quitting and getting help&lt;/h2&gt;
+&lt;p&gt;Here are the commands for quitting and getting help:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt;    &lt;span class="n"&gt;_H_elp&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;_H_elp&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;_c_ommand&lt;/span&gt;
+
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;character&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+             &lt;span class="n"&gt;Repeat&lt;/span&gt; &lt;span class="n"&gt;character&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="n"&gt;times&lt;/span&gt;
+
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;          &lt;span class="n"&gt;Stop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unhang&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;      &lt;span class="n"&gt;Stop&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;exit&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_c_lose&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;Emacs&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Macros&lt;/h2&gt;
+&lt;h3&gt;Repeating yourself&lt;/h3&gt;
+&lt;p&gt;Repeat C-n ten times:&lt;/p&gt;
+&lt;p&gt;C-u 10 C-n&lt;/p&gt;
+&lt;p&gt;C-u 70 #&lt;/p&gt;
+&lt;h3&gt;Keyboard macros&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;C-x (&lt;/code&gt; lots of stuff  &lt;code&gt;C-x )&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Can include counters.  e.g.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;TAB&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;RET&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will make:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&amp;#x2026;&lt;/p&gt;
+&lt;p&gt;(info "(emacs)Keyboard Macros")&lt;/p&gt;
+&lt;p&gt;I use this all the time to automate boring editing functions all
+the time!!&lt;/p&gt;
 &lt;h2&gt;Modes&lt;/h2&gt;
+&lt;p&gt;Modes contain specialisations (commands/variables) for different
+languages.
+-   Major modes are defined for different languages (C, latex, R,
+    python, &amp;#x2026;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Consistency across modes where possible (e.g. commands for
+    commenting, indentation).  Keybindings consistent.  &lt;em&gt;Font lock&lt;/em&gt;
+    also consistent, e.g. comments in red.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Major mode decided typically based on buffer name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-h m&lt;/code&gt; describes features available in current buffer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;Completion&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;TAB completion where possible, e.g &lt;code&gt;M-x describe- TAB&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;Getting help&lt;/h2&gt;
+&lt;p&gt;Here is how to get help:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;       &lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt; 
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;       &lt;span class="n"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;  
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;       &lt;span class="n"&gt;info&lt;/span&gt;          
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;       &lt;span class="n"&gt;tutorial&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check out &lt;a href="http://emacswiki.org"&gt;http://emacswiki.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It also lists cool packages (or libraries) you can add to Emacs 
+to make it do more.&lt;/p&gt;
 &lt;h2&gt;libraries&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Emacs' &lt;code&gt;load-path&lt;/code&gt; controls which directories are searched.&lt;/p&gt;
+&lt;p&gt;(locate-library "ess")
+(add-to-list 'load-path "~/langs/emacs/org-mode/lisp")&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Or to look up the definition of a function, try:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="nx"&gt;find&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;dirs&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Hooks&lt;/h2&gt;
-&lt;h2&gt;Philosophy&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 30 Jun 2014 00:00:00 -0400</pubDate><guid>tag:,2014-06-30:r-tutorial-emacs-basics.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to R with Emacs-Speaks-Statistics</title><link>/r-tutorial.html</link><description>&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Hooks are usually the way you set up Emacs to act on a file you
+want to behave in a certain way.
+-   Hooks are run e.g. after major-mode has been created.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;lisp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hook&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eldoc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Compare the following two versions:&lt;/p&gt;
+&lt;h2&gt;version 1&lt;/h2&gt;
+&lt;p&gt;(defun my-ess-hook ()
+  "Add my keybindings to ESS mode."
+  (local-set-key (kbd "C-j") 'ess-eval-line-and-step))&lt;/p&gt;
+&lt;p&gt;(add-hook 'R-mode-hook 'my-ess-hook)&lt;/p&gt;
+&lt;h2&gt;version 2&lt;/h2&gt;
+&lt;p&gt;(add-hook 'R-mode-hook
+          '(lambda ()  (local-set-key (kbd "M-RET")
+                                      'ess-R-use-this-dir)))&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate><guid>tag:,2014-07-01:r-tutorial-emacs-basics.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to R with Emacs-Speaks-Statistics</title><link>/r-tutorial.html</link><description>&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;A number of my colleagues need to analyze data and are learning a
 programming language for the first time.  It does not need to be said,
 this is a very heavy lift and occurs in the presence of a wide diversity
