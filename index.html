@@ -20,15 +20,67 @@
                     <li><a href="/pages/bio.html">Bio</a></li>
                     <li><a href="/pages/academic.html">Academic</a></li>
                     <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/bs-jobs.html">BS-jobs</a></li>
                     <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
-                    <li><a href="/category/r-course.html">r-course</a></li>
+                    <li><a href="/category/r-course.html">R-course</a></li>
                     <li><a href="/category/tutorials.html">Tutorials</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/r-tutorial-emacs-basics.html">Intro to basic Emacs for statistics</a></h1>
+                    <h1 class="entry-title"><a href="/jobs-20140701.html">bs jobs today</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-07-01T15:02:00">
+                Published: Tue 01 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/bs-jobs.html">BS-jobs</a>. </p>
+<p>tags: <a href="/tag/jobs.html">jobs</a> <a href="/tag/reentry.html">reentry</a> </p>
+</footer><!-- /.post-info --><blockquote>
+<p>"Nothing will work unless you do." ~Maya Angelou</p>
+</blockquote>
+<p><img src="../../images/maya-barak.jpg" width="350px" alt="img" title="maya.jpg"></p>
+
+<h1>Today in bullshit</h1>
+<p>I was unemployed for a long time.  I was a job developer for six
+months at <a href="http://www.etcny.org/employment-services/">Exodus Transitional Community</a> in 2009 after I came
+home. Sometimes everyone needs a <em>bullshit</em> job.  These are not a
+career.  If you work at Popeye's you are not going to own Popeye's
+chicken.  However there is a human dignity to work that may allow you
+to buy your kid a slice of pizza.  Every dad deserves that.  Here are
+the jobs I saw today.</p>
+<h1>Empanada Mama</h1>
+<p>This is a small but really busy place.  They need people go here
+first. The address is 763 9th Ave, New York, NY 10019:</p>
+<p><img src="../../images/empanada-mama.jpg" width="350px" alt="empanada" title="mama.jpg"></p>
+
+<h1>Hummus kitchen</h1>
+<p>This is a kosher middle eastern place.  I hope that they remember
+people have been throwing jews into jails since they invented
+prison. The address is 416 Amsterdam Ave (80th street), New York, NY 10024.</p>
+<p><img src="../../images/hummus-kitchen.jpg" width="350px" alt="hummus" title="hummus.jpg"></p>
+
+<h1>Kebab house</h1>
+<p>I know nothing except they had a sign out.  If they hire you, I will
+eat there, 712 9th Ave:</p>
+<p><img src="../../images/kebab-house.jpg" width="350px" alt="kebab" title="kebab.jpg"></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/r-tutorial-emacs-basics.html" rel="bookmark"
+                           title="Permalink to Intro to basic Emacs for statistics">Intro to basic Emacs for statistics</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-07-01T00:00:00">
                 Published: Tue 01 July 2014
@@ -39,7 +91,7 @@
         </address>
 <p>In <a href="/category/r-course.html">R-course</a>. </p>
 <p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
-</footer><!-- /.post-info --><h1>Emacs</h1>
+</footer><!-- /.post-info -->                <h1>Emacs</h1>
 <blockquote>
 <p>What I cannot build, I do not understand. — Richard Feynman</p>
 </blockquote>
@@ -49,323 +101,10 @@
 </ul>
 <h3>The long answer (though still far from complete)</h3>
 <p>Emacs provides the same editing commands available for each language
-you are using.  This is a big advantage if you are using a variety of
-tools to solve a given problem. Right now you care about using R.
-Soon you will realize that you may need a database.  Databases don't
-naturally speak R.  They speak Structured Querey Language (SQL).
-Emacs can speak SQL.  You may need to create a web program.  You will
-need to speak Python or Ruby.  Emacs can speak python or ruby.</p>
-<p>Instead of a graph, you may want to create an interactive
-vizualization using d3.js.  Again Emacs can edit javascript.  You may
-need to turn your report into a LaTex report, again Emacs speaks Latex
-or HTML.  </p>
-<p>Otherwise you might use R-studio for R, Eclipse for python,
-Gedit or Notepad++ for LaTex, Webstorm for Javascript, Netbeans for
-Java, phpMyAdmin for SQL.  You don't want to learn a new editor every
-time you use a new tool.</p>
-<p>Also, as we will see, there are a large set of tools available at all
-times. Emacs lets us move text between tasks easily.  Because Emacs
-exposes its source code, it easy to extend.  There is also a facillity
-for creating macros to accomplish one off tasks.  The language Emacs
-is written in, Elisp, allows us to add new features. These new
-features don't require you to restart Emacs, it is a fully dynamic
-environment.</p>
-<h3>The short answer</h3>
-<p>Emacs is an editor for code. Emacs is an Integrated Development
-Environment (IDE) for any language you will ever need (including R).
-Emacs is a terminal emulator. Emacs is a file manager.  And Emacs can
-show the differences between files and integrate with all version control
-systems.  If you want to build something, then Emacs is the right environment</p>
-<h2>History of Emacs</h2>
-<h3>Brief outline</h3>
-<p>The chief architect of Emacs is Richard Stallman (<a href="https://www.fsf.org/about/staff-and-board">RMS</a>).  He is the
-founder of the Free Software foundation. Richard developed a number of
-widely used software components of GNU, including the original Emacs,
-the GNU Compiler Collection, the GNU symbolic debugger (gdb), GNU
-Emacs, and various other programs for the GNU operating system. He
-invented the idea of copyleft and licenses that allow for copying.
-When he invented it, he and the other principal inventor <a href="https://labs.oracle.com/pls/apex/f?p%3Dlabs:bio:0:120">Guy Steele</a>
-were in researchers at the artificial intelligence lab at MIT, <a href="http://www.csail.mit.edu/">CSAIL</a>.
-They were both graduate students of Gerald J Sussman (<a href="http://groups.csail.mit.edu/mac/users/gjs/biography.html">GJS</a>) who was
-working with lisp variant languages to solve decision problems.</p>
-<p>Emacs has evolved from a terminal only editor to one with a rich
-graphical support.  Emacs is capable through (tramp mode) of editing
-files on remote machines.  This means that you can edit files that
-need to run on a machine that you share such as an Amazon cluster
-(AWS) or a super computer. Don't worry we will start much smaller!</p>
-<p>Emacs development has been undergoing a renissaince since the
-development of org-mode.  Prior development cycles had been slow.  As
-of this writing, the latest Emacs version is 24.3 and org-mode is
-8.2.5.  Prior development cycles had been slow.  Also in the 1990's
-Emacs split with more graphic support being available <a href="http://www.xemacs.org/">XEmacs</a>.  At
-least two other variants are still maintained <a href="http://aquamacs.org/">Aquamacs</a> for Mac OS X and
-<a href="http://ergoemacs.org/">Ergo-Emacs</a> which claims to be easier on your fingers.  The inventor of
-Ergo-Emacs, <a href="http://xahlee.org/">Xah Lee</a>, is a prolific contributor of tutorials and other
-resources to the Emacs community.</p>
-<h2>Where do your documents live?</h2>
-<p>Your documents live on Disk.  However if you use a modern graphical 
-user interface it is not always easy to find out where the document 
-you care about is.  Your docuents folder is a subdirectory.  My 
-user name is 'evan'. In linux, my documents are in:</p>
-<div class="highlight"><pre><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span>
-</pre></div>
-
-
-<p>In Mac OS X and Windows 8, my documents are in:</p>
-<div class="highlight"><pre><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span>
-</pre></div>
-
-
-<p>You create a document by asking Emacs to find a document that does not
-exist yet.  Before we can do this you have to understand the instructions
-this tutorial is going to give.  So we need to define certain keystrokes:</p>
-<ul>
-<li><code>TAB</code> is the TAB (indent) key.</li>
-<li><code>RET</code> is the Return (carriage return, enter) key.</li>
-<li><code>C-h</code> means press control key AND ``h'' together</li>
-<li><code>ESC-h</code> means press ESC key THEN ``h''</li>
-<li><code>M-h</code> means press ALT or Meta key AND ``h'' together.</li>
-<li><code>M-C-h</code> means press Meta or Alt while pressing  h and control key.  OR
-    (if no meta/alt): ESC THEN (control and h keys together).</li>
-<li>Older keyboards (and sometimes older Macs) without ALT or Meta
-    lead to confusion between ESC and Meta, but ideally they should
-    be different.</li>
-</ul>
-<p>To do this start Emacs and find the file ``practice.org''.  So if you are 
-on Linux:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">practice</span><span class="p">.</span><span class="n">org</span>
-</pre></div>
-
-
-<p>If you are on Windows or Mac:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">practice</span><span class="p">.</span><span class="n">org</span>
-</pre></div>
-
-
-<p>If you see a blank screen, you have done it right.</p>
-<h2>Every time you press a key&#x2026;you call a function</h2>
-<p>This is going to seem pedantic but I am betting you will refer back to
-this.  It is easy to get lost with keypresses, keystrokes and
-keybindings. When you type the letter "a", that is called a <em>keystroke</em>.
-A <em>keybinding</em> is the function that is bound to a combiantion of
-<em>keystrokes</em>.</p>
-<p>One of the most important keybindings is:</p>
-<ul>
-<li><code>M-x</code> is bound to execute-extended-command, which allows you to run a
-    command by name (there are many commands that are not bound to
-    keys).</li>
-</ul>
-<p>(Rember that the <code>M-x</code> is probably <code>Alt-x</code> on your machine.) Another
-important keystroke combination is <code>C-g</code> is bound to Quit which will
-end the command.  If you have typed <code>M-x</code> now, then type <code>C-g</code> to
-Quit.  Mapping between keybindings and commands is flexible; can
-change on fly.</p>
-<h2>Moving around</h2>
-<p>I find this picture from Phil Sung helps me remember how to move:</p>
-<p><img src="../images/EvAtWork.png" width="300px" alt="img" title="arrows.png"></p>
-
-<div class="highlight"><pre>C<span class="o">-</span>v    Move forward one screenful
-M<span class="o">-</span>v    Move backward one screenful
-C<span class="o">-</span>l    Clear and redraw screen
-M<span class="o">-</span> <span class="o">-&gt;</span>  Meta<span class="o">-&lt;</span>right<span class="o">&gt;</span> <span class="o">-</span> moves forward a word
-M<span class="o">-</span> <span class="o">&lt;-</span>  Meta<span class="o">-&lt;</span>left<span class="o">&gt;</span> <span class="o">-</span> moves back a word
-M<span class="o">-</span> <span class="p">{</span>   Meta<span class="o">-&lt;</span>up<span class="o">&gt;</span> <span class="o">-</span> move up a paragraph
-M<span class="o">-</span> <span class="p">}</span>   Meta<span class="o">-&lt;</span>down<span class="o">&gt;</span> <span class="o">-</span> move down a paragraph
-M<span class="o">-</span> <span class="o">&lt;</span>   Meta<span class="o">-&lt;</span>less than<span class="o">&gt;</span> <span class="o">-</span> move to file start
-M<span class="o">-</span> <span class="o">&gt;</span>   Meta<span class="o">-&lt;</span>greater than<span class="o">&gt;</span> <span class="o">-</span> move to file end
-</pre></div>
-
-
-<p>Instead of the squiggly brace <code>{</code> or <code>}</code> the up or down arrow will work
-as well.</p>
-<h2>Cut and paste</h2>
-<p>Instead of <code>C-c</code> to copy and <code>C-v</code> to paste, Emacs has older
-keybindings. This seems strange</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">d</span>    <span class="n">Delete</span>
-<span class="n">C</span><span class="o">-</span><span class="n">k</span>    <span class="n">Kill</span> <span class="n">from</span> <span class="n">the</span> <span class="n">cursor</span> <span class="n">position</span> <span class="n">to</span>
-       <span class="n">end</span> <span class="n">of</span> <span class="n">line</span>
-<span class="n">C</span><span class="o">-</span><span class="n">y</span>    <span class="n">Recover</span><span class="o">/</span><span class="n">Paste</span> <span class="p">(</span><span class="n">Yank</span><span class="p">)</span> <span class="n">killed</span> <span class="n">text</span>
-       <span class="p">(</span><span class="n">repeat</span> <span class="n">to</span> <span class="n">copy</span><span class="p">)</span>
-<span class="n">M</span><span class="o">-</span><span class="n">y</span>    <span class="n">recover</span> <span class="n">former</span> <span class="n">killed</span> <span class="n">text</span> <span class="p">(</span><span class="n">after</span> <span class="n">C</span><span class="o">-</span><span class="n">y</span><span class="p">).</span>
-       <span class="n">Repeat</span> <span class="n">to</span> <span class="n">go</span> <span class="n">back</span> <span class="n">through</span> <span class="n">stack</span><span class="p">).</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">u</span>  <span class="n">_U_ndo</span>  <span class="p">(</span><span class="n">multiple</span> <span class="n">undo</span><span class="o">/</span><span class="n">redo</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Here is the payoff:</p>
-<ul>
-<li>
-<p><em>point</em> is current location of cursor</p>
-</li>
-<li>
-<p><em>mark</em> <code>C-SPC</code> to define another point</p>
-</li>
-<li>
-<p><em>region</em> is text between mark and point</p>
-</li>
-<li>
-<p><code>C-w</code> kills from point to mark.</p>
-</li>
-<li>
-<p><code>C-y</code> yanks that text back.</p>
-</li>
-</ul>
-<h2>Loading/saving files</h2>
-<p>Now we can look at the commands to find files and see the buffers
-we have loaded into Emacs.  Emacs actually does not save all of your
-changes to the file.  Emacs makes a copy of your file on disk to a
-copy, called a <em>buffer</em>. You make all of your changes to the buffer and 
-when you write the file to disk, it replaces the file.</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span>  <span class="n">_F_ind</span> <span class="n">a</span> <span class="n">file</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">s</span>  <span class="n">_S_ave</span> <span class="n">the</span> <span class="n">file</span>
-<span class="n">C</span><span class="o">-</span><span class="n">s</span> <span class="n">C</span><span class="o">-</span><span class="n">w</span>  <span class="n">_W_rite</span> <span class="n">the</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">name</span>
-<span class="n">If</span> <span class="n">you</span> <span class="n">find</span> <span class="n">a</span> <span class="n">second</span> <span class="n">file</span> <span class="n">with</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">first</span> <span class="n">file</span> <span class="n">remains</span> <span class="n">inside</span> <span class="n">Emacs</span><span class="p">.</span>
-<span class="n">You</span> <span class="n">can</span> <span class="k">switch</span> <span class="n">back</span> <span class="n">to</span> <span class="n">it</span> <span class="n">by</span> <span class="n">finding</span> <span class="n">it</span>
-<span class="n">again</span> <span class="n">with</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">b</span><span class="p">.</span>  <span class="n">This</span> <span class="n">way</span> <span class="n">you</span> <span class="n">can</span> <span class="n">get</span>
-<span class="n">quite</span> <span class="n">a</span> <span class="n">number</span> <span class="n">of</span> <span class="n">files</span> <span class="n">inside</span> <span class="n">Emacs</span><span class="p">.</span>
-</pre></div>
-
-
-<h2>Windows</h2>
-<p>Here is how you work with the buffers that you have loaded into Emacs:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">0</span>      <span class="n">Move</span> <span class="n">between</span> <span class="n">windows</span>
-           <span class="p">(</span><span class="n">Oh</span><span class="p">,</span> <span class="n">not</span> <span class="n">Zero</span><span class="o">!</span><span class="p">)</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span>      <span class="n">One</span> <span class="n">window</span>
-           <span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.,</span> <span class="n">kill</span> <span class="n">all</span> <span class="n">other</span> <span class="n">windows</span><span class="p">).</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span>      <span class="n">Split</span> <span class="n">horizontally</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span>      <span class="n">Split</span> <span class="n">vertically</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">b</span>      <span class="n">Switch</span> <span class="n">to</span> <span class="n">new</span> <span class="n">_b_uffer</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">b</span>    <span class="n">List</span> <span class="n">_b_uffers</span>
-</pre></div>
-
-
-<h2>Search and replace</h2>
-<p>Here are the commands for searching and replacing:</p>
-<div class="highlight"><pre><span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span><span class="n">then</span><span class="p">)</span> <span class="n">replace</span><span class="o">-</span><span class="n">string</span>
-           <span class="n">Replace</span> <span class="n">string</span>
-<span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span><span class="n">then</span><span class="p">)</span> <span class="n">query</span><span class="o">-</span><span class="n">replace</span><span class="o">-</span><span class="n">string</span>
-           <span class="n">Will</span> <span class="n">ask</span> <span class="n">you</span><span class="p">,</span> <span class="k">for</span> <span class="n">each</span> <span class="n">match</span><span class="p">,</span>
-           <span class="k">if</span> <span class="n">you</span> <span class="n">really</span> <span class="n">want</span> <span class="n">to</span> <span class="n">replace</span>
-           <span class="n">the</span> <span class="n">old</span> <span class="n">string</span> <span class="n">with</span> <span class="n">the</span> <span class="n">new</span> <span class="n">one</span><span class="p">.</span>
-<span class="n">C</span><span class="o">-</span><span class="n">s</span>        <span class="n">_S_earch</span> <span class="n">forward</span> <span class="p">(</span><span class="n">repeat</span> <span class="n">to</span>
-           <span class="n">reuse</span> <span class="n">past</span> <span class="n">search</span> <span class="n">strings</span><span class="p">)</span>
-<span class="n">C</span><span class="o">-</span><span class="n">r</span>        <span class="n">Search</span> <span class="n">_R_everse</span> <span class="p">(</span><span class="n">repeat</span> <span class="n">to</span>
-           <span class="n">reuse</span> <span class="n">past</span> <span class="n">search</span> <span class="n">strings</span><span class="p">)</span>
-</pre></div>
-
-
-<h2>Quitting and getting help</h2>
-<p>Here are the commands for quitting and getting help:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">or</span> <span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="o">?</span>    <span class="n">_H_elp</span>
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">c</span> <span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="n">_H_elp</span> <span class="n">on</span> <span class="n">this</span> <span class="n">_c_ommand</span>
-
-<span class="n">C</span><span class="o">-</span><span class="n">u</span> <span class="mi">8</span> <span class="p">(</span><span class="n">character</span> <span class="n">or</span> <span class="n">command</span><span class="p">)</span>
-             <span class="n">Repeat</span> <span class="n">character</span><span class="o">/</span><span class="n">command</span> <span class="mi">8</span> <span class="n">times</span>
-
-<span class="n">C</span><span class="o">-</span><span class="n">g</span>          <span class="n">Stop</span><span class="p">,</span> <span class="n">unhang</span><span class="p">.</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">c</span>      <span class="n">Stop</span> <span class="n">and</span> <span class="n">exit</span> <span class="p">(</span><span class="n">_c_lose</span><span class="p">)</span> <span class="n">Emacs</span>
-</pre></div>
-
-
-<h2>Macros</h2>
-<h3>Repeating yourself</h3>
-<p>Repeat C-n ten times:</p>
-<p>C-u 10 C-n</p>
-<p>C-u 70 #</p>
-<h3>Keyboard macros</h3>
-<p><code>C-x (</code> lots of stuff  <code>C-x )</code></p>
-<p>Can include counters.  e.g.</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span> <span class="n">TAB</span> <span class="n">step</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">k</span> <span class="n">C</span><span class="o">-</span><span class="n">i</span> <span class="n">RET</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="p">)</span>
-</pre></div>
-
-
-<p>will make:</p>
-<div class="highlight"><pre><span class="n">step</span> <span class="mi">0</span>
-<span class="n">step</span> <span class="mi">1</span>
-<span class="n">step</span> <span class="mi">2</span>
-</pre></div>
-
-
-<p>&#x2026;</p>
-<p>(info "(emacs)Keyboard Macros")</p>
-<p>I use this all the time to automate boring editing functions all
-the time!!</p>
-<h2>Modes</h2>
-<p>Modes contain specialisations (commands/variables) for different
-languages.
--   Major modes are defined for different languages (C, latex, R,
-    python, &#x2026;).</p>
-<ul>
-<li>
-<p>Consistency across modes where possible (e.g. commands for
-    commenting, indentation).  Keybindings consistent.  <em>Font lock</em>
-    also consistent, e.g. comments in red.</p>
-</li>
-<li>
-<p>Major mode decided typically based on buffer name.</p>
-</li>
-<li>
-<p><code>C-h m</code> describes features available in current buffer.</p>
-</li>
-</ul>
-<h2>Completion</h2>
-<ul>
-<li>TAB completion where possible, e.g <code>M-x describe- TAB</code></li>
-</ul>
-<h2>Getting help</h2>
-<p>Here is how to get help:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">m</span>       <span class="n">describe</span> <span class="n">mode</span> 
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">k</span>       <span class="n">describe</span> <span class="n">key</span>  
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">i</span>       <span class="n">info</span>          
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">t</span>       <span class="n">tutorial</span>
-</pre></div>
-
-
-<p>Check out <a href="http://emacswiki.org">http://emacswiki.org</a></p>
-<p>It also lists cool packages (or libraries) you can add to Emacs 
-to make it do more.</p>
-<h2>libraries</h2>
-<p>Emacs' <code>load-path</code> controls which directories are searched.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_ess</span> <span class="p">()</span>
-<span class="s">&quot;initialize ess&quot;</span>
-<span class="p">(</span><span class="n">locate</span><span class="o">-</span><span class="n">library</span> <span class="s">&quot;ess&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">&#39;</span><span class="n">load</span><span class="o">-</span><span class="n">path</span> <span class="s">&quot;~/langs/emacs/org-mode/lisp&quot;</span><span class="p">))</span>
-</pre></div>
-
-
-<p>Or to look up the definition of a function, try:</p>
-<div class="highlight"><pre><span class="nx">M</span><span class="o">-</span><span class="nx">x</span> <span class="nx">find</span><span class="o">-</span><span class="kd">function</span> <span class="nx">ess</span><span class="o">-</span><span class="nx">dirs</span>
-</pre></div>
-
-
-<h2>Hooks</h2>
-<p>Hooks are usually the way you set up Emacs to act on a file you
-want to behave in a certain way.</p>
-<p>Hooks are run e.g. after major-mode has been created.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_eldoc</span><span class="p">()</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">emacs</span><span class="o">-</span><span class="n">lisp</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">eldoc</span><span class="o">-</span><span class="n">mode</span><span class="p">))</span>
-</pre></div>
-
-
-<p>Compare the following two versions:</p>
-<div class="highlight"><pre><span class="p">;;</span> <span class="n">version</span> <span class="mi">1</span>
-<span class="p">(</span><span class="n">defun</span> <span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span> <span class="p">()</span>
-  <span class="s">&quot;Add my keybindings to ESS mode.&quot;</span>
-  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">eval</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">and</span><span class="o">-</span><span class="n">step</span><span class="p">))</span>
-
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span><span class="p">)</span>
-
-<span class="p">;;</span> <span class="n">version</span> <span class="mi">2</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span>
-          <span class="err">&#39;</span><span class="p">(</span><span class="n">lambda</span> <span class="p">()</span>  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;M-RET&quot;</span><span class="p">)</span>
-                                      <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">use</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="n">dir</span><span class="p">)))</span>
-</pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+you are using.  This is a big advantage ...</p>
+                <a class="readmore" href="/r-tutorial-emacs-basics.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -434,7 +173,7 @@ of well intentioned opinion.  It also occurs in ...</p>
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
         </address>
-<p>In <a href="/category/r-course.html">r-course</a>. </p>
+<p>In <a href="/category/r-course.html">R-course</a>. </p>
 <p>tags: <a href="/tag/emacs.html">emacs</a> <a href="/tag/rstats.html">rstats</a> <a href="/tag/ess.html">ess</a> </p>
 </footer><!-- /.post-info -->                <h1>credit</h1>
 <p>I am trying to explain the ethos and social convention of
@@ -578,37 +317,6 @@ or merely a monstrous waste of time, money and a cell
 phone. #TweetingArrests <a href="http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/">http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/</a></p>
 <p><img src="../images/george0.png" width="650px" alt="img" title="george0.png"></p>
                 <a class="readmore" href="/arrest-tweet.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ban-the-box.html" rel="bookmark"
-                           title="Permalink to Ban the box">Ban the box</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-05-02T15:02:00">
-                Published: Fri 02 May 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
-        </address>
-<p>In <a href="/category/criminal-justice.html">Criminal Justice</a>. </p>
-<p>tags: <a href="/tag/reentry.html">reentry</a> <a href="/tag/jobs.html">jobs</a> </p>
-</footer><!-- /.post-info -->                <p>NYC is considering banning private employers from asking about
-criminal convictions on employment applications.  If NYC passes this,
-it is a game changer.  Once again Jumaane Williams is leading the
-charge on behalf of the working poor.</p>
-<ul>
-<li><a href="http://online.wsj.com/news/articles/SB10001424127887323997004578640623464096406">wsj-online</a></li>
-<li><a href="http://www.cssny.org/news/entry/watch-fair-chance-act-would-ban-the-box-in-nyc">cssny</a></li>
-<li><a href="http://fairchancenyc.wordpress.com/">fairChance.org</a></li>
-</ul>
-<p><img src="../images/banBox.jpg" width="600px" alt="img" title="banBox.jpg"></p>
-                <a class="readmore" href="/ban-the-box.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2014-07-01T00:00:00-04:00</updated><entry><title>Intro to basic Emacs for statistics</title><link href="/r-tutorial-emacs-basics.html" rel="alternate"></link><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-07-01:r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2014-07-01T15:02:00-04:00</updated><entry><title>bs jobs today</title><link href="/jobs-20140701.html" rel="alternate"></link><updated>2014-07-01T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-07-01:jobs-20140701.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;"Nothing will work unless you do." ~Maya Angelou&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../../images/maya-barak.jpg" width="350px" alt="img" title="maya.jpg"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Today in bullshit&lt;/h1&gt;
+&lt;p&gt;I was unemployed for a long time.  I was a job developer for six
+months at &lt;a href="http://www.etcny.org/employment-services/"&gt;Exodus Transitional Community&lt;/a&gt; in 2009 after I came
+home. Sometimes everyone needs a &lt;em&gt;bullshit&lt;/em&gt; job.  These are not a
+career.  If you work at Popeye's you are not going to own Popeye's
+chicken.  However there is a human dignity to work that may allow you
+to buy your kid a slice of pizza.  Every dad deserves that.  Here are
+the jobs I saw today.&lt;/p&gt;
+&lt;h1&gt;Empanada Mama&lt;/h1&gt;
+&lt;p&gt;This is a small but really busy place.  They need people go here
+first. The address is 763 9th Ave, New York, NY 10019:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/empanada-mama.jpg" width="350px" alt="empanada" title="mama.jpg"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Hummus kitchen&lt;/h1&gt;
+&lt;p&gt;This is a kosher middle eastern place.  I hope that they remember
+people have been throwing jews into jails since they invented
+prison. The address is 416 Amsterdam Ave (80th street), New York, NY 10024.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/hummus-kitchen.jpg" width="350px" alt="hummus" title="hummus.jpg"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Kebab house&lt;/h1&gt;
+&lt;p&gt;I know nothing except they had a sign out.  If they hire you, I will
+eat there, 712 9th Ave:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/kebab-house.jpg" width="350px" alt="kebab" title="kebab.jpg"&gt;&lt;/p&gt;</summary><category term="jobs"></category><category term="reentry"></category></entry><entry><title>Intro to basic Emacs for statistics</title><link href="/r-tutorial-emacs-basics.html" rel="alternate"></link><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-07-01:r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
