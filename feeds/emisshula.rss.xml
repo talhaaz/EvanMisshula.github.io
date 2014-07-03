@@ -1,5 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 02 Jul 2014 15:02:00 -0400</lastBuildDate><item><title>More Starter Jobs</title><link>/jobs-20140702.html</link><description>&lt;blockquote&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 02 Jul 2014 15:03:00 -0400</lastBuildDate><item><title>Emacs Speaks Statistics (ESS) Tutorial</title><link>/r-tutorial-ess.html</link><description>&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All models are wrong, but some are useful.~George E. P. Box&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why is ESS useful?&lt;/h2&gt;
+&lt;p&gt;ESS makes your command history searchable and modifiable. When you
+start doing statistics you think you will always remember what you did
+and instantly recall why you did it with that particular data. As you
+work on more projects you realize that is a hopeless task. But you
+will get questions on what you have done, especially if it was novel
+or well thought out.  These questions may not start until months after
+your work is done.  Having a command history is the bare minimum of
+what you will need to support your work.  We will talk about creating
+&lt;em&gt;replicable research&lt;/em&gt; later in these tutorials. Unbelievably, this is
+a topic almost never addressed in introductory courses.&lt;/p&gt;
+&lt;p&gt;ESS does other tasks for you as well that make interacting with your
+data easier.  ESS gives you command line completion of both object
+(data) and file names which saves on both typing and mistakes. It
+creates so-called &lt;em&gt;Hot Keys&lt;/em&gt; for quick performance of wrote tasks.  It
+records a complete transcript of your R session.  It provides an
+interface to the R help system. It allows you to edit your data.  It
+provides highlighting and proper indentation which makes your code
+easier to read for you and others.  It allows you to run either parts 
+of files (called regions) or entire files.&lt;/p&gt;
+&lt;h2&gt;ESS history&lt;/h2&gt;
+&lt;p&gt;The project has been going since before the invention of R.  It was
+around in 1989, when it was used to interact with R's proprietary
+antecedent Bell Lab's S-language built by Richard Chambers. I am a a
+geek about the history of scientific and mathematical ideas. If you
+are interested in the history, the &lt;a href="http://en.wikipedia.org/wiki/S_%2528programming_language%2529"&gt;wikipedia&lt;/a&gt; article is a good start.
+You can also check out the &lt;a href="http://stat.bell-labs.com/S/"&gt;S-page&lt;/a&gt; at Bell Labs.  For any academic work
+I strongly suggest citing the published paper on ESS which is available
+at this &lt;a href="http://biostats.bepress.com/uwbiostat/paper173/"&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Installing ESS&lt;/h2&gt;
+&lt;p&gt;There are a number of ways to install ESS.  I will create a separate 
+series of posts on this.  For many, this will be your first foray
+into FREE software and installing for the first time is not easy,
+particularly on a Mac.  Here is a much to brief set of instructions:&lt;/p&gt;
+&lt;h3&gt;Linux&lt;/h3&gt;
+&lt;h4&gt;Beginner&lt;/h4&gt;
+&lt;p&gt;Install from the ELPA package manager.  You should search for ESS
+(C-s, where C-s means press the Control and "s" keys at the same
+time).  Refer to Xah Lee's &lt;a href="http://ergoemacs.org/emacs/emacs_package_system.html"&gt;tutorial&lt;/a&gt; on loading from the packackage 
+manager.&lt;/p&gt;
+&lt;h4&gt;Advanced&lt;/h4&gt;
+&lt;p&gt;Download the &lt;a href="http://ess.r-project.org/index.php?Section%3Ddownload"&gt;package&lt;/a&gt;. If you do not have a hidden file called
+&lt;em&gt;home/username&lt;/em&gt;.emacs create one and add the line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;~/langs/emacs/elisp-ds/ess/lisp/ess-site&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Trap&lt;/h4&gt;
+&lt;p&gt;Do not install Emacs and ESS from the Ubuntu or Debian repositories.  They
+are usually hoplelessly out of date.&lt;/p&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;p&gt;Download the emacs distribution for &lt;a href="http://vgoulet.act.ulaval.ca/en/emacs/windows/"&gt;Windows&lt;/a&gt; from Vincent Goulet.
+Remember this is an executable file and you will have to allow it to
+work.&lt;/p&gt;
+&lt;h3&gt;Mac OS X&lt;/h3&gt;
+&lt;p&gt;Download the emacs distribution for &lt;a href="http://vgoulet.act.ulaval.ca/en/emacs/mac/"&gt;Mac OS X&lt;/a&gt;  Vincent Goulet.
+Remember this is an executable file and you will have to allow it to
+work. Also you have to drag the downloaded file to your apps file. I
+have never understood the point of this and I forget to how to do it 
+every time.  Here is a &lt;a href="http://apple.stackexchange.com/questions/15306/why-do-i-have-to-drag-my-new-apps-into-the-application-folder"&gt;reference and explanation&lt;/a&gt;.  It always makes me 
+think of how Richard Stallman who founded the Free Software movement
+hated Steve Jobs:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Steve Jobs, the pioneer of the computer as a jail made cool, designed
+to sever fools from their freedom, has died.&lt;/p&gt;
+&lt;p&gt;As Chicago Mayor Harold Washington said of the corrupt former Mayor
+Daley, "I'm not glad he's dead, but I'm glad he's gone." Nobody
+deserves to have to die &amp;#x2013; not Jobs, not Mr. Bill, not even people
+guilty of bigger evils than theirs. But we all deserve the end of
+Jobs' malign influence on people's computing.&lt;/p&gt;
+&lt;p&gt;Unfortunately, that influence continues despite his absence. We can
+only hope his successors, as they attempt to carry on his legacy, will
+be less effective. ~Richard M Stallman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../../images/rms.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;h2&gt;Testing your installation&lt;/h2&gt;
+&lt;p&gt;You have to have installed R.  The instructions are &lt;a href="http://cran.r-project.org/doc/manuals/r-release/R-admin.html"&gt;here&lt;/a&gt;. You have to
+have installed Emacs and ESS.  For Windows and Mac Users, you get both
+Emacs and ESS when you download from Vincent Goulet. Now type &lt;code&gt;M-x R&lt;/code&gt;.
+This will start an R process within a new buffer.  These buffers are
+called &lt;em&gt;inferior&lt;/em&gt; as they run a process under Emacs.  The ESS manual
+calls them &lt;em&gt;iESS&lt;/em&gt; buffers.&lt;/p&gt;
+&lt;p&gt;If something went wrong, note the error and search.  If nothing happened
+try searching "Emacs can't find my R installation."&lt;/p&gt;
+&lt;h2&gt;Editing R code&lt;/h2&gt;
+&lt;p&gt;Indentation is automatic.  If you want to do something special use the
+command &lt;code&gt;M-x indent region&lt;/code&gt;. If you don't understand what that means
+please refer to my earlier tutorial on &lt;a href="http://EvanMisshula.github.io/r-tutorial-emacs-basics.html"&gt;basic emacs&lt;/a&gt;. It also resets the
+underscore "_" to the assignment arrow "&amp;lt;-" which saves a keystroke
+many times. If not you can use the underscore by typing &lt;code&gt;M-q _&lt;/code&gt; or just
+"_" twice.  You can tab complete objects (data) with &lt;code&gt;C-c TAB&lt;/code&gt; in buffers
+that end with .R extension.  It is by the file extension that Emacs 
+knows what mode to use.&lt;/p&gt;
+&lt;p&gt;Here are the key-bindings for moving around functions:&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+&lt;colgroup&gt;
+&lt;col  class="left" /&gt;
+
+&lt;col  class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="left"&gt;Keybinding&lt;/th&gt;
+&lt;th scope="col" class="left"&gt;Function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="left"&gt;C-M-a&lt;/td&gt;
+&lt;td class="left"&gt;ess-beginning-of-function&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;C-M-e&lt;/td&gt;
+&lt;td class="left"&gt;ess-end-of-function&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;C-M-h&lt;/td&gt;
+&lt;td class="left"&gt;ess-mark-function&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Viewing help files&lt;/h2&gt;
+&lt;p&gt;You can view a help file two ways.  If you are in the R console:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;?pbinorm&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you are not:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C-c C-v RET pbinom RET&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;The R session&lt;/h1&gt;
+&lt;p&gt;In the &lt;code&gt;*R*&lt;/code&gt; buffer you can run any R command.  R and statistics will be 
+the next tutorial.  You can recall your command history.&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+&lt;colgroup&gt;
+&lt;col  class="left" /&gt;
+
+&lt;col  class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="left"&gt;keybinding&lt;/th&gt;
+&lt;th scope="col" class="left"&gt;function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="left"&gt;M-p&lt;/td&gt;
+&lt;td class="left"&gt;comint-previous-input&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;M-n&lt;/td&gt;
+&lt;td class="left"&gt;comint-next-input&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;M-r&lt;/td&gt;
+&lt;td class="left"&gt;comint-previous-matching-input&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1&gt;Transcripts&lt;/h1&gt;
+&lt;p&gt;You can save an R buffer to create a transcript. You can clean up the
+transcript with &lt;code&gt;M-x ess-transcript-clean-buffer&lt;/code&gt;.  You can run
+multiple sessions of R.=M-x R= multiple times will generate multiple
+processes, e.g. &lt;code&gt;*R*&lt;/code&gt;, &lt;code&gt;*R:2*&lt;/code&gt;, &amp;#x2026;&lt;/p&gt;
+&lt;h1&gt;Sending code from an R buffer to an R session&lt;/h1&gt;
+&lt;p&gt;If you only have one R session (typical), it will automatically be
+associated with the R buffer.  Otherwise you can associate the buffer
+with &lt;code&gt;C-c C-s&lt;/code&gt;.  Here are the bindings for sending code:&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+&lt;colgroup&gt;
+&lt;col  class="left" /&gt;
+
+&lt;col  class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="left"&gt;Keybinding&lt;/th&gt;
+&lt;th scope="col" class="left"&gt;Function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c C-j`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-line`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c M-j`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-line-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c C-f`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-function`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c M-f`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-function-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c C-r`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-region`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c M-r`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-region-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c C-b`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-buffer`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c M-b`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-buffer-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c C-n`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-line-and-step`&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;About 90% of the time I only use:&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+&lt;colgroup&gt;
+&lt;col  class="left" /&gt;
+
+&lt;col  class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="left"&gt;Keybinding&lt;/th&gt;
+&lt;th scope="col" class="left"&gt;Function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="left"&gt;`C-c C-r`&lt;/td&gt;
+&lt;td class="left"&gt;`ess-eval-region`&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Next we are on to statistics!!&lt;/h2&gt;
+
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; Box &amp; Draper (1987), Empirical model-building and response surfaces, Wiley, p. 424.&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" class="footnum" href="#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; Windows 8 hides the file extension by default. You can change
+this evil behavior by seting the environment variable.&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-02:r-tutorial-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>More Starter Jobs</title><link>/jobs-20140702.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;If a man is called to be a streetsweeper, he should sweep streets even
 as Michelangelo painted, or Beethoven composed music, or Shakespeare
 wrote poetry. He should sweep streets so well that all the hosts of
@@ -23,7 +318,7 @@ yesterday.  The address is 276 Columbus Ave.  I don't know anything about the pl
 hire you, I will tell my girlfriend to shop there. &lt;/p&gt;
 &lt;p&gt;&lt;img src="../../images/sales-and-sm.jpg" width="350px" alt="Roslyn" title="Roslyn"&gt;&lt;/p&gt;
 
-&lt;p&gt;Good luck!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-02:jobs-20140702.html</guid><category>jobs</category><category>reentry</category></item><item><title>Everybody starts somewhere</title><link>/jobs-20140701.html</link><description>&lt;blockquote&gt;
+&lt;h1&gt;Good luck!&lt;/h1&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-02:jobs-20140702.html</guid><category>jobs</category><category>reentry</category></item><item><title>Everybody starts somewhere</title><link>/jobs-20140701.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;"Nothing will work unless you do." ~Maya Angelou&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src="../../images/maya-barak.jpg" width="350px" alt="img" title="maya.jpg"&gt;&lt;/p&gt;
