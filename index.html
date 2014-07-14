@@ -29,7 +29,76 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/r-tutorial-ess.html">Emacs Speaks Statistics (ESS) Tutorial</a></h1>
+                    <h1 class="entry-title"><a href="/jobs-20140714.html">Monday jobs</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-07-14T15:02:00">
+                Published: Mon 14 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/starter-jobs.html">Starter-jobs</a>. </p>
+<p>tags: <a href="/tag/jobs.html">jobs</a> <a href="/tag/reentry.html">reentry</a> </p>
+</footer><!-- /.post-info --><blockquote>
+<p>Nothing ever comes to one, that is worth having, except as a result of
+hard work. ~Booker T. Washington</p>
+</blockquote>
+<p><img src="../../images/booker.jpeg" width="350px" alt="btw" title="btw"></p>
+
+<h1>Starter jobs reality</h1>
+<p>I was away last week.  I only found one job on my way to work but I
+need to keep putting these up. Don't apply online.  Always ask to see 
+the manager.</p>
+<h1>Lenny's</h1>
+<p>This is a busy deli. The sign says to email or talk to the manager. Always talk
+to the manager. The address is 469 Columbus Ave (at 83th Street), New York, NY 10019:</p>
+<p><img src="../../images/lennys2.jpg" width="350px" alt="Lennys" title="lenny"></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/r-foundation-ess.html" rel="bookmark"
+                           title="Permalink to R foundations with ESS">R foundations with ESS</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-07-04T15:03:00">
+                Published: Fri 04 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/r-course.html">R-course</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
+</footer><!-- /.post-info -->                <h1>R foundations</h1>
+<p><img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"></p>
+
+<blockquote>
+<p>In God we trust. All others must bring data. ~ W. Edwards Demming</p>
+</blockquote>
+<h2>R console</h2>
+<p>Start an <strong><em>R</em></strong> buffer through <em>ess</em> by typing <code>M-x R</code>.  See the earlier
+tutorial here or here if that is mystery. At the console type:</p>
+<div class="highlight"><pre><span class="mi">10</span><span class="o">+</span><span class="mi">20</span>
+</pre></div>
+                <a class="readmore" href="/r-foundation-ess.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/r-tutorial-ess.html" rel="bookmark"
+                           title="Permalink to Emacs Speaks Statistics (ESS) Tutorial">Emacs Speaks Statistics (ESS) Tutorial</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-07-02T15:03:00">
                 Published: Wed 02 July 2014
@@ -40,7 +109,7 @@
         </address>
 <p>In <a href="/category/r-course.html">R-course</a>. </p>
 <p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
-</footer><!-- /.post-info --><h1>Making your editor do statistics</h1>
+</footer><!-- /.post-info -->                <h1>Making your editor do statistics</h1>
 <p><img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"></p>
 
 <blockquote>
@@ -49,298 +118,10 @@
 <h2>Why is ESS useful?</h2>
 <p>ESS makes your command history searchable and modifiable. When you
 start doing statistics you think you will always remember what you did
-and instantly recall why you did it with that particular data. As you
-work on more projects you realize that is a hopeless task. But you
-will get questions on what you have done, especially if it was novel
-or well thought out.  These questions may not start until months after
-your work is done.  Having a command history is the bare minimum of
-what you will need to support your work.  We will talk about creating
-<em>replicable research</em> later in these tutorials. Unbelievably, this is
-a topic almost never addressed in introductory courses.</p>
-<p>ESS does other tasks for you as well that make interacting with your
-data easier.  ESS gives you command line completion of both object
-(data) and file names which saves on both typing and mistakes. It
-creates so-called <em>Hot Keys</em> for quick performance of wrote tasks.  It
-records a complete transcript of your R session.  It provides an
-interface to the R help system. It allows you to edit your data.  It
-provides highlighting and proper indentation which makes your code
-easier to read for you and others.  It allows you to run either parts 
-of files (called regions) or entire files.</p>
-<h2>ESS history</h2>
-<p>The project has been going since before the invention of R.  It was
-around in 1989, when it was used to interact with R's proprietary
-antecedent Bell Lab's S-language built by Richard Chambers. I am a a
-geek about the history of scientific and mathematical ideas. If you
-are interested in the history, the <a href="http://en.wikipedia.org/wiki/S_%2528programming_language%2529">wikipedia</a> article is a good start.
-You can also check out the <a href="http://stat.bell-labs.com/S/">S-page</a> at Bell Labs.  For any academic work
-I strongly suggest citing the published paper on ESS which is available
-at this <a href="http://biostats.bepress.com/uwbiostat/paper173/">link</a>.</p>
-<h2>Installing ESS</h2>
-<p>There are a number of ways to install ESS.  I will create a separate 
-series of posts on this.  For many, this will be your first foray
-into FREE software and installing for the first time is not easy,
-particularly on a Mac.  Here is a much to brief set of instructions:</p>
-<h3>Linux</h3>
-<h4>Beginner</h4>
-<p>Install from the ELPA package manager.  You should search for ESS
-(C-s, where C-s means press the Control and "s" keys at the same
-time).  Refer to Xah Lee's <a href="http://ergoemacs.org/emacs/emacs_package_system.html">tutorial</a> on loading from the packackage 
-manager.</p>
-<h4>Advanced</h4>
-<p>Download the <a href="http://ess.r-project.org/index.php?Section%3Ddownload">package</a>. If you do not have a hidden file called
-<em>home/username</em>.emacs create one and add the line:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">load</span> <span class="s">&quot;~/langs/emacs/elisp-ds/ess/lisp/ess-site&quot;</span><span class="p">)</span>
-</pre></div>
-
-
-<h4>Trap</h4>
-<p>Do not install Emacs and ESS from the Ubuntu or Debian repositories.  They
-are usually hoplelessly out of date.</p>
-<h3>Windows</h3>
-<p>Download the emacs distribution for <a href="http://vgoulet.act.ulaval.ca/en/emacs/windows/">Windows</a> from Vincent Goulet.
-Remember this is an executable file and you will have to allow it to
-work.</p>
-<h3>Mac OS X</h3>
-<p>Download the emacs distribution for <a href="http://vgoulet.act.ulaval.ca/en/emacs/mac/">Mac OS X</a>  Vincent Goulet.
-Remember this is an executable file and you will have to allow it to
-work. Also you have to drag the downloaded file to your apps file. I
-have never understood the point of this and I forget to how to do it 
-every time.  Here is a <a href="http://apple.stackexchange.com/questions/15306/why-do-i-have-to-drag-my-new-apps-into-the-application-folder">reference and explanation</a>.  It always makes me 
-think of how Richard Stallman who founded the Free Software movement
-hated Steve Jobs:</p>
-<blockquote>
-<p>Steve Jobs, the pioneer of the computer as a jail made cool, designed
-to sever fools from their freedom, has died.</p>
-<p>As Chicago Mayor Harold Washington said of the corrupt former Mayor
-Daley, "I'm not glad he's dead, but I'm glad he's gone." Nobody
-deserves to have to die &#x2013; not Jobs, not Mr. Bill, not even people
-guilty of bigger evils than theirs. But we all deserve the end of
-Jobs' malign influence on people's computing.</p>
-<p>Unfortunately, that influence continues despite his absence. We can
-only hope his successors, as they attempt to carry on his legacy, will
-be less effective. ~Richard M Stallman</p>
-</blockquote>
-<p><img src="../../images/rms.jpeg" width="300px" alt="box" title="box"></p>
-
-<h2>Testing your installation</h2>
-<p>You have to have installed R.  The instructions are <a href="http://cran.r-project.org/doc/manuals/r-release/R-admin.html">here</a>. You have to
-have installed Emacs and ESS.  For Windows and Mac Users, you get both
-Emacs and ESS when you download from Vincent Goulet. Now type <code>M-x R</code>.
-This will start an R process within a new buffer.  These buffers are
-called <em>inferior</em> as they run a process under Emacs.  The ESS manual
-calls them <em>iESS</em> buffers.</p>
-<p>If something went wrong, note the error and search.  If nothing happened
-try searching "Emacs can't find my R installation."</p>
-<h2>Editing R code</h2>
-<p>Indentation is automatic.  If you want to do something special use the
-command <code>M-x indent region</code>. If you don't understand what that means
-please refer to my earlier tutorial on <a href="http://EvanMisshula.github.io/r-tutorial-emacs-basics.html">basic emacs</a>. It also resets the
-underscore "_" to the assignment arrow "&lt;-" which saves a keystroke
-many times. If not you can use the underscore by typing <code>M-q _</code> or just
-"_" twice.  You can tab complete objects (data) with <code>C-c TAB</code> in buffers
-that end with .R extension.  It is by the file extension that Emacs 
-knows what mode to use.</p>
-<p>Here are the key-bindings for moving around functions:</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="left">Keybinding</th>
-<th scope="col" class="left">Function</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="left">C-M-a</td>
-<td class="left">ess-beginning-of-function</td>
-</tr>
-
-
-<tr>
-<td class="left">C-M-e</td>
-<td class="left">ess-end-of-function</td>
-</tr>
-
-
-<tr>
-<td class="left">C-M-h</td>
-<td class="left">ess-mark-function</td>
-</tr>
-</tbody>
-</table>
-
-<h2>Viewing help files</h2>
-<p>You can view a help file two ways.  If you are in the R console:</p>
-<blockquote>
-<p>?pbinorm</p>
-</blockquote>
-<p>If you are not:</p>
-<p><code>C-c C-v RET pbinom RET</code></p>
-<h1>The R session</h1>
-<p>In the <code>*R*</code> buffer you can run any R command.  R and statistics will be 
-the next tutorial.  You can recall your command history.</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="left">keybinding</th>
-<th scope="col" class="left">function</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="left">M-p</td>
-<td class="left">comint-previous-input</td>
-</tr>
-
-
-<tr>
-<td class="left">M-n</td>
-<td class="left">comint-next-input</td>
-</tr>
-
-
-<tr>
-<td class="left">M-r</td>
-<td class="left">comint-previous-matching-input</td>
-</tr>
-</tbody>
-</table>
-
-<h1>Transcripts</h1>
-<p>You can save an R buffer to create a transcript. You can clean up the
-transcript with <code>M-x ess-transcript-clean-buffer</code>.  You can run
-multiple sessions of R.=M-x R= multiple times will generate multiple
-processes, e.g. <code>*R*</code>, <code>*R:2*</code>, &#x2026;</p>
-<h1>Sending code from an R buffer to an R session</h1>
-<p>If you only have one R session (typical), it will automatically be
-associated with the R buffer.  Otherwise you can associate the buffer
-with <code>C-c C-s</code>.  Here are the bindings for sending code:</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="left">Keybinding</th>
-<th scope="col" class="left">Function</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="left">`C-c C-j`</td>
-<td class="left">`ess-eval-line`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c M-j`</td>
-<td class="left">`ess-eval-line-and-go`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c C-f`</td>
-<td class="left">`ess-eval-function`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c M-f`</td>
-<td class="left">`ess-eval-function-and-go`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c C-r`</td>
-<td class="left">`ess-eval-region`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c M-r`</td>
-<td class="left">`ess-eval-region-and-go`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c C-b`</td>
-<td class="left">`ess-eval-buffer`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c M-b`</td>
-<td class="left">`ess-eval-buffer-and-go`</td>
-</tr>
-
-
-<tr>
-<td class="left">`C-c C-n`</td>
-<td class="left">`ess-eval-line-and-step`</td>
-</tr>
-</tbody>
-</table>
-
-<p>About 90% of the time I only use:</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="left">Keybinding</th>
-<th scope="col" class="left">Function</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="left">`C-c C-r`</td>
-<td class="left">`ess-eval-region`</td>
-</tr>
-</tbody>
-</table>
-
-<h2>Next we are on to statistics!!</h2>
-
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> Box & Draper (1987), Empirical model-building and response surfaces, Wiley, p. 424.</div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> Windows 8 hides the file extension by default. You can change
-this evil behavior by seting the environment variable.</div>
-
-
-</div>
-
-</div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+and instantly recall why you did it ...</p>
+                <a class="readmore" href="/r-tutorial-ess.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -537,60 +318,6 @@ change. the smarter sentencing act will save billions of dollars and
 ease dangerous overcrowding in prisons by reducing sentences for
 non-violent drug offenders. it will also ...</p>
                 <a class="readmore" href="/no-more-drug-war.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/emacsnyc-IPython.html" rel="bookmark"
-                           title="Permalink to Emacs-IPython-Update">Emacs-IPython-Update</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-05-14T23:37:00">
-                Published: Wed 14 May 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
-        </address>
-<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
-<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/emacs-ipython-notebook.html">emacs-ipython-notebook</a> <a href="/tag/ipython.html">ipython</a> <a href="/tag/tutorial.html">tutorial</a> </p>
-</footer><!-- /.post-info -->                <h1>Update</h1>
-<p>On May 5, I gave a lightning talk at the Emacsnyc meetup on the state
-of the Emacs IPthon notebook.  A big thank you to <a href="http://www.tabfugni.cc">Eric</a> from
-<a href="http://emacsnyc.org">http://emacsnyc.org</a> for his extraordinary linux vs audio-visual
-equipment efforts.</p>
-<iframe width="560" height="315" src="//www.youtube.com/embed/dgcBKz03lK8" frameborder="0" allowfullscreen></iframe>
-                <a class="readmore" href="/emacsnyc-IPython.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/CecilyMcMillan.html" rel="bookmark"
-                           title="Permalink to CecilyMcMillan">CecilyMcMillan</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-05-08T15:02:00">
-                Published: Thu 08 May 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
-        </address>
-<p>In <a href="/category/criminal-justice.html">Criminal Justice</a>. </p>
-<p>tags: <a href="/tag/overcriminalization.html">overcriminalization</a> <a href="/tag/occupy.html">occupy</a> </p>
-</footer><!-- /.post-info -->                <p>The Judge would be wise to listen to a <a href="http://www.scribd.com/doc/222954383/Jury-Letter">jury</a> that understands the
-pointlessness of <a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor/?mg%3Dblogs-wsj&amp;url%3Dhttp%25253A%25252F%25252Fblogs.wsj.com%25252Fmetropolis%25252F2014%25252F05%25252F12%25252Fcity-council-members-call-for-leniency-for-occupy-wall-street-protestor">incarceration of the harmless</a>. #MasssIncarceration
- #Justice4Cecily #NoMoreDrugWar</p>
-<p><img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"></p>
-
-<p><img src="../images/jury.png" width="600px" alt="img" title="jury.png"></p>
-                <a class="readmore" href="/CecilyMcMillan.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

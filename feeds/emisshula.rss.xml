@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 02 Jul 2014 15:03:00 -0400</lastBuildDate><item><title>Emacs Speaks Statistics (ESS) Tutorial</title><link>/r-tutorial-ess.html</link><description>&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 14 Jul 2014 15:02:00 -0400</lastBuildDate><item><title>Monday jobs</title><link>/jobs-20140714.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;Nothing ever comes to one, that is worth having, except as a result of
+hard work. ~Booker T. Washington&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../../images/booker.jpeg" width="350px" alt="btw" title="btw"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Starter jobs reality&lt;/h1&gt;
+&lt;p&gt;I was away last week.  I only found one job on my way to work but I
+need to keep putting these up. Don't apply online.  Always ask to see 
+the manager.&lt;/p&gt;
+&lt;h1&gt;Lenny's&lt;/h1&gt;
+&lt;p&gt;This is a busy deli. The sign says to email or talk to the manager. Always talk
+to the manager. The address is 469 Columbus Ave (at 83th Street), New York, NY 10019:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/lennys2.jpg" width="350px" alt="Lennys" title="lenny"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 14 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-14:jobs-20140714.html</guid><category>jobs</category><category>reentry</category></item><item><title>R foundations with ESS</title><link>/r-foundation-ess.html</link><description>&lt;h1&gt;R foundations&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In God we trust. All others must bring data. ~ W. Edwards Demming&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;R console&lt;/h2&gt;
+&lt;p&gt;Start an &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; buffer through &lt;em&gt;ess&lt;/em&gt; by typing &lt;code&gt;M-x R&lt;/code&gt;.  See the earlier
+tutorial here or here if that is mystery. At the console type:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 04 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-04:r-foundation-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Emacs Speaks Statistics (ESS) Tutorial</title><link>/r-tutorial-ess.html</link><description>&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
 &lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
