@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 22 Jul 2014 15:02:00 -0400</lastBuildDate><item><title>South Brooklyn jobs</title><link>/jobs-20140722.html</link><description>&lt;blockquote&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 24 Jul 2014 15:03:00 -0400</lastBuildDate><item><title>Descriptives</title><link>/r-descriptives-ess.html</link><description>&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. ~Bobby Bragan, 1963&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Encountering data&lt;/h1&gt;
+&lt;p&gt;Here we will describe the techniques you should use to give yourself and
+your readers/bosses/teachers a good feel of the data. This is often called
+&lt;em&gt;descriptive statistics&lt;/em&gt;.  In this context a &lt;em&gt;statistic&lt;/em&gt; is a single number
+that summarizes your data. It is important to know what type of data you have
+and the &lt;em&gt;level of measurement&lt;/em&gt; but we will put off that discussion for a 
+a few paragraphs.  I am also putting off a discussion of why statistics is 
+important and I am just assuming that this is something you have to do in
+order to do your research.&lt;/p&gt;
+&lt;p&gt;Here is the daunting part, your data is usually a long list of numbers.  How 
+do you describe &lt;em&gt;that&lt;/em&gt;?  Usually the first technique you want to use is to 
+graph all of the numbers together.  In fact all of the data has a special name. &lt;/p&gt;
+&lt;p&gt;Your data is called the sample distribution.  How do we get that data
+into R?  Again, we will defer that question. One nice feature of R is
+that it has some data built in.  For example, it has the average amount of 
+precipitation for 70 cities in the United States.  We can use this data to 
+illustrate a few techniqeus that you can use on your own data.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precip&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;precip&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;Named&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="mi"&gt;67&lt;/span&gt; &lt;span class="mf"&gt;54.7&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="mf"&gt;48.5&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt; &lt;span class="mf"&gt;17.2&lt;/span&gt; &lt;span class="mf"&gt;20.7&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="mf"&gt;43.4&lt;/span&gt; &lt;span class="mf"&gt;40.2&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;names&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;chr&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Mobile&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Juneau&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Phoenix&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Little Rock&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
+    &lt;span class="n"&gt;Mobile&lt;/span&gt;      &lt;span class="n"&gt;Juneau&lt;/span&gt;     &lt;span class="n"&gt;Phoenix&lt;/span&gt; &lt;span class="n"&gt;Little&lt;/span&gt; &lt;span class="n"&gt;Rock&lt;/span&gt; 
+      &lt;span class="mf"&gt;67.0&lt;/span&gt;        &lt;span class="mf"&gt;54.7&lt;/span&gt;         &lt;span class="mf"&gt;7.0&lt;/span&gt;        &lt;span class="mf"&gt;48.5&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;str&lt;/code&gt; command gets the structure of the data.  There are a few commands 
+for this &lt;code&gt;summary&lt;/code&gt; is the other one I sometimes use. And &lt;code&gt;precip[1:4]&lt;/code&gt; gave 
+us the first four elements.&lt;/p&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; Robert Randall Bragan an American shortstop, catcher, manager, and coach in Major League Baseball.&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 24 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-24:r-descriptives-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>South Brooklyn jobs</title><link>/jobs-20140722.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;There's no free lunch. Don't feel entitled to anything you didn't sweat and struggle for.
 ~Marian Wright Edelman, advocate for children &lt;/p&gt;
 &lt;/blockquote&gt;
