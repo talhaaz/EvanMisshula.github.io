@@ -74,7 +74,49 @@ illustrate a few techniqeus that you can use on your own data.</p>
 
 <p>The <code>str</code> command gets the structure of the data.  There are a few commands 
 for this <code>summary</code> is the other one I sometimes use. And <code>precip[1:4]</code> gave 
-us the first four elements.</p>
+us the first four elements.  Here are some other built in datasets</p>
+<div class="highlight"><pre><span class="n">str</span><span class="p">(</span><span class="n">rivers</span><span class="p">)</span>
+<span class="n">str</span><span class="p">(</span><span class="n">discoveries</span><span class="p">)</span>
+
+<span class="n">num</span> <span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">141</span><span class="p">]</span> <span class="mi">735</span> <span class="mi">320</span> <span class="mi">325</span> <span class="mi">392</span> <span class="mi">524</span> <span class="p">...</span>
+<span class="n">Time</span><span class="o">-</span><span class="n">Series</span> <span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">]</span> <span class="n">from</span> <span class="mi">1860</span> <span class="n">to</span> <span class="mi">1959</span><span class="o">:</span> <span class="mi">5</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">1</span> <span class="p">...</span>
+</pre></div>
+
+
+<p>The first thing we want to get a sense of is how the numbers are
+distributed.  The best way to this is to use a <em>histogram</em>.  A
+histogram is a bar chart where we bin the count the number of
+observations that fall in a defined range.  I allows us to quickly
+notice important properties. <code>R</code> has a function for computing this
+built in.</p>
+<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="img" src="../../images/hist_precip.jpg" /></p>
+<p>We can imporove this by passing two parameters.  The first is designating 
+a color (<code>col</code>) and the second is not computing the frequency counts but
+instead dividing by the total observations in our sample.</p>
+<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steel blue&quot;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="img" src="../../images/hist_precip_imp.jpg" /></p>
+<p>Two important and frustrating things to note about histograms.  They are highly dependant on the number
+of bins we choose.  We will show an example below of manually setting the bins.  Second there is no 
+general algorithm for setting the number of bins.  We can only repeat it for an increasing number of 
+bins and stop when the shape is stable.  Now we are also supressing the printing of a title.  For more 
+parameters of <code>hist</code> type ?hist at the console prompt.</p>
+<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">,</span><span class="n">breaks</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steel blue&quot;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="img" src="../../images/hist_precip_10.jpg" /></p>
+<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">,</span><span class="n">breaks</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steel blue&quot;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="img" src="../../images/hist_precip_200.jpg" /></p>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
