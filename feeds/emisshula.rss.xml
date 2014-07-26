@@ -61,11 +61,14 @@ instead dividing by the total observations in our sample.&lt;/p&gt;
 
 
 &lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_imp.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;Two important and frustrating things to note about histograms.  They are highly dependant on the number
-of bins we choose.  We will show an example below of manually setting the bins.  Second there is no 
-general algorithm for setting the number of bins.  We can only repeat it for an increasing number of 
-bins and stop when the shape is stable.  Now we are also supressing the printing of a title.  For more 
-parameters of &lt;code&gt;hist&lt;/code&gt; type ?hist at the console prompt.&lt;/p&gt;
+&lt;p&gt;Two important and frustrating things to note about histograms.  They
+are highly dependant on the number of bins we choose.  We will show an
+example below of manually setting the bins.  Second there is no
+general algorithm for setting the number of bins.  We can only repeat
+it for an increasing number of bins and stop when the shape is stable.
+Now we are also supressing the printing of a title.  For more
+parameters of &lt;code&gt;hist&lt;/code&gt; type &lt;code&gt;?hist&lt;/code&gt; at the console prompt.  Histograms
+were first introduced by Karl Pearson.  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precip&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;breaks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;steel blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -76,11 +79,29 @@ parameters of &lt;code&gt;hist&lt;/code&gt; type ?hist at the console prompt.&lt
 
 
 &lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_200.jpg" /&gt;&lt;/p&gt;
+&lt;h1&gt;The ugly history of statistics&lt;/h1&gt;
+&lt;p&gt;Karl Pearson was a British mathematician. He is considered the founder
+of mathematical statistics.  Dr. Pearson established the first
+department of statistics in the world at University College, in
+London. However, he was also the founding editor of the &lt;em&gt;Annals of
+Eugenics&lt;/em&gt;.  Dr. Pearson advocated for the restriction of immigration
+by Jewish people to Britain on the basis that ``this alien Jewish
+population is somewhat inferior physically and mentally to the native
+population.'' He also thought that war between the races was
+inevitable.&lt;/p&gt;
+&lt;p&gt;A number of prominent founders of statistics and biostatistics shared
+Dr. Pearson's views.  I find that these embarassing facts are often
+left out fo the history of statistics.  I think it is important to
+remember these ugly warts so that we can separate these important
+contributions from the ugly politics of their inventors allowing us to
+use our research to make rather than inhibit social progress.&lt;/p&gt;
 &lt;div id="footnotes"&gt;
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
 &lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; Robert Randall Bragan an American shortstop, catcher, manager, and coach in Major League Baseball.&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" class="footnum" href="#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; Pearson, Karl, &amp; Moul, Margaret (1925). "The Problem of Alien Immigration into Great Britain, Illustrated by an Examination of Russian and Polish Jewish Children", Part II, Annals of Eugenics, Vol. I, No. 2, pp. 125-126.&lt;/div&gt;
 
 
 &lt;/div&gt;
