@@ -1,5 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 28 Jul 2014 15:02:00 -0400</lastBuildDate><item><title>Brighton Ditmas Park</title><link>/jobs-20140728.html</link><description>&lt;blockquote&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 30 Jul 2014 15:03:00 -0400</lastBuildDate><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;I have developed a Zen-like approach to the operating systems that
+people use: 'When you're ready, the right operating system will appear
+in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
+online graphic design tool. Formerly, he was an advisor to the
+Motorola business unit of Google and chief evangelist of Apple.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../../images/guy.jpeg" width="350px" alt="guy" title="guy"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Dev Environment&lt;/h1&gt;
+&lt;p&gt;A development environment is one where you can make the software you
+need to run.  You need this to run the latest free software which is
+often only implemented in source code.  Particularly to take advantage
+of common mathematical libraries you need a Fortran, C and C++
+compiler even if you never use those languages directly.  Apple does
+not include it in their default configuration because it does not want
+you to create your ow software, it want you to buy their software
+products (rant over).&lt;/p&gt;
+&lt;h1&gt;Obtain the compilers&lt;/h1&gt;
+&lt;p&gt;First you need to make sure that you have the latest operating system.
+To do that, you need to left click on the Apple icon and read the release.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/osRelease.png" width="350px" alt="os" title="os"&gt;&lt;/p&gt;
+
+&lt;p&gt;Then we have to obtain an &lt;a href="https://appleid.apple.com/"&gt;appleID&lt;/a&gt; including submitting a credit card.
+The good news is that they won't charge you.  We just need to obtain
+the xcode which has Apple's development tools.  The only ones I have
+ever used are the compilers which are FREE software.  Bottom line is,
+legally they can't charge for them (&lt;a href="https://www.gnu.org/philosophy/apsl.html"&gt;copyleft&lt;/a&gt;). Search in Google for 
+"xCode download".  It will automatically detect your OS and if you have
+Mac OS X installed, it will include the free button you need to press
+to download it.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xCode.png" width="350px" alt="xCode" title="xCode"&gt;&lt;/p&gt;
+
+&lt;p&gt;When it finishes downloading it will automatically install and and you 
+will see the picture below. The only difference is a small button which 
+now says installed. (Yay!)&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xCodeInstalled.png" width="350px" alt="xCodeInstalled" title="xCodeInstalled"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you have any trouble sounding condescending, find a Unix user to
+show you how it's done. ~Scott Adams&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Obtain an alternate windowing library&lt;/h1&gt;
+&lt;p&gt;The next step is to download the xQuartz project which let's the free
+software on your machine open new windows.  Software needs to open new
+windows if it needs to warn you about something so this is an
+essential function.  You can find it at this &lt;a href="http://xquartz.macosforge.org/landing/"&gt;xQuartz link&lt;/a&gt;.  The file
+is a dmg.  Since this is not an official Apple product it will be
+saved in downloads.  &lt;a href="http://www.ofzenandcomputing.com/how-to-install-dmg-files-mac/"&gt;Here&lt;/a&gt; is a link that explains in detail how to
+install a dmg file.  A dmg is disc image file.  You need to left click
+on it. That will open an empty box.  See picture below.  Double click
+on the box and that will start an installer.  You will need to put in
+your password. Also see picture further below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xQuartzPkg.png" width="350px" alt="xQuartzPkg" title="xQuartzPkg"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="../../images/xQuartzInstaller.png" width="350px" alt="xQuartzInstalled" title="xQuartzInstalled"&gt;&lt;/p&gt;
+
+&lt;p&gt;You have to log back in and out for xQuartz to take effect.&lt;/p&gt;
+&lt;h1&gt;Obtain a package manager&lt;/h1&gt;
+&lt;p&gt;Most distributions of Linux come with a package manager to sort out which
+software depends on which other libraries.  These were a huge innovation
+in the Linux world.  And there is a package manager for Mac OS X. It is 
+called &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt;. To install it we are going to need the terminal which
+is hard to find on a Mac.  You need to left click the launcher icon.  See
+picture below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/launcher.png" width="350px" alt="launcher" title="launcher"&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you need to find the terminal.  It is hiding in the other icon. See
+the picture below and left click the similar image on your Mac.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/otherIcon.png" width="350px" alt="otherIcon" title="otherIcon"&gt;&lt;/p&gt;
+
+&lt;p&gt;Then left click the terminal icon, pictured below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/terminalIcon.png" width="350px" alt="terminalIcon" title="terminalIcon"&gt;&lt;/p&gt;
+
+&lt;p&gt;Now copy the Homebrew installation script (using command-C to copy and 
+command V to paste) and paste it inside the terminal as pictured below:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/homebrew.png" width="350px" alt="homebrew" title="homebrew"&gt;&lt;/p&gt;
+
+&lt;p&gt;Now press the [enter key].  You will be prompted for your password.  When
+Homebrew finishes type &lt;code&gt;brew doctor&lt;/code&gt; at the prompt. If all goes well
+you will get a positive message.  As &lt;a href="http://zmjones.com/mac-setup/"&gt;Zed Jones&lt;/a&gt; points out, we still need
+to manually set the path. In the terminal type:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo emacs /etc/paths&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will have to change the file to look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sbin&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sbin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Type Ctrl-x Ctrl-s to save it and Ctrl-x Ctrl-c to quit.&lt;/p&gt;
+&lt;h1&gt;Obtain git&lt;/h1&gt;
+&lt;p&gt;The first thing we need is git. Git is the source control and
+collaboration software that is most popular in the FREE software
+world. Type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Obtain emacs&lt;/h1&gt;
+&lt;p&gt;In order to be able to manipulate the files that contain our data and 
+present our output, we need to obtain our editor, Emacs.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;emacs&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;cocoa&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here again there are some quirks.  On Linux, we would simply use the
+Emacs package manager but on Mac we have used the package manager
+Homebrew so the Emacs package manager gui install button won't install
+because of permission problems.  So we have to use the command interactive 
+commands from Emacs.  No big deal, once you figure it out but it took a 
+while to find it. I found this &lt;a href="http://howardabrams.com/projects/dot-files/emacs.html"&gt;post&lt;/a&gt; helpful.  So we need to set up the 
+Emacs repositories by creating a &lt;em&gt;.emacs&lt;/em&gt; file. Any file with a '.' in front
+is a hidden configuration file.  It will not appear when you type &lt;code&gt;ls&lt;/code&gt; for 
+list files at the command prompt.  You can edit them in Emacs &lt;code&gt;C-x C-f .emacs&lt;/code&gt;.
+Now we have to add the code below.  (Used &lt;code&gt;Command-C&lt;/code&gt; to copy it and &lt;code&gt;Ctrl-Y&lt;/code&gt;
+in Emacs to paste/yank it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setq&lt;/span&gt; &lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;archives&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;org&amp;quot;&lt;/span&gt;       &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://orgmode.org/elpa/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;gnu&amp;quot;&lt;/span&gt;       &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://elpa.gnu.org/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;melpa&amp;quot;&lt;/span&gt;     &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://melpa.milkbox.net/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;marmalade&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://marmalade-repo.org/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;initialize&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now just after this we can specify a programmatic way to check which
+packages are installed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;defun&lt;/span&gt; &lt;span class="nx"&gt;filter&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;condp&lt;/span&gt; &lt;span class="nx"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;Emacs Lisp doesn’t come with a ‘filter’ function to keep elements that satisfy&lt;/span&gt;
+&lt;span class="s2"&gt;a conditional and excise the elements that do not satisfy it. One can use ‘mapcar’&lt;/span&gt;
+&lt;span class="s2"&gt;to iterate over a list with a conditional, and then use ‘delq’ to remove the ‘nil’&lt;/span&gt;
+&lt;span class="s2"&gt;values.&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;delq&lt;/span&gt; &lt;span class="nx"&gt;nil&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;mapcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;lambda&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;funcall&lt;/span&gt; &lt;span class="nx"&gt;condp&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="nx"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;defun&lt;/span&gt; &lt;span class="nx"&gt;inverse&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;filter&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;condp&lt;/span&gt; &lt;span class="nx"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;A filter function, but returns a list of the entries that don&amp;#39;t match the predicate.&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;delq&lt;/span&gt; &lt;span class="nx"&gt;nil&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;mapcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;lambda&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;and&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;not&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;funcall&lt;/span&gt; &lt;span class="nx"&gt;condp&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="nx"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;defun&lt;/span&gt; &lt;span class="nx"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;install&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;Given a list of packages, this will install them from the standard locations.&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;install&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;inverse&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;filter&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="kr"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;installed&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt; &lt;span class="nx"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;when&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;install&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kr"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;refresh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;dolist&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;it&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;install&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kr"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;install&lt;/span&gt; &lt;span class="nx"&gt;it&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;delete&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;other&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;windows&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Emacs package to get the right environment&lt;/h1&gt;
+&lt;p&gt;Now the first thing we should do is correct for another Mac induced 
+problem. An Emacs instance started from the graphical user interface
+will have a different environment than a sell in a terminal window.
+This happens because OS X does not run a shell during login.  If the
+environment is different you will get weird behavior when Emacs calls
+external utilities like make.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;RET&lt;/span&gt; &lt;span class="n"&gt;exec&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;initialize&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then in the &lt;code&gt;.emacs&lt;/code&gt; file add the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;exec&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;memq&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mac&lt;/span&gt; &lt;span class="n"&gt;ns&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;exec&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;initialize&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At this point quit emacs &lt;code&gt;C-x C-c&lt;/code&gt; and restart. &lt;/p&gt;
+&lt;h1&gt;Emacs package to get the communicate with R (ESS)&lt;/h1&gt;
+&lt;p&gt;Here again type &lt;code&gt;M-x package-install RET ess RET&lt;/code&gt;.  This will 
+install ESS. Find the &lt;em&gt;.emacs&lt;/em&gt; file by typin &lt;code&gt;C-x C-f .emacs&lt;/code&gt;
+and add the following code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;;;&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt; &lt;span class="n"&gt;configuration&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setq&lt;/span&gt; &lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ask&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setq&lt;/span&gt; &lt;span class="n"&gt;inferior&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/usr/local/bin/R&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setq&lt;/span&gt; &lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;process&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;R&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Install R&lt;/h1&gt;
+&lt;p&gt;Another weird quirk is that xCode has removed gcc which is the most
+common set of compilers in the world.  They are what R expects to
+encounter.  There are two alternatives.  You can build a late version
+of the compilers via the instructions found at this &lt;a href="http://apple.stackexchange.com/questions/38222/how-do-i-install-gcc-via-homebrew"&gt;link&lt;/a&gt; &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//raw.github.com/Homebrew/homebrew-versions/gcc48.rb&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Where [flags] should include all the required languages,
+e.g. (&amp;#x2013;enable-cxx &amp;#x2013;enable-fortran).  Also see this &lt;a href="https://coderwall.com/p/lqpp8w"&gt;link&lt;/a&gt; for an
+example of how to create a symlink to make a newer version the
+default.  However I got away with just installing version 4.2 (a seven
+year old version of the gcc compilers by installing XCode Command Line
+Tools. These are separate from XCode which I found confusing.  You can
+install them with xcode-select &amp;#x2013;install).  Then you can just type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;gcc&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now that &lt;code&gt;gcc&lt;/code&gt; is installed you can install R.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;tap&lt;/span&gt; &lt;span class="n"&gt;homebrew&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;science&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt; &lt;span class="n"&gt;formula&lt;/span&gt; &lt;span class="n"&gt;has&lt;/span&gt; &lt;span class="n"&gt;been&lt;/span&gt; &lt;span class="n"&gt;moved&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can test the installation by typing &lt;code&gt;M-x R&lt;/code&gt; in Emacs and 
+you should have R inside of Emacs.  Next post will get Python 
+set up.  I am betting our 4.2 version of gcc is not going to 
+be good enough.&lt;/p&gt;
+&lt;h1&gt;Dedication&lt;/h1&gt;
+&lt;p&gt;This post is dedicated to Matt Gold and the &lt;a href="http://digitalfellows.commons.gc.cuny.edu/"&gt;GC Digital Fellows&lt;/a&gt; project
+who were able to obtain for me not only access to a Mac but insured
+that I would have admin rights to install software and create this 
+tutorial. They bare no responsibility for any mistakes or omissions 
+which are solely the responsiblity of the author.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 30 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-30:mac-dev-env.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category><category>OS X</category></item><item><title>Brighton Ditmas Park</title><link>/jobs-20140728.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;A man's bread and butter is only insured when he works for it.
 ~&lt;a href="http://en.wikipedia.org/wiki/Marcus_Garvey"&gt;Marcus Garvey&lt;/a&gt;, a Jamaican political leader, publisher, journalist,
 entrepreneur, and orator.&lt;/p&gt;
@@ -98,7 +318,6 @@ built in.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;We can imporove this by passing two parameters.  The first is designating 
 a color (&lt;code&gt;col&lt;/code&gt;) and the second is not computing the frequency counts but
 instead dividing by the total observations in our sample.&lt;/p&gt;
@@ -106,7 +325,6 @@ instead dividing by the total observations in our sample.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_imp.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Two important and frustrating things to note about histograms.  They
 are highly dependant on the number of bins we choose.  We will show an
 example below of manually setting the bins.  Second there is no
@@ -116,15 +334,11 @@ Now we are also supressing the printing of a title.  For more
 parameters of &lt;code&gt;hist&lt;/code&gt; type &lt;code&gt;?hist&lt;/code&gt; at the console prompt.  Histograms
 were first introduced by Karl Pearson.  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precip&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;breaks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;steel blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precip&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;breaks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;steel blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_10.jpg" /&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precip&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;breaks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;steel blue&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;FALSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_200.jpg" /&gt;&lt;/p&gt;
 &lt;h1&gt;The ugly history of statistics&lt;/h1&gt;
 &lt;p&gt;Karl Pearson was a British mathematician. He is considered the founder
 of mathematical statistics.  Dr. Pearson established the first
@@ -141,6 +355,12 @@ left out fo the history of statistics.  I think it is important to
 remember these ugly warts so that we can separate these important
 contributions from the ugly politics of their inventors allowing us to
 use our research to make rather than inhibit social progress.&lt;/p&gt;
+&lt;h1&gt;Stem and leaf plots&lt;/h1&gt;
+&lt;p&gt;Another older technique for exploring data is to draw a stem and leaf
+plot.  These were popularized by John Tukey in his book &lt;em&gt;Exploratory Data
+Analysis&lt;/em&gt; .  The leading digits of the data are the &lt;em&gt;stems&lt;/em&gt; while
+the final digits are the &lt;em&gt;leaves&lt;/em&gt;.  The graph is drawn left to right with 
+a vertical line separating the stem and leaves.&lt;/p&gt;
 &lt;div id="footnotes"&gt;
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
@@ -148,6 +368,8 @@ use our research to make rather than inhibit social progress.&lt;/p&gt;
 &lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; Robert Randall Bragan an American shortstop, catcher, manager, and coach in Major League Baseball.&lt;/div&gt;
 
 &lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" class="footnum" href="#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; Pearson, Karl, &amp; Moul, Margaret (1925). "The Problem of Alien Immigration into Great Britain, Illustrated by an Examination of Russian and Polish Jewish Children", Part II, Annals of Eugenics, Vol. I, No. 2, pp. 125-126.&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" class="footnum" href="#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; ukey, John W. (1977). Exploratory Data Analysis (1 ed.). Pearson. ISBN 0-201-07616-0.&lt;/div&gt;
 
 
 &lt;/div&gt;
