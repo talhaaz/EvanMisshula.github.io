@@ -31,7 +31,7 @@
                 <article>
                     <h1 class="entry-title"><a href="/python-dev-env.html">Python Dev Env</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-01-20T20:10:47">
+        <abbr class="published" title="2014-01-20T20:10:47-05:00">
                 Published: Mon 20 January 2014
         </abbr>
 
@@ -57,9 +57,9 @@ reasons why this needs to be updated:</p>
 <p>I will repeat the steps here. First install the c libraries that
 python needs to function.</p>
 <p>I use apt-get in ubuntu so type</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="o">~</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
 
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libsqlite3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libbz2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxml2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxslt</span><span class="o">-</span><span class="n">dev</span> <span class="n">curl</span>
+<span class="nv">$ </span>sudo apt-get install libsqlite3-dev libbz2-dev libxml2-dev libxslt-dev curl
 </pre></div>
 
 
@@ -82,65 +82,65 @@ between bash and an interpreted language like Python.</p>
 <h4><a href="http://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement">can-i-replace</a></h4>
 <p>I am assuming you have git installed. If not, <a href="https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04">git-tutorial</a> is a good
 tutorial for installing git.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="o">~</span>
-<span class="err">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/yyuu/pyenv.git .pyenv</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>git clone git://github.com/yyuu/pyenv.git .pyenv
 </pre></div>
 
 
 <p>Define environment variable <code>PYENV_ROOT</code> to point to the path where
 pyenv repo is cloned and add <code>$PYENV_ROOT/bin</code> to your <code>$PATH</code> for access
 to the pyenv command-line utility.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">echo</span> <span class="err">‘</span><span class="n">export</span> <span class="n">PYENV_ROOT</span><span class="o">=</span><span class="err">”$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">pyenv</span><span class="err">”‘</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
-<span class="err">$</span> <span class="n">echo</span> <span class="err">‘</span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">”$</span><span class="n">PYENV_ROOT</span><span class="o">/</span><span class="n">bin</span><span class="o">:</span><span class="err">$</span><span class="n">PATH</span><span class="err">”‘</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> ‘export <span class="nv">PYENV_ROOT</span><span class="o">=</span>”<span class="nv">$HOME</span>/.pyenv”‘ &gt;&gt; ~/.bashrc
+<span class="nv">$ </span><span class="nb">echo</span> ‘export <span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PYENV_ROOT</span>/bin:<span class="nv">$PATH</span>”‘ &gt;&gt; ~/.bashrc
 </pre></div>
 
 
 <p>Add pyenv init to your shell to enable shims and autocompletion. Shims
 and binstubs are worth knowing about.  You can read up on them
 <a href="https://github.com/yyuu/pyenv#understanding-shims">understand-shims</a>.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">echo</span> <span class="err">‘</span><span class="n">eval</span> <span class="err">“$</span><span class="p">(</span><span class="n">pyenv</span> <span class="n">init</span> <span class="o">-</span><span class="p">)</span><span class="err">”‘</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> ‘eval “<span class="k">$(</span>pyenv init -<span class="k">)</span>”‘ &gt;&gt; ~/.bashrc
 </pre></div>
 
 
 <p>Restart your shell so the path changes take effect. You can now begin using pyenv.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">exec</span> <span class="err">$</span><span class="n">SHELL</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">exec</span> <span class="nv">$SHELL</span>
 </pre></div>
 
 
 <p>Install Python versions into <code>$PYENV_ROOT/versions</code>. For example, to
 install Python 2.7.5, download and unpack the source, then run:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">install</span> <span class="mf">2.7.5</span>
-<span class="err">$</span> <span class="n">pyenv</span> <span class="n">rehash</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv install 2.7.5
+<span class="nv">$ </span>pyenv rehash
 </pre></div>
 
 
 <p>And now we have to tell the system to use this new version of python</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">local</span> <span class="mf">2.7.5</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv <span class="nb">local </span>2.7.5
 </pre></div>
 
 
 <h2>Install virtualenv</h2>
 <p>We are going to do two tricky things we are going to install
 virtualenv in the version of python AND install the pyenv plugin virtualenv.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
+<div class="highlight"><pre><span class="nv">$ </span>pip install virtualenv
 </pre></div>
 
 
 <p>and to install the pyenv plugin.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv</span>
+<div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 </pre></div>
 
 
 <p>You are now ready to create a virtual environment in a non-system version of python. I don’t understand why this will not work if you are anywhere else.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">virtualenv</span>
-<span class="err">$</span> <span class="n">pyenv</span> <span class="n">virtualenv</span> <span class="mf">2.7.5</span> <span class="n">no</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">drug</span><span class="o">-</span><span class="n">war</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv virtualenv
+<span class="nv">$ </span>pyenv virtualenv 2.7.5 no-more-drug-war
 </pre></div>
 
 
 <p>We can list all of the virtual environments. Change directory to the
 one you want to work in and in my case the virtual environment is
 no-more-drug-war:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">activate</span> <span class="n">no</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">drug</span><span class="o">-</span><span class="n">war</span><span class="o">:</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv activate no-more-drug-war:
 </pre></div>
 
 
@@ -154,56 +154,56 @@ lc (created from /usr</p>
 seek (created from /usr)
 \#+END<sub>SRC</sub></p>
 <p>To review, we can activate the virtual environment with the following command.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">activate</span> <span class="n">no</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">drug</span><span class="o">-</span><span class="n">war</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv activate no-more-drug-war
 </pre></div>
 
 
 <p>You can deactivate the activate’d virtualenv by pyenv deactivate.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">deactivate</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv deactivate
 </pre></div>
 
 
 <p>So, in order to know what packages we have installed at any time, we install yolk.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">yolk</span>
+<div class="highlight"><pre><span class="nv">$ </span>pip install yolk
 </pre></div>
 
 
 <p>Do not type sudo! To see what it installed at any time:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">yolk</span> <span class="o">-</span><span class="n">l</span>
+<div class="highlight"><pre><span class="nv">$ </span>yolk -l
 </pre></div>
 
 
 <p>A list of further packages for IPython are available here. Type these individually and they each may take a few minutes to install.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">jinja2</span>
+<div class="highlight"><pre><span class="nv">$ </span>pip install jinja2
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyzmq</span>
+<span class="nv">$ </span>pip install pyzmq
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pygments</span>
+<span class="nv">$ </span>pip install pygments
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">tornado</span>
+<span class="nv">$ </span>pip install tornado
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nose</span>
+<span class="nv">$ </span>pip install nose
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+<span class="nv">$ </span>pip install numpy
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scipy</span>
+<span class="nv">$ </span>pip install scipy
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+<span class="nv">$ </span>pip install matplotlib
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="nv">$ </span>pip install pandas
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span>
+<span class="nv">$ </span>pip install ipython
 </pre></div>
 
 
 <p>Turning it on and off</p>
 <p>Now to get out of your virtual environment, just type</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">deactivate</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv deactivate
 </pre></div>
 
 
 <p>To get back in, type:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyenv</span> <span class="n">activate</span> <span class="n">no</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">drug</span><span class="o">-</span><span class="n">war</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv activate no-more-drug-war
 </pre></div>
 
 
@@ -243,8 +243,10 @@ correct my question on stack overlfow.</p>                </article>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

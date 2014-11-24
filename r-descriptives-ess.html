@@ -37,7 +37,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-07-24T15:03:00">
+        <abbr class="published" title="2014-07-24T15:03:00-04:00">
                 Published: Thu 24 July 2014
         </abbr>
 
@@ -68,24 +68,24 @@ into R?  Again, we will defer that question. One nice feature of R is
 that it has some data built in.  For example, it has the average amount of 
 precipitation for 70 cities in the United States.  We can use this data to 
 illustrate a few techniqeus that you can use on your own data.</p>
-<div class="highlight"><pre><span class="n">str</span><span class="p">(</span><span class="n">precip</span><span class="p">)</span>
-<span class="n">precip</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight"><pre>str(precip)
+precip[1:4]
 
-<span class="n">Named</span> <span class="n">num</span> <span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">70</span><span class="p">]</span> <span class="mi">67</span> <span class="mf">54.7</span> <span class="mi">7</span> <span class="mf">48.5</span> <span class="mi">14</span> <span class="mf">17.2</span> <span class="mf">20.7</span> <span class="mi">13</span> <span class="mf">43.4</span> <span class="mf">40.2</span> <span class="p">...</span>
-<span class="o">-</span> <span class="n">attr</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="s">&quot;names&quot;</span><span class="p">)</span><span class="o">=</span> <span class="n">chr</span> <span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">70</span><span class="p">]</span> <span class="s">&quot;Mobile&quot;</span> <span class="s">&quot;Juneau&quot;</span> <span class="s">&quot;Phoenix&quot;</span> <span class="s">&quot;Little Rock&quot;</span> <span class="p">...</span>
-    <span class="n">Mobile</span>      <span class="n">Juneau</span>     <span class="n">Phoenix</span> <span class="n">Little</span> <span class="n">Rock</span> 
-      <span class="mf">67.0</span>        <span class="mf">54.7</span>         <span class="mf">7.0</span>        <span class="mf">48.5</span>
+Named num [1:70] 67 54.7 7 48.5 14 17.2 20.7 13 43.4 40.2 ...
+- attr(*, &quot;names&quot;)= chr [1:70] &quot;Mobile&quot; &quot;Juneau&quot; &quot;Phoenix&quot; &quot;Little Rock&quot; ...
+    Mobile      Juneau     Phoenix Little Rock 
+      67.0        54.7         7.0        48.5
 </pre></div>
 
 
 <p>The <code>str</code> command gets the structure of the data.  There are a few commands 
 for this <code>summary</code> is the other one I sometimes use. And <code>precip[1:4]</code> gave 
 us the first four elements.  Here are some other built in datasets</p>
-<div class="highlight"><pre><span class="n">str</span><span class="p">(</span><span class="n">rivers</span><span class="p">)</span>
-<span class="n">str</span><span class="p">(</span><span class="n">discoveries</span><span class="p">)</span>
+<div class="highlight"><pre>str(rivers)
+str(discoveries)
 
-<span class="n">num</span> <span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">141</span><span class="p">]</span> <span class="mi">735</span> <span class="mi">320</span> <span class="mi">325</span> <span class="mi">392</span> <span class="mi">524</span> <span class="p">...</span>
-<span class="n">Time</span><span class="o">-</span><span class="n">Series</span> <span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">]</span> <span class="n">from</span> <span class="mi">1860</span> <span class="n">to</span> <span class="mi">1959</span><span class="o">:</span> <span class="mi">5</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">1</span> <span class="p">...</span>
+num [1:141] 735 320 325 392 524 ...
+Time-Series [1:100] from 1860 to 1959: 5 3 0 2 0 3 2 3 6 1 ...
 </pre></div>
 
 
@@ -95,14 +95,14 @@ histogram is a bar chart where we bin the count the number of
 observations that fall in a defined range.  I allows us to quickly
 notice important properties. <code>R</code> has a function for computing this
 built in.</p>
-<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">)</span>
+<div class="highlight"><pre>hist(precip)
 </pre></div>
 
 
 <p>We can imporove this by passing two parameters.  The first is designating 
 a color (<code>col</code>) and the second is not computing the frequency counts but
 instead dividing by the total observations in our sample.</p>
-<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steel blue&quot;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+<div class="highlight"><pre>hist(precip,col=&quot;steel blue&quot;,freq=FALSE)
 </pre></div>
 
 
@@ -114,9 +114,9 @@ it for an increasing number of bins and stop when the shape is stable.
 Now we are also supressing the printing of a title.  For more
 parameters of <code>hist</code> type <code>?hist</code> at the console prompt.  Histograms
 were first introduced by Karl Pearson.  </p>
-<div class="highlight"><pre><span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">,</span><span class="n">breaks</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steel blue&quot;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+<div class="highlight"><pre>hist(precip,breaks=10,col=&quot;steel blue&quot;,freq=FALSE)
 
-<span class="n">hist</span><span class="p">(</span><span class="n">precip</span><span class="p">,</span><span class="n">breaks</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steel blue&quot;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="n">FALSE</span><span class="p">)</span>
+hist(precip,breaks=200,col=&quot;steel blue&quot;,freq=FALSE)
 </pre></div>
 
 
@@ -189,8 +189,10 @@ a vertical line separating the stem and leaves.</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

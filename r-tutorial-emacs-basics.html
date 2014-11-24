@@ -37,7 +37,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-07-01T00:00:00">
+        <abbr class="published" title="2014-07-01T00:00:00-04:00">
                 Published: Tue 01 July 2014
         </abbr>
 
@@ -114,12 +114,12 @@ resources to the Emacs community.</p>
 user interface it is not always easy to find out where the document 
 you care about is.  Your docuents folder is a subdirectory.  My 
 user name is 'evan'. In linux, my documents are in:</p>
-<div class="highlight"><pre><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span>
+<div class="highlight"><pre>/home/evan/Documents
 </pre></div>
 
 
 <p>In Mac OS X and Windows 8, my documents are in:</p>
-<div class="highlight"><pre><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span>
+<div class="highlight"><pre>/Users/evan/Documents
 </pre></div>
 
 
@@ -140,12 +140,12 @@ this tutorial is going to give.  So we need to define certain keystrokes:</p>
 </ul>
 <p>To do this start Emacs and find the file ``practice.org''.  So if you are 
 on Linux:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">practice</span><span class="p">.</span><span class="n">org</span>
+<div class="highlight"><pre>C-x C-f /home/evan/Documents/practice.org
 </pre></div>
 
 
 <p>If you are on Windows or Mac:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">evan</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">practice</span><span class="p">.</span><span class="n">org</span>
+<div class="highlight"><pre>C-x C-f /Users/evan/Documents/practice.org
 </pre></div>
 
 
@@ -188,14 +188,14 @@ as well.</p>
 <h2>Cut and paste</h2>
 <p>Instead of <code>C-c</code> to copy and <code>C-v</code> to paste, Emacs has older
 keybindings. This seems strange</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">d</span>    <span class="n">Delete</span>
-<span class="n">C</span><span class="o">-</span><span class="n">k</span>    <span class="n">Kill</span> <span class="n">from</span> <span class="n">the</span> <span class="n">cursor</span> <span class="n">position</span> <span class="n">to</span>
-       <span class="n">end</span> <span class="n">of</span> <span class="n">line</span>
-<span class="n">C</span><span class="o">-</span><span class="n">y</span>    <span class="n">Recover</span><span class="o">/</span><span class="n">Paste</span> <span class="p">(</span><span class="n">Yank</span><span class="p">)</span> <span class="n">killed</span> <span class="n">text</span>
-       <span class="p">(</span><span class="n">repeat</span> <span class="n">to</span> <span class="n">copy</span><span class="p">)</span>
-<span class="n">M</span><span class="o">-</span><span class="n">y</span>    <span class="n">recover</span> <span class="n">former</span> <span class="n">killed</span> <span class="n">text</span> <span class="p">(</span><span class="n">after</span> <span class="n">C</span><span class="o">-</span><span class="n">y</span><span class="p">).</span>
-       <span class="n">Repeat</span> <span class="n">to</span> <span class="n">go</span> <span class="n">back</span> <span class="n">through</span> <span class="n">stack</span><span class="p">).</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">u</span>  <span class="n">_U_ndo</span>  <span class="p">(</span><span class="n">multiple</span> <span class="n">undo</span><span class="o">/</span><span class="n">redo</span><span class="p">)</span>
+<div class="highlight"><pre>C-d    Delete
+C-k    Kill from the cursor position to
+       end of line
+C-y    Recover/Paste (Yank) killed text
+       (repeat to copy)
+M-y    recover former killed text (after C-y).
+       Repeat to go back through stack).
+C-x u  _U_ndo  (multiple undo/redo)
 </pre></div>
 
 
@@ -223,55 +223,55 @@ we have loaded into Emacs.  Emacs actually does not save all of your
 changes to the file.  Emacs makes a copy of your file on disk to a
 copy, called a <em>buffer</em>. You make all of your changes to the buffer and 
 when you write the file to disk, it replaces the file.</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span>  <span class="n">_F_ind</span> <span class="n">a</span> <span class="n">file</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">s</span>  <span class="n">_S_ave</span> <span class="n">the</span> <span class="n">file</span>
-<span class="n">C</span><span class="o">-</span><span class="n">s</span> <span class="n">C</span><span class="o">-</span><span class="n">w</span>  <span class="n">_W_rite</span> <span class="n">the</span> <span class="n">file</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">name</span>
-<span class="n">If</span> <span class="n">you</span> <span class="n">find</span> <span class="n">a</span> <span class="n">second</span> <span class="n">file</span> <span class="n">with</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span><span class="p">,</span>
-<span class="n">the</span> <span class="n">first</span> <span class="n">file</span> <span class="n">remains</span> <span class="n">inside</span> <span class="n">Emacs</span><span class="p">.</span>
-<span class="n">You</span> <span class="n">can</span> <span class="k">switch</span> <span class="n">back</span> <span class="n">to</span> <span class="n">it</span> <span class="n">by</span> <span class="n">finding</span> <span class="n">it</span>
-<span class="n">again</span> <span class="n">with</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">b</span><span class="p">.</span>  <span class="n">This</span> <span class="n">way</span> <span class="n">you</span> <span class="n">can</span> <span class="n">get</span>
-<span class="n">quite</span> <span class="n">a</span> <span class="n">number</span> <span class="n">of</span> <span class="n">files</span> <span class="n">inside</span> <span class="n">Emacs</span><span class="p">.</span>
+<div class="highlight"><pre>C-x C-f  _F_ind a file
+C-x C-s  _S_ave the file
+C-s C-w  _W_rite the file to a new name
+If you find a second file with C-x C-f,
+the first file remains inside Emacs.
+You can switch back to it by finding it
+again with C-x C-b.  This way you can get
+quite a number of files inside Emacs.
 </pre></div>
 
 
 <h2>Windows</h2>
 <p>Here is how you work with the buffers that you have loaded into Emacs:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">0</span>      <span class="n">Move</span> <span class="n">between</span> <span class="n">windows</span>
-           <span class="p">(</span><span class="n">Oh</span><span class="p">,</span> <span class="n">not</span> <span class="n">Zero</span><span class="o">!</span><span class="p">)</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span>      <span class="n">One</span> <span class="n">window</span>
-           <span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">e</span><span class="p">.,</span> <span class="n">kill</span> <span class="n">all</span> <span class="n">other</span> <span class="n">windows</span><span class="p">).</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span>      <span class="n">Split</span> <span class="n">horizontally</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span>      <span class="n">Split</span> <span class="n">vertically</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">b</span>      <span class="n">Switch</span> <span class="n">to</span> <span class="n">new</span> <span class="n">_b_uffer</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">b</span>    <span class="n">List</span> <span class="n">_b_uffers</span>
+<div class="highlight"><pre>C-x 0      Move between windows
+           (Oh, not Zero!)
+C-x 1      One window
+           (i.e., kill all other windows).
+C-x 2      Split horizontally
+C-x 3      Split vertically
+C-x b      Switch to new _b_uffer
+C-x C-b    List _b_uffers
 </pre></div>
 
 
 <h2>Search and replace</h2>
 <p>Here are the commands for searching and replacing:</p>
-<div class="highlight"><pre><span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span><span class="n">then</span><span class="p">)</span> <span class="n">replace</span><span class="o">-</span><span class="n">string</span>
-           <span class="n">Replace</span> <span class="n">string</span>
-<span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span><span class="n">then</span><span class="p">)</span> <span class="n">query</span><span class="o">-</span><span class="n">replace</span><span class="o">-</span><span class="n">string</span>
-           <span class="n">Will</span> <span class="n">ask</span> <span class="n">you</span><span class="p">,</span> <span class="k">for</span> <span class="n">each</span> <span class="n">match</span><span class="p">,</span>
-           <span class="k">if</span> <span class="n">you</span> <span class="n">really</span> <span class="n">want</span> <span class="n">to</span> <span class="n">replace</span>
-           <span class="n">the</span> <span class="n">old</span> <span class="n">string</span> <span class="n">with</span> <span class="n">the</span> <span class="n">new</span> <span class="n">one</span><span class="p">.</span>
-<span class="n">C</span><span class="o">-</span><span class="n">s</span>        <span class="n">_S_earch</span> <span class="n">forward</span> <span class="p">(</span><span class="n">repeat</span> <span class="n">to</span>
-           <span class="n">reuse</span> <span class="n">past</span> <span class="n">search</span> <span class="n">strings</span><span class="p">)</span>
-<span class="n">C</span><span class="o">-</span><span class="n">r</span>        <span class="n">Search</span> <span class="n">_R_everse</span> <span class="p">(</span><span class="n">repeat</span> <span class="n">to</span>
-           <span class="n">reuse</span> <span class="n">past</span> <span class="n">search</span> <span class="n">strings</span><span class="p">)</span>
+<div class="highlight"><pre>M-x (then) replace-string
+           Replace string
+M-x (then) query-replace-string
+           Will ask you, for each match,
+           if you really want to replace
+           the old string with the new one.
+C-s        _S_earch forward (repeat to
+           reuse past search strings)
+C-r        Search _R_everse (repeat to
+           reuse past search strings)
 </pre></div>
 
 
 <h2>Quitting and getting help</h2>
 <p>Here are the commands for quitting and getting help:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">or</span> <span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="o">?</span>    <span class="n">_H_elp</span>
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">c</span> <span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="n">_H_elp</span> <span class="n">on</span> <span class="n">this</span> <span class="n">_c_ommand</span>
+<div class="highlight"><pre>C-h or C-h ?    _H_elp
+C-h c (command) _H_elp on this _c_ommand
 
-<span class="n">C</span><span class="o">-</span><span class="n">u</span> <span class="mi">8</span> <span class="p">(</span><span class="n">character</span> <span class="n">or</span> <span class="n">command</span><span class="p">)</span>
-             <span class="n">Repeat</span> <span class="n">character</span><span class="o">/</span><span class="n">command</span> <span class="mi">8</span> <span class="n">times</span>
+C-u 8 (character or command)
+             Repeat character/command 8 times
 
-<span class="n">C</span><span class="o">-</span><span class="n">g</span>          <span class="n">Stop</span><span class="p">,</span> <span class="n">unhang</span><span class="p">.</span>
-<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">c</span>      <span class="n">Stop</span> <span class="n">and</span> <span class="n">exit</span> <span class="p">(</span><span class="n">_c_lose</span><span class="p">)</span> <span class="n">Emacs</span>
+C-g          Stop, unhang.
+C-x C-c      Stop and exit (_c_lose) Emacs
 </pre></div>
 
 
@@ -283,14 +283,14 @@ when you write the file to disk, it replaces the file.</p>
 <h3>Keyboard macros</h3>
 <p><code>C-x (</code> lots of stuff  <code>C-x )</code></p>
 <p>Can include counters.  e.g.</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="p">(</span> <span class="n">TAB</span> <span class="n">step</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">k</span> <span class="n">C</span><span class="o">-</span><span class="n">i</span> <span class="n">RET</span> <span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="p">)</span>
+<div class="highlight"><pre>C-x ( TAB step C-x C-k C-i RET C-x )
 </pre></div>
 
 
 <p>will make:</p>
-<div class="highlight"><pre><span class="n">step</span> <span class="mi">0</span>
-<span class="n">step</span> <span class="mi">1</span>
-<span class="n">step</span> <span class="mi">2</span>
+<div class="highlight"><pre>step 0
+step 1
+step 2
 </pre></div>
 
 
@@ -300,10 +300,12 @@ when you write the file to disk, it replaces the file.</p>
 the time!!</p>
 <h2>Modes</h2>
 <p>Modes contain specialisations (commands/variables) for different
-languages.
--   Major modes are defined for different languages (C, latex, R,
-    python, &#x2026;).</p>
+languages.</p>
 <ul>
+<li>
+<p>Major modes are defined for different languages (C, latex, R,
+    python, &#x2026;).</p>
+</li>
 <li>
 <p>Consistency across modes where possible (e.g. commands for
     commenting, indentation).  Keybindings consistent.  <em>Font lock</em>
@@ -322,10 +324,10 @@ languages.
 </ul>
 <h2>Getting help</h2>
 <p>Here is how to get help:</p>
-<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">m</span>       <span class="n">describe</span> <span class="n">mode</span> 
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">k</span>       <span class="n">describe</span> <span class="n">key</span>  
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">i</span>       <span class="n">info</span>          
-<span class="n">C</span><span class="o">-</span><span class="n">h</span> <span class="n">t</span>       <span class="n">tutorial</span>
+<div class="highlight"><pre>C-h m       describe mode 
+C-h k       describe key  
+C-h i       info          
+C-h t       tutorial
 </pre></div>
 
 
@@ -334,10 +336,10 @@ languages.
 to make it do more.</p>
 <h2>libraries</h2>
 <p>Emacs' <code>load-path</code> controls which directories are searched.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_ess</span> <span class="p">()</span>
-<span class="s">&quot;initialize ess&quot;</span>
-<span class="p">(</span><span class="n">locate</span><span class="o">-</span><span class="n">library</span> <span class="s">&quot;ess&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">&#39;</span><span class="n">load</span><span class="o">-</span><span class="n">path</span> <span class="s">&quot;~/langs/emacs/org-mode/lisp&quot;</span><span class="p">))</span>
+<div class="highlight"><pre>(defun init_ess ()
+&quot;initialize ess&quot;
+(locate-library &quot;ess&quot;)
+(add-to-list &#39;load-path &quot;~/langs/emacs/org-mode/lisp&quot;))
 </pre></div>
 
 
@@ -350,23 +352,23 @@ to make it do more.</p>
 <p>Hooks are usually the way you set up Emacs to act on a file you
 want to behave in a certain way.</p>
 <p>Hooks are run e.g. after major-mode has been created.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">init_eldoc</span><span class="p">()</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">emacs</span><span class="o">-</span><span class="n">lisp</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">turn</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">eldoc</span><span class="o">-</span><span class="n">mode</span><span class="p">))</span>
+<div class="highlight"><pre>(defun init_eldoc()
+(add-hook &#39;emacs-lisp-mode-hook &#39;turn-on-eldoc-mode))
 </pre></div>
 
 
 <p>Compare the following two versions:</p>
-<div class="highlight"><pre><span class="p">;;</span> <span class="n">version</span> <span class="mi">1</span>
-<span class="p">(</span><span class="n">defun</span> <span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span> <span class="p">()</span>
-  <span class="s">&quot;Add my keybindings to ESS mode.&quot;</span>
-  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;C-j&quot;</span><span class="p">)</span> <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">eval</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">and</span><span class="o">-</span><span class="n">step</span><span class="p">))</span>
+<div class="highlight"><pre>;; version 1
+(defun my-ess-hook ()
+  &quot;Add my keybindings to ESS mode.&quot;
+  (local-set-key (kbd &quot;C-j&quot;) &#39;ess-eval-line-and-step))
 
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">my</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">hook</span><span class="p">)</span>
+(add-hook &#39;R-mode-hook &#39;my-ess-hook)
 
-<span class="p">;;</span> <span class="n">version</span> <span class="mi">2</span>
-<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="err">&#39;</span><span class="n">R</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">hook</span>
-          <span class="err">&#39;</span><span class="p">(</span><span class="n">lambda</span> <span class="p">()</span>  <span class="p">(</span><span class="n">local</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">key</span> <span class="p">(</span><span class="n">kbd</span> <span class="s">&quot;M-RET&quot;</span><span class="p">)</span>
-                                      <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">use</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="n">dir</span><span class="p">)))</span>
+;; version 2
+(add-hook &#39;R-mode-hook
+          &#39;(lambda ()  (local-set-key (kbd &quot;M-RET&quot;)
+                                      &#39;ess-R-use-this-dir)))
 </pre></div>
     </div><!-- /.entry-content -->
 
@@ -401,8 +403,10 @@ want to behave in a certain way.</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

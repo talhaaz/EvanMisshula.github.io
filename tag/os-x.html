@@ -31,7 +31,7 @@
                 <article>
                     <h1 class="entry-title"><a href="/mac-dev-env.html">Mac OS X Installation</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-07-30T15:03:00">
+        <abbr class="published" title="2014-07-30T15:03:00-04:00">
                 Published: Wed 30 July 2014
         </abbr>
 
@@ -124,11 +124,11 @@ you will get a positive message.  As <a href="http://zmjones.com/mac-setup/">Zed
 to manually set the path. In the terminal type:</p>
 <p><code>sudo emacs /etc/paths</code></p>
 <p>You will have to change the file to look like this:</p>
-<div class="highlight"><pre><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span>
-<span class="o">/</span><span class="n">bin</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span>
-<span class="o">/</span><span class="n">sbin</span>
+<div class="highlight"><pre>/usr/local/bin
+/usr/bin
+/bin
+/usr/sbin
+/sbin
 </pre></div>
 
 
@@ -137,14 +137,14 @@ to manually set the path. In the terminal type:</p>
 <p>The first thing we need is git. Git is the source control and
 collaboration software that is most popular in the FREE software
 world. Type</p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
+<div class="highlight"><pre>brew install git
 </pre></div>
 
 
 <h1>Obtain emacs</h1>
 <p>In order to be able to manipulate the files that contain our data and 
 present our output, we need to obtain our editor, Emacs.</p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="n">install</span> <span class="n">emacs</span> <span class="o">--</span><span class="n">cocoa</span>
+<div class="highlight"><pre>brew install emacs --cocoa
 </pre></div>
 
 
@@ -159,12 +159,12 @@ is a hidden configuration file.  It will not appear when you type <code>ls</code
 list files at the command prompt.  You can edit them in Emacs <code>C-x C-f .emacs</code>.
 Now we have to add the code below.  (Used <code>Command-C</code> to copy it and <code>Ctrl-Y</code>
 in Emacs to paste/yank it.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">require</span> <span class="err">&#39;</span><span class="n">package</span><span class="p">)</span>
-<span class="p">(</span><span class="n">setq</span> <span class="n">package</span><span class="o">-</span><span class="n">archives</span> <span class="err">&#39;</span><span class="p">((</span><span class="s">&quot;org&quot;</span>       <span class="p">.</span> <span class="s">&quot;http://orgmode.org/elpa/&quot;</span><span class="p">)</span>
-                         <span class="p">(</span><span class="s">&quot;gnu&quot;</span>       <span class="p">.</span> <span class="s">&quot;http://elpa.gnu.org/packages/&quot;</span><span class="p">)</span>
-                         <span class="p">(</span><span class="s">&quot;melpa&quot;</span>     <span class="p">.</span> <span class="s">&quot;http://melpa.milkbox.net/packages/&quot;</span><span class="p">)</span>
-                         <span class="p">(</span><span class="s">&quot;marmalade&quot;</span> <span class="p">.</span> <span class="s">&quot;http://marmalade-repo.org/packages/&quot;</span><span class="p">)))</span>
-<span class="p">(</span><span class="n">package</span><span class="o">-</span><span class="n">initialize</span><span class="p">)</span>
+<div class="highlight"><pre>(require &#39;package)
+(setq package-archives &#39;((&quot;org&quot;       . &quot;http://orgmode.org/elpa/&quot;)
+                         (&quot;gnu&quot;       . &quot;http://elpa.gnu.org/packages/&quot;)
+                         (&quot;melpa&quot;     . &quot;http://melpa.milkbox.net/packages/&quot;)
+                         (&quot;marmalade&quot; . &quot;http://marmalade-repo.org/packages/&quot;)))
+(package-initialize)
 </pre></div>
 
 
@@ -201,14 +201,14 @@ will have a different environment than a sell in a terminal window.
 This happens because OS X does not run a shell during login.  If the
 environment is different you will get weird behavior when Emacs calls
 external utilities like make.</p>
-<div class="highlight"><pre><span class="n">M</span><span class="o">-</span><span class="n">x</span> <span class="n">package</span><span class="o">-</span><span class="n">install</span> <span class="n">RET</span> <span class="n">exec</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">shell</span><span class="o">-</span><span class="n">initialize</span>
+<div class="highlight"><pre>M-x package-install RET exec-path-from-shell-initialize
 </pre></div>
 
 
 <p>Then in the <code>.emacs</code> file add the following code:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">require</span> <span class="err">&#39;</span><span class="n">exec</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">shell</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="n">memq</span> <span class="n">window</span><span class="o">-</span><span class="n">system</span> <span class="err">&#39;</span><span class="p">(</span><span class="n">mac</span> <span class="n">ns</span><span class="p">))</span>
-    <span class="p">(</span><span class="n">exec</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">shell</span><span class="o">-</span><span class="n">initialize</span><span class="p">))</span>
+<div class="highlight"><pre>(require &#39;exec-path-from-shell)
+    (when (memq window-system &#39;(mac ns))
+    (exec-path-from-shell-initialize))
 </pre></div>
 
 
@@ -217,11 +217,11 @@ external utilities like make.</p>
 <p>Here again type <code>M-x package-install RET ess RET</code>.  This will 
 install ESS. Find the <em>.emacs</em> file by typin <code>C-x C-f .emacs</code>
 and add the following code.</p>
-<div class="highlight"><pre><span class="p">;;</span><span class="n">ess</span><span class="o">-</span><span class="n">mode</span> <span class="n">configuration</span>
-<span class="p">(</span><span class="n">setq</span> <span class="n">ess</span><span class="o">-</span><span class="n">ask</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">ess</span><span class="o">-</span><span class="n">directory</span> <span class="n">t</span><span class="p">)</span> 
-<span class="p">(</span><span class="n">setq</span> <span class="n">inferior</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">program</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;/usr/local/bin/R&quot;</span><span class="p">)</span> 
-<span class="p">(</span><span class="n">setq</span> <span class="n">ess</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">process</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;R&quot;</span><span class="p">)</span> 
-<span class="p">(</span><span class="n">require</span> <span class="err">&#39;</span><span class="n">ess</span><span class="o">-</span><span class="n">site</span><span class="p">)</span>
+<div class="highlight"><pre>;;ess-mode configuration
+(setq ess-ask-for-ess-directory t) 
+(setq inferior-R-program-name &quot;/usr/local/bin/R&quot;) 
+(setq ess-local-process-name &quot;R&quot;) 
+(require &#39;ess-site)
 </pre></div>
 
 
@@ -230,7 +230,7 @@ and add the following code.</p>
 common set of compilers in the world.  They are what R expects to
 encounter.  There are two alternatives.  You can build a late version
 of the compilers via the instructions found at this <a href="http://apple.stackexchange.com/questions/38222/how-do-i-install-gcc-via-homebrew">link</a> </p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="n">install</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span> <span class="n">https</span><span class="o">:</span><span class="c1">//raw.github.com/Homebrew/homebrew-versions/gcc48.rb</span>
+<div class="highlight"><pre>brew install [flags] https://raw.github.com/Homebrew/homebrew-versions/gcc48.rb
 </pre></div>
 
 
@@ -241,13 +241,13 @@ default.  However I got away with just installing version 4.2 (a seven
 year old version of the gcc compilers by installing XCode Command Line
 Tools. These are separate from XCode which I found confusing.  You can
 install them with xcode-select &#x2013;install).  Then you can just type</p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="n">install</span> <span class="n">gcc</span>
+<div class="highlight"><pre>brew install gcc
 </pre></div>
 
 
 <p>Now that <code>gcc</code> is installed you can install R.</p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="n">tap</span> <span class="n">homebrew</span><span class="o">/</span><span class="n">science</span> <span class="err">#</span><span class="n">the</span> <span class="n">R</span> <span class="n">formula</span> <span class="n">has</span> <span class="n">been</span> <span class="n">moved</span> <span class="n">here</span>
-<span class="n">brew</span> <span class="n">install</span> <span class="n">r</span>
+<div class="highlight"><pre>brew tap homebrew/science #the R formula has been moved here
+brew install r
 </pre></div>
 
 
@@ -294,8 +294,10 @@ which are solely the responsiblity of the author.</p>                </article>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

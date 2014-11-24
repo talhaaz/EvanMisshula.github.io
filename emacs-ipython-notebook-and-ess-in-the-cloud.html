@@ -37,7 +37,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2013-07-12T02:41:00">
+        <abbr class="published" title="2013-07-12T02:41:00-04:00">
                 Published: Fri 12 July 2013
         </abbr>
 
@@ -101,19 +101,21 @@ that is simply to big for my laptop. I needed to run IPython
 remotely on an amazon ec2 instance but edit the interactive session
 locally.  These servers have no windowing software (x11) and it
 violates the terms of service to install it. There were a few
-choices.
-1.  Run IPython remotely (on the instance) and edit it a local
-    non-window version of Emacs.
-2.  Run IPython remotely on a public ip over http. (This is a
-    <strong>really</strong> bad idea for reasons I will explain.)
-3.  Run IPython remotely on a public ip over SSL/TLS with a
-    password.(A somewhat less bad idea bad idea.)
-4.  Run IPython remotely on a port on the remote localhost, 127.0.0.1
+choices.</p>
+<ol>
+<li>Run IPython remotely (on the instance) and edit it a local
+    non-window version of Emacs.</li>
+<li>Run IPython remotely on a public ip over http. (This is a
+    <strong>really</strong> bad idea for reasons I will explain.)</li>
+<li>Run IPython remotely on a public ip over SSL/TLS with a
+    password.(A somewhat less bad idea bad idea.)</li>
+<li>Run IPython remotely on a port on the remote localhost, 127.0.0.1
     and forward that port to our local localhost (no typo there) via
     ssh. Then we can pick it when we open the notebook list in
     Emacs. The command is M-x ein:notebooklist-open. 'M' here, is
     'Meta' which on Linux or Windows is mapped to the Alt key and on
-    Mac is mapped to the command key.</p>
+    Mac is mapped to the command key.</li>
+</ol>
 <h1>Why everything sucks but the last option.</h1>
 <ol>
 <li>If you edit on the remote machine you are using Emacs inside the
@@ -145,7 +147,7 @@ host and identity. Good directions are <a href="http://blog.i-evaluation.com/201
 <strong>local</strong> machine is your laptop and the <strong>remote</strong> is the server you are
 using. The result is that establishing an ssh connection should be as
 easy as:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">ssh</span> <span class="n">myServer</span>
+<div class="highlight"><pre><span class="nv">$ </span>ssh myServer
 </pre></div>
 
 
@@ -224,8 +226,10 @@ for both Mac OS X and Windows.</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

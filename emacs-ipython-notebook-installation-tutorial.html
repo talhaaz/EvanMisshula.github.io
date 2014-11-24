@@ -37,7 +37,7 @@
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2013-06-24T23:37:00">
+        <abbr class="published" title="2013-06-24T23:37:00-04:00">
                 Published: Mon 24 June 2013
         </abbr>
 
@@ -76,13 +76,15 @@ editing in the browser.</p>
 <h1>The Package Systems</h1>
 <p>The best blog post I found on the emacs package system was from <a href="http://ergoemacs.org/emacs/emacs_package_system.html">Xah Lee</a>. I will
 work hard to add something here. There are six package systems in emacs
-24.x. They are:
-1.  <a href="http://elpa.gnu.org/">elpa</a>
-2.  <a href="http://tromey.com/elpa/">tromey-elpa</a>
-3.  <a href="http://marmalade-repo.org/">marmalade</a>
-4.  <a href="http://melpa.milkbox.net/">milkbox</a>
-5.  <a href="http://www.emacswiki.org/emacs/DELPS">DELPS</a>
-6.  <a href="http://www.emacswiki.org/emacs/el-get">el-get</a></p>
+24.x. They are:</p>
+<ol>
+<li><a href="http://elpa.gnu.org/">elpa</a></li>
+<li><a href="http://tromey.com/elpa/">tromey-elpa</a></li>
+<li><a href="http://marmalade-repo.org/">marmalade</a></li>
+<li><a href="http://melpa.milkbox.net/">milkbox</a></li>
+<li><a href="http://www.emacswiki.org/emacs/DELPS">DELPS</a></li>
+<li><a href="http://www.emacswiki.org/emacs/el-get">el-get</a></li>
+</ol>
 <p>The first is the official system. I am not going to cover tromey,
 marmalade-repo or DELPS. I just don't know them yet. I was able to
 install other packages successfully in el-get. It did not work for me
@@ -90,26 +92,26 @@ with the Emacs-IPython-Notebook.</p>
 <h1>Let's get started</h1>
 <p>So you may not have a .emacs file. This file loads all of your
 customization files into emacs. Create it if you don't.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">touch</span> <span class="p">.</span><span class="n">emacs</span>
+<div class="highlight"><pre><span class="nv">$ </span>touch .emacs
 </pre></div>
 
 
 <p>Now find it <code>C-x C-f ~/.emacs</code> (The capital 'C' means control.)</p>
 <p>Add the following lines:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">setq</span> <span class="n">package</span><span class="o">-</span><span class="n">archives</span> <span class="err">&#39;</span><span class="p">((</span><span class="s">&quot;gnu&quot;</span> <span class="p">.</span> <span class="s">&quot;http://elpa.gnu.org/packages/&quot;</span><span class="p">)</span>
- <span class="p">))</span>
+<div class="highlight"><pre>(setq package-archives &#39;((&quot;gnu&quot; . &quot;http://elpa.gnu.org/packages/&quot;)
+ ))
 
-<span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="n">emacs</span><span class="o">-</span><span class="n">major</span><span class="o">-</span><span class="n">version</span> <span class="mi">24</span><span class="p">)</span>
-   <span class="p">(</span><span class="n">require</span> <span class="err">&#39;</span><span class="n">package</span><span class="p">)</span>
-   <span class="p">(</span><span class="n">package</span><span class="o">-</span><span class="n">initialize</span><span class="p">)</span>
-   <span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">&#39;</span><span class="n">package</span><span class="o">-</span><span class="n">archives</span> <span class="err">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="p">.</span>
-<span class="s">&quot;http://melpa.milkbox.net/packages/&quot;</span><span class="p">)</span> <span class="n">t</span><span class="p">)</span>
-   <span class="p">)</span>
+(when (&gt;= emacs-major-version 24)
+   (require &#39;package)
+   (package-initialize)
+   (add-to-list &#39;package-archives &#39;(&quot;melpa&quot; .
+&quot;http://melpa.milkbox.net/packages/&quot;) t)
+   )
 </pre></div>
 
 
 <p>This adds melpa to your repositories. You also need to add the line</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">load</span><span class="o">-</span><span class="n">theme</span> <span class="err">&#39;</span><span class="n">zenburn</span> <span class="n">t</span><span class="p">)</span>
+<div class="highlight"><pre>(load-theme &#39;zenburn t)
 </pre></div>
 
 
@@ -137,7 +139,7 @@ repository for this post including a working .emacs file (and my
 personal .emacs file) at my github repo which is linked here.</p>
 <p>Now to start the notebook. Go to the directory with a notebook or where
 you want to keep them and open a new shell. Type:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">ipython</span> <span class="n">notebook</span> <span class="o">--</span><span class="n">pylab</span><span class="o">=</span><span class="kr">inline</span>
+<div class="highlight"><pre><span class="nv">$ </span>ipython notebook --pylab<span class="o">=</span>inline
 </pre></div>
 
 
@@ -183,8 +185,10 @@ where it always belonged.</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>

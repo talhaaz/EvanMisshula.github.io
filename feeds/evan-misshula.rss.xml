@@ -16,9 +16,9 @@ reasons why this needs to be updated:&lt;/p&gt;
 &lt;p&gt;I will repeat the steps here. First install the c libraries that
 python needs to function.&lt;/p&gt;
 &lt;p&gt;I use apt-get in ubuntu so type&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;libsqlite3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libbz2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libxml2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libxslt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;curl&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install libsqlite3-dev libbz2-dev libxml2-dev libxslt-dev curl
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -41,65 +41,65 @@ between bash and an interpreted language like Python.&lt;/p&gt;
 &lt;h4&gt;&lt;a href="http://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement"&gt;can-i-replace&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;I am assuming you have git installed. If not, &lt;a href="https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04"&gt;git-tutorial&lt;/a&gt; is a good
 tutorial for installing git.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/yyuu/pyenv.git .pyenv&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~
+&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git://github.com/yyuu/pyenv.git .pyenv
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Define environment variable &lt;code&gt;PYENV_ROOT&lt;/code&gt; to point to the path where
 pyenv repo is cloned and add &lt;code&gt;$PYENV_ROOT/bin&lt;/code&gt; to your &lt;code&gt;$PATH&lt;/code&gt; for access
 to the pyenv command-line utility.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PYENV_ROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;”$&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pyenv&lt;/span&gt;&lt;span class="err"&gt;”‘&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bashrc&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;”$&lt;/span&gt;&lt;span class="n"&gt;PYENV_ROOT&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PATH&lt;/span&gt;&lt;span class="err"&gt;”‘&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bashrc&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; ‘export &lt;span class="nv"&gt;PYENV_ROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;”&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.pyenv”‘ &amp;gt;&amp;gt; ~/.bashrc
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; ‘export &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;”&lt;span class="nv"&gt;$PYENV_ROOT&lt;/span&gt;/bin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;”‘ &amp;gt;&amp;gt; ~/.bashrc
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add pyenv init to your shell to enable shims and autocompletion. Shims
 and binstubs are worth knowing about.  You can read up on them
 &lt;a href="https://github.com/yyuu/pyenv#understanding-shims"&gt;understand-shims&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;eval&lt;/span&gt; &lt;span class="err"&gt;“$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;”‘&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bashrc&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; ‘eval “&lt;span class="k"&gt;$(&lt;/span&gt;pyenv init -&lt;span class="k"&gt;)&lt;/span&gt;”‘ &amp;gt;&amp;gt; ~/.bashrc
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Restart your shell so the path changes take effect. You can now begin using pyenv.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;exec&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;SHELL&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;exec&lt;/span&gt; &lt;span class="nv"&gt;$SHELL&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Install Python versions into &lt;code&gt;$PYENV_ROOT/versions&lt;/code&gt;. For example, to
 install Python 2.7.5, download and unpack the source, then run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="mf"&gt;2.7.5&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;rehash&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv install 2.7.5
+&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv rehash
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;And now we have to tell the system to use this new version of python&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt; &lt;span class="mf"&gt;2.7.5&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv &lt;span class="nb"&gt;local &lt;/span&gt;2.7.5
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;Install virtualenv&lt;/h2&gt;
 &lt;p&gt;We are going to do two tricky things we are going to install
 virtualenv in the version of python AND install the pyenv plugin virtualenv.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;and to install the pyenv plugin.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;You are now ready to create a virtual environment in a non-system version of python. I don’t understand why this will not work if you are anywhere else.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="mf"&gt;2.7.5&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;more&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;drug&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;war&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv virtualenv
+&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv virtualenv 2.7.5 no-more-drug-war
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;We can list all of the virtual environments. Change directory to the
 one you want to work in and in my case the virtual environment is
 no-more-drug-war:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;activate&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;more&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;drug&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;war&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv activate no-more-drug-war:
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -113,56 +113,56 @@ lc (created from /usr&lt;/p&gt;
 seek (created from /usr)
 \#+END&lt;sub&gt;SRC&lt;/sub&gt;&lt;/p&gt;
 &lt;p&gt;To review, we can activate the virtual environment with the following command.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;activate&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;more&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;drug&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;war&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv activate no-more-drug-war
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;You can deactivate the activate’d virtualenv by pyenv deactivate.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;deactivate&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv deactivate
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;So, in order to know what packages we have installed at any time, we install yolk.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;yolk&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install yolk
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Do not type sudo! To see what it installed at any time:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;yolk&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;yolk -l
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;A list of further packages for IPython are available here. Type these individually and they each may take a few minutes to install.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;jinja2&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install jinja2
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pyzmq&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pyzmq
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pygments&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pygments
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;tornado&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install tornado
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;nose&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install numpy
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;scipy&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install scipy
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;matplotlib&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install matplotlib
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pandas
 
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ipython&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ipython
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Turning it on and off&lt;/p&gt;
 &lt;p&gt;Now to get out of your virtual environment, just type&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;deactivate&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv deactivate
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;To get back in, type:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pyenv&lt;/span&gt; &lt;span class="n"&gt;activate&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;more&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;drug&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;war&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pyenv activate no-more-drug-war
 &lt;/pre&gt;&lt;/div&gt;
 
 

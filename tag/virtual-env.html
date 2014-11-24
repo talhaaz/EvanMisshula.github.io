@@ -31,7 +31,7 @@
                 <article>
                     <h1 class="entry-title"><a href="/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html">Setting up a virtual environment with Ipython, numpy and pandas</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2013-06-25T00:56:00">
+        <abbr class="published" title="2013-06-25T00:56:00-04:00">
                 Published: Tue 25 June 2013
         </abbr>
 
@@ -50,71 +50,71 @@ it is two years old, there is another version of python and it does
 not cover <a href="http://ipython.org/">IPython</a>, I will repeat the steps here.</p>
 <h1>First install Pythonbrew and another version of python</h1>
 <p>I use apt-get in ubuntu so type</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="o">~</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
 
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libsqlite3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libbz2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxml2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxslt</span><span class="o">-</span><span class="n">dev</span> <span class="n">curl</span>
+<span class="nv">$ </span>sudo apt-get install libsqlite3-dev libbz2-dev libxml2-dev libxslt-dev curl
 </pre></div>
 
 
 <p>Then get pythonbrew:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="err">``</span><span class="n">curl</span> <span class="o">-</span><span class="n">kL</span> <span class="n">http</span><span class="o">:</span><span class="c1">//github.com/utahta/pythonbrew/raw/master/pythonbrew-install | bash``</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="sb">``</span>curl -kL http://github.com/utahta/pythonbrew/raw/master/pythonbrew-install <span class="p">|</span> bash<span class="sb">``</span>
 </pre></div>
 
 
 <p>This line gets the repository and executes through bash. We will need
 to modify the configuration file for bash.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">echo</span> <span class="s">&quot;source $HOME/.pythonbrew/etc/bashrc&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;source </span><span class="nv">$HOME</span><span class="s2">/.pythonbrew/etc/bashrc&quot;</span> &gt;&gt; ~/.bashrc
 </pre></div>
 
 
 <p>Don't forget the dot in <code>.bashrc</code>. Now nothing changes until this file is
 executed by the operating system:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">source</span> <span class="p">.</span><span class="n">bashrc</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> .bashrc
 </pre></div>
 
 
 <p>This should complete with no errors. The next step is to install python
 2.7.3. It is going to take a few minutes to complete.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pythonbrew</span> <span class="n">install</span> <span class="o">--</span><span class="n">verbose</span> <span class="mf">2.7.3</span>
+<div class="highlight"><pre><span class="nv">$ </span>pythonbrew install --verbose 2.7.3
 </pre></div>
 
 
 <p>And now we have to tell the system to use this new version of python</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pythonbrew</span> <span class="n">use</span> <span class="mf">2.7.3</span>
+<div class="highlight"><pre><span class="nv">$ </span>pythonbrew use 2.7.3
 </pre></div>
 
 
 <h1>Install virtualenv and virtualenvwrapper</h1>
 <p>We have to install virtualenv in the system's python and
 virtualenvwrapper in the new python.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">virtualenv</span>
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install python-virtualenv
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenvwrapper</span>
+<span class="nv">$ </span>pip install virtualenvwrapper
 </pre></div>
 
 
 <p>The first line only needs to be executed once. It works for the whole
 system. The second one needs to be done for each new python environment
 you create. Make a hidden directory to hold the virtual environments.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">mkdir</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span>
+<div class="highlight"><pre><span class="nv">$ </span>mkdir ~/.virtualenvs
 </pre></div>
 
 
 <p>Add the following three lines at the end of your .bashrc.</p>
-<div class="highlight"><pre><span class="n">export</span> <span class="n">WORKON_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="err">``</span>
-<span class="n">export</span> <span class="n">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">pythonbrew</span><span class="o">/</span><span class="n">pythons</span><span class="o">/</span><span class="n">Python</span><span class="o">-</span><span class="mf">2.7.3</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span><span class="err">``</span>
-<span class="n">source</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">pythonbrew</span><span class="o">/</span><span class="n">pythons</span><span class="o">/</span><span class="n">Python</span><span class="o">-</span><span class="mf">2.7.3</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="p">.</span><span class="n">sh</span><span class="err">``</span>
+<div class="highlight"><pre><span class="x">export WORKON_HOME=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.virtualenvs``</span>
+<span class="x">export VIRTUALENVWRAPPER_PYTHON=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.pythonbrew/pythons/Python-2.7.3/bin/python``</span>
+<span class="x">source </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.pythonbrew/pythons/Python-2.7.3/bin/virtualenvwrapper.sh``</span>
 </pre></div>
 
 
 <p>You will need to use an editor. Then you have to reload them:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">source</span> <span class="p">.</span><span class="n">bashrc</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> .bashrc
 </pre></div>
 
 
 <h1>Create the virtual environment</h1>
 <p>To create a virtual environment called 'no-more-drug-war', type:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">mkvirtualenv</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="n">no</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">drug</span><span class="o">-</span><span class="n">war</span>
+<div class="highlight"><pre><span class="nv">$ </span>mkvirtualenv --no-site-packages no-more-drug-war
 </pre></div>
 
 
@@ -122,43 +122,43 @@ you create. Make a hidden directory to hold the virtual environments.</p>
 <hr />
 <p>So, in order to know what packages we have installed at any time, we
 install yolk.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">yolk</span>
+<div class="highlight"><pre><span class="nv">$ </span>pip install yolk
 </pre></div>
 
 
 <p>Do not type sudo! To see what it installed at any time:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">yolk</span> <span class="o">-</span><span class="n">l</span>
+<div class="highlight"><pre><span class="nv">$ </span>yolk -l
 </pre></div>
 
 
 <p>A list of further packages for IPython are available <a href="http://ipython.org/ipython-doc/stable/install/install.html">here</a>.
 Type these individually and they each may take a few minutes to install.</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyzmq</span>
+<div class="highlight"><pre><span class="nv">$ </span>pip install pyzmq
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pygments</span>
+<span class="nv">$ </span>pip install pygments
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">tornado</span>
+<span class="nv">$ </span>pip install tornado
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">nose</span>
+<span class="nv">$ </span>pip install nose
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+<span class="nv">$ </span>pip install numpy
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scipy</span>
+<span class="nv">$ </span>pip install scipy
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+<span class="nv">$ </span>pip install matplotlib
 
-<span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="nv">$ </span>pip install pandas
 </pre></div>
 
 
 <h1>Turning it on and off</h1>
 <p>Now to get out of your virtual environment, just type</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">exit</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">exit</span>
 </pre></div>
 
 
 <p>To get back in, type:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">workon</span> <span class="n">no</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">drug</span><span class="o">-</span><span class="n">war</span>
+<div class="highlight"><pre><span class="nv">$ </span>workon no-more-drug-war
 </pre></div>
 
 
@@ -196,8 +196,10 @@ Type these individually and they each may take a few minutes to install.</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-		  Powered by <a href="http://orgmode.org/">Org-mode</a>, <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org">Python</a> with css theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 </body>
