@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 30 Jul 2014 15:03:00 -0400</lastBuildDate><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 03 Nov 2014 00:00:00 -0500</lastBuildDate><item><title>Reproducible-research-org-mode</title><link>/emacsnyc-rr.html</link><description>&lt;h1&gt;Update&lt;/h1&gt;
+&lt;p&gt;On November 3, I gave a talk at the Emacsnyc meetup on reproducible
+research.  I will get a link to the presentation up soon.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt&lt;sub&gt;PWoM5Y&lt;/sub&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 03 Nov 2014 00:00:00 -0500</pubDate><guid>tag:,2014-11-03:emacsnyc-rr.html</guid><category>Emacs</category><category>reproducibility</category><category>open-science</category></item><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;I have developed a Zen-like approach to the operating systems that
 people use: 'When you're ready, the right operating system will appear
 in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
