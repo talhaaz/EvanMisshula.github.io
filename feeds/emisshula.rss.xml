@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 03 Nov 2014 00:00:00 -0500</lastBuildDate><item><title>Reproducible-research-org-mode</title><link>/emacsnyc-rr.html</link><description>&lt;h1&gt;Update&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 03 Nov 2014 00:00:00 -0500</lastBuildDate><item><title>Reproducible-research-org-mode</title><link>/emacsnyc-rr.html</link><description>&lt;p&gt;o* Update&lt;/p&gt;
 &lt;p&gt;On November 3, I gave a talk at the Emacsnyc meetup on reproducible
 research.  I will get a link to the presentation up soon.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt&lt;sub&gt;PWoM5Y&lt;/sub&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 03 Nov 2014 00:00:00 -0500</pubDate><guid>tag:,2014-11-03:emacsnyc-rr.html</guid><category>Emacs</category><category>reproducibility</category><category>open-science</category></item><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt&lt;sub&gt;PWoM5Y&lt;/sub&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;You can view the presentation:&lt;/p&gt;
+&lt;p&gt;&lt;a href="rr.html" target="&lt;sub&gt;blank&lt;/sub&gt;"&amp;gt;new tab&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;And here is the github:&lt;/p&gt;
+&lt;p&gt;&lt;a href="&lt;a href="http://github.com/EvanMisshula/rr"&gt;http://github.com/EvanMisshula/rr&lt;/a&gt;" target="&lt;sub&gt;blank&lt;/sub&gt;"&amp;gt;rr repo&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;and Sheyla's map:&lt;/p&gt;
+&lt;iframe width='100%' height='520' frameborder='0' src='http://johnjayrec.cartodb.com/viz/8599a654-719d-11e4-9cbc-0e018d66dc29/embed&lt;sub&gt;map&lt;/sub&gt;' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 03 Nov 2014 00:00:00 -0500</pubDate><guid>tag:,2014-11-03:emacsnyc-rr.html</guid><category>Emacs</category><category>reproducibility</category><category>open-science</category></item><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;I have developed a Zen-like approach to the operating systems that
 people use: 'When you're ready, the right operating system will appear
 in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
@@ -222,53 +229,7 @@ be good enough.&lt;/p&gt;
 who were able to obtain for me not only access to a Mac but insured
 that I would have admin rights to install software and create this 
 tutorial. They bare no responsibility for any mistakes or omissions 
-which are solely the responsiblity of the author.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 30 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-30:mac-dev-env.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category><category>OS X</category></item><item><title>Brighton Ditmas Park</title><link>/jobs-20140728.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;A man's bread and butter is only insured when he works for it.
-~&lt;a href="http://en.wikipedia.org/wiki/Marcus_Garvey"&gt;Marcus Garvey&lt;/a&gt;, a Jamaican political leader, publisher, journalist,
-entrepreneur, and orator.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../../images/garvey.jpeg" width="350px" alt="mmg" title="mmg"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Getting to the job&lt;/h1&gt;
-&lt;p&gt;More jobs in South Brooklyn.  The first three are in Brighton Beach. You can
-get there via the B or Q line or the B68 bus.  The last two are near Newkirk
-Plaza in Ditmas Park.&lt;/p&gt;
-&lt;h1&gt;Gourmet Deli&lt;/h1&gt;
-&lt;p&gt;This is a large deli/small supermarket that opened in Brighton beach since 
-Hurricane Sandy.  It serves the area' growing latin and Bangladeshi 
-communities.  It is next to 3057 Coney Island Avenue on the corner of 
-West 10th Street Court, one block south of Neptune ave. &lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/gd1.jpg" width="350px" alt="gdg" title="gdg"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;p&gt;&lt;img src="../../images/gourmetDeli.png" width="350px" alt="gd2" title="gd2"&gt;&lt;/p&gt; &lt;/p&gt;
-&lt;h1&gt;Tacos El Rey&lt;/h1&gt;
-&lt;p&gt;Mexican restaurant in Brighton Beach.  They are looking for a waiter.
-This is a busy cash only place.  The food is ok at best but they are
-the only restaurant in the are so they are always busy.  The address
-is 3168 Coney Island Ave, Brooklyn, NY 11235.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/tcrHelp.jpg" width="350px" alt="tcrhw" title="tcrhw"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;p&gt;&lt;img src="../../images/tacosElRey.jpg" width="350px" alt="tcr" title="tcr"&gt;&lt;/p&gt; &lt;/p&gt;
-&lt;h1&gt;Royal Pizza&lt;/h1&gt;
-&lt;p&gt;This is the best pizza place in Brighton Beach.  Completely remodeled
-since Hurrican Sandy.  The address is 705 Brighton Beach Ave #1, New
-York, NY 11235.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/royalPizza.jpg" width="350px" alt="tcrhw" title="tcrhw"&gt;&lt;/p&gt;
-
-&lt;h1&gt;One stop camera&lt;/h1&gt;
-&lt;p&gt;This place was holding interviews yesterday. The address is 1100 Coney Island Ave.
-It is in Ditmas Park near the Newkirk Ave stop.  It is between Foster Ave and 
-Avenue H.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/oneStophw.jpg" width="350px" alt="tcrhw" title="tcrhw"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;p&gt;&lt;img src="../../images/oneStopAddress.png" width="350px" alt="tcr" title="tcr"&gt;&lt;/p&gt; &lt;/p&gt;
-&lt;h1&gt;Pearland Bokerage/AllTaxi&lt;/h1&gt;
-&lt;p&gt;Bunch of help wanted signs for drivers here.  This is on the corner of 
-Foster Ave and Coney Island Ave.  The address is 1043 Coney Island Ave.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/allTaxihw1.jpg" width="350px" alt="allThw1" title="tcrhw"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;p&gt;&lt;img src="../../images/allTaxihw2.jpg" width="350px" alt="allT" title="tcrhw"&gt;&lt;/p&gt; 
-&lt;p&gt;&lt;img src="../../images/allTaxiAddress.jpg" width="350px" alt="tcr" title="tcr"&gt;&lt;/p&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 28 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-28:jobs-20140728.html</guid><category>jobs</category><category>reentry</category></item><item><title>Descriptives</title><link>/r-descriptives-ess.html</link><description>&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+which are solely the responsiblity of the author.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 30 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-30:mac-dev-env.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category><category>OS X</category></item><item><title>Descriptives</title><link>/r-descriptives-ess.html</link><description>&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. ~Bobby Bragan, 1963&lt;/p&gt;
@@ -377,72 +338,7 @@ a vertical line separating the stem and leaves.&lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 24 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-24:r-descriptives-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>South Brooklyn jobs</title><link>/jobs-20140722.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;There's no free lunch. Don't feel entitled to anything you didn't sweat and struggle for.
-~Marian Wright Edelman, advocate for children &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../../images/marianWrightEdelman.jpeg" width="350px" alt="mwe" title="mwe"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Starter jobs reality&lt;/h1&gt;
-&lt;p&gt;Here are a couple of jobs in South Brooklyn.  We are interviewing in
-East Flatbush so these jobs are reachable via either the B68 or the
-Q line subway.&lt;/p&gt;
-&lt;h1&gt;BJ's&lt;/h1&gt;
-&lt;p&gt;BJ's is a large chain of retail warehouses. They are opening soon in Brooklyn 
-and have to hire a lot of people.  The application site is at 1218 Neptune Ave
-(near W12th street).&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/bjs.jpg" width="350px" alt="bjs" title="bjs"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Rocco's&lt;/h1&gt;
-&lt;p&gt;This is a pizzeria.  The sign is in Spanish.  It means they are looking
-for someone to wash dishes.  It is in the shopping center at West 5th and
-Neptune Ave.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/Roccos.jpg" width="350px" alt="rocco" title="rocco"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 22 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-22:jobs-20140722.html</guid><category>jobs</category><category>reentry</category></item><item><title>Nineth Avenue Jobs</title><link>/jobs-20140720.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;To make our way, we must have firm resolve, persistence, tenacity. We
-must gear ourselves to work hard all the way. We can never let up.
-Ralph Bunche, grandson of a slave and Nobel prize winner&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../../images/bunche.jpeg" width="350px" alt="btw" title="rb"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Starter jobs reality&lt;/h1&gt;
-&lt;p&gt;This week is a mix. Tomorrow I will have a bunch of jobs in South
-Brooklyn.  Today, these are jobs on the West Side near where I work.&lt;/p&gt;
-&lt;h1&gt;Roast Kitchen&lt;/h1&gt;
-&lt;p&gt;This is an expanding mid price restaurant chain.  I saw the sign in
-the village at one of their construction sites.  I love that they put 
-real people to call in the advertisement. (Ellie Karagiannis and Giselle
-Jaramillo, can be reached at (212) 664-1820.)  As always, I would go 
-to their location rather than call. Their main location is at 49th and 7th 
-ave.  The address is: 740 7th Ave, New York, NY 10019&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/roastKitchen.jpg" width="350px" alt="RoastKitchen" title="rk"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Holey Cream&lt;/h1&gt;
-&lt;p&gt;Who doesn't wnat to sell ice cream during the summer.  Although, the
-adverticement gives an email address to send a resume, I would
-strongly urge you to go.  The address is 796 9th Ave (at 53rd Street).&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/HoleyCream2.jpg"width="350px" alt="Holey Cream" title="hc"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="../../images/HoleyCreamAddress.jpeg" width="350px" alt="Holey Cream Address" title="hca"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Pita Kitchen&lt;/h1&gt;
-&lt;p&gt;This is a delivery job.  You can make good money in tips.  The address
-is 790 9th Ave (at 52nd Street) New York, NY 10019&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/pitaGrillSign.jpg"width="350px" alt="Pita Kitchen Sign" title="pks"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="../../images/pitaKitchenDelivery.jpg" width="350px" alt="Pita Grill Delivery" title="pgd"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sun, 20 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-20:jobs-20140720.html</guid><category>jobs</category><category>reentry</category></item><item><title>Monday jobs</title><link>/jobs-20140714.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;Nothing ever comes to one, that is worth having, except as a result of
-hard work. ~Booker T. Washington&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../../images/booker.jpeg" width="350px" alt="btw" title="btw"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Starter jobs reality&lt;/h1&gt;
-&lt;p&gt;I was away last week.  I only found one job on my way to work but I
-need to keep putting these up. Don't apply online.  Always ask to see 
-the manager.&lt;/p&gt;
-&lt;h1&gt;Lenny's&lt;/h1&gt;
-&lt;p&gt;This is a busy deli. The sign says to email or talk to the manager. Always talk
-to the manager. The address is 469 Columbus Ave (at 83th Street), New York, NY 10019:&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/lennys2.jpg" width="350px" alt="Lennys" title="lenny"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 14 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-14:jobs-20140714.html</guid><category>jobs</category><category>reentry</category></item><item><title>R foundations with ESS</title><link>/r-foundation-ess.html</link><description>&lt;h1&gt;R foundations&lt;/h1&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 24 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-24:r-descriptives-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>R foundations with ESS</title><link>/r-foundation-ess.html</link><description>&lt;h1&gt;R foundations&lt;/h1&gt;
 &lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -747,60 +643,7 @@ this evil behavior by seting the environment variable.&lt;/div&gt;
 
 &lt;/div&gt;
 
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-02:r-tutorial-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>More Starter Jobs</title><link>/jobs-20140702.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;If a man is called to be a streetsweeper, he should sweep streets even
-as Michelangelo painted, or Beethoven composed music, or Shakespeare
-wrote poetry. He should sweep streets so well that all the hosts of
-heaven and earth will pause to say, here lived a great streetsweeper
-who did his job well.  ~Martin Luther King, Jr.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../../images/mlk.jpeg" width="350px" alt="martin" title="mlk"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Starter jobs reality&lt;/h1&gt;
-&lt;p&gt;In NYC a lot starter jobs are in food service or retail.  I know that is not 
-for everyone.  It is hard work.  Most of the time though, being unemployed 
-is worse.&lt;/p&gt;
-&lt;h1&gt;Lenny's&lt;/h1&gt;
-&lt;p&gt;This is a busy deli. The sign says to email or talk to the manager. Always talk
-to the manager. The address is 302 Columbus Ave (at 74th Street), New York, NY 10019:&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/lennysColumbus.jpg" width="350px" alt="Lennys" title="lenny"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Roslyn&lt;/h1&gt;
-&lt;p&gt;This is a high end women's retial store.  The sign was in the store when I walked to work
-yesterday.  The address is 276 Columbus Ave.  I don't know anything about the place. If they
-hire you, I will tell my girlfriend to shop there. &lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/sales-and-sm.jpg" width="350px" alt="Roslyn" title="Roslyn"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Good luck!&lt;/h1&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-02:jobs-20140702.html</guid><category>jobs</category><category>reentry</category></item><item><title>Everybody starts somewhere</title><link>/jobs-20140701.html</link><description>&lt;blockquote&gt;
-&lt;p&gt;"Nothing will work unless you do." ~Maya Angelou&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../../images/maya-barak.jpg" width="350px" alt="img" title="maya.jpg"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Starter jobs today&lt;/h1&gt;
-&lt;p&gt;I was unemployed for a long time.  I was a job developer for six
-months at &lt;a href="http://www.etcny.org/employment-services/"&gt;Exodus Transitional Community&lt;/a&gt; in 2009 after I came
-home. Sometimes everyone needs a &lt;em&gt;starter&lt;/em&gt; job or a
-&lt;em&gt;bullshit&lt;/em&gt; job.  These are not a career.  If you work at Popeye's you
-are not going to own Popeye's chicken.  However there is a human
-dignity to work. Working may allow you to buy your kid a slice of pizza.
-Every dad deserves that.  Here are the jobs I saw today.&lt;/p&gt;
-&lt;h1&gt;Empanada Mama&lt;/h1&gt;
-&lt;p&gt;This is a small but really busy place.  They need people go here
-first. The address is 763 9th Ave, New York, NY 10019:&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/empanada-mama.jpg" width="350px" alt="empanada" title="mama.jpg"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Hummus kitchen&lt;/h1&gt;
-&lt;p&gt;This is a kosher middle eastern place.  I hope that they remember
-people have been throwing Jews into jails since they invented
-prison. The address is 416 Amsterdam Ave (80th street), New York, NY 10024.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/hummus-kitchen.jpg" width="350px" alt="hummus" title="hummus.jpg"&gt;&lt;/p&gt;
-
-&lt;h1&gt;Kebab house&lt;/h1&gt;
-&lt;p&gt;I know nothing except they had a sign out.  If they hire you, I will
-eat there, 712 9th Ave:&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../images/kebab-house.jpg" style="float:left; "width="350px" alt="kebab" title="kebab.jpg"&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="../../images/kebab-delivery.jpg" style="margin-left:5px;float:left; "width="350px" alt="kebab-d" title="kebab-delivery.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 15:02:00 -0400</pubDate><guid>tag:,2014-07-01:jobs-20140701.html</guid><category>jobs</category><category>reentry</category></item><item><title>Intro to basic Emacs for statistics</title><link>/r-tutorial-emacs-basics.html</link><description>&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:03:00 -0400</pubDate><guid>tag:,2014-07-02:r-tutorial-ess.html</guid><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to basic Emacs for statistics</title><link>/r-tutorial-emacs-basics.html</link><description>&lt;h1&gt;Emacs&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
