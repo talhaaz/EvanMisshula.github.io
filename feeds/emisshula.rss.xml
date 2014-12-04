@@ -2,14 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Evan Misshula</title><link>/</link><description></description><atom:link href="/feeds/emisshula.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 03 Nov 2014 00:00:00 -0500</lastBuildDate><item><title>Reproducible-research-org-mode</title><link>/emacsnyc-rr.html</link><description>&lt;p&gt;o* Update&lt;/p&gt;
 &lt;p&gt;On November 3, I gave a talk at the Emacsnyc meetup on reproducible
 research.  I will get a link to the presentation up soon.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt&lt;sub&gt;PWoM5Y&lt;/sub&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt_PWoM5Y" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;You can view the presentation:&lt;/p&gt;
-&lt;p&gt;&lt;a href="rr.html" target="&lt;sub&gt;blank&lt;/sub&gt;"&amp;gt;new tab&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="rr.html" target="_blank"&gt;new tab&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;And here is the github:&lt;/p&gt;
-&lt;p&gt;&lt;a href="&lt;a href="http://github.com/EvanMisshula/rr"&gt;http://github.com/EvanMisshula/rr&lt;/a&gt;" target="&lt;sub&gt;blank&lt;/sub&gt;"&amp;gt;rr repo&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;and Sheyla's map:&lt;/p&gt;
-&lt;iframe width='100%' height='520' frameborder='0' src='http://johnjayrec.cartodb.com/viz/8599a654-719d-11e4-9cbc-0e018d66dc29/embed&lt;sub&gt;map&lt;/sub&gt;' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 03 Nov 2014 00:00:00 -0500</pubDate><guid>tag:,2014-11-03:emacsnyc-rr.html</guid><category>Emacs</category><category>reproducibility</category><category>open-science</category></item><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://github.com/EvanMisshula/rr"&gt;rr repo&lt;/a&gt; &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 03 Nov 2014 00:00:00 -0500</pubDate><guid>tag:,2014-11-03:emacsnyc-rr.html</guid><category>Emacs</category><category>reproducibility</category><category>open-science</category></item><item><title>Mac OS X Installation</title><link>/mac-dev-env.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;I have developed a Zen-like approach to the operating systems that
 people use: 'When you're ready, the right operating system will appear
 in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
