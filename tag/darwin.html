@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Reproducible-research-org-mode</title>
+        <title>Evan Misshula - Darwin</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -22,42 +22,58 @@
                     <li><a href="/pages/contact.html">Contact</a></li>
                     <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
                     <li><a href="/category/r-course.html">R-course</a></li>
-                    <li class="active"><a href="/category/tutorials.html">Tutorials</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/emacsnyc-rr.html" rel="bookmark"
-           title="Permalink to Reproducible-research-org-mode">Reproducible-research-org-mode</a></h1>
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="EMisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-    </header>
 
-    <div class="entry-content">
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/death-by-pop-up.html">Emacs dies on popup</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-11-03T00:00:00-05:00">
-                Published: Mon 03 November 2014
+        <abbr class="published" title="2014-12-27T00:00:00-05:00">
+                Published: Sat 27 December 2014
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
         </address>
 <p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
-<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/reproducibility.html">reproducibility</a> <a href="/tag/open-science.html">open-science</a> </p>
-</footer><!-- /.post-info -->      <p>o* Update</p>
-<p>On November 3, I gave a talk at the Emacsnyc meetup on reproducible
-research.  I will get a link to the presentation up soon.</p>
-<iframe width="560" height="315" src="//www.youtube.com/embed/CGnt_PWoM5Y" frameborder="0" allowfullscreen></iframe>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/homebrew.html">homebrew</a> <a href="/tag/mac.html">Mac</a> <a href="/tag/os-x.html">OS X</a> <a href="/tag/mavericks.html">Mavericks</a> <a href="/tag/darwin.html">Darwin</a> </p>
+</footer><!-- /.post-info --><h1>Switched to Mac</h1>
+<p>My switch to the Mac meant that I was making more typing mistakes and on one 
+them I was always getting to Emacs to freeze.  I looked like this:</p>
+<p><img src="../images/Computer-Freezes.jpg" width="450px" alt="img" title="Computer-Freezes.jpg"></p>
 
-<p>You can view the presentation:</p>
-<p><a href="rr.html" target="_blank">new tab</a> </p>
-<p>And here is the github:</p>
-<p><a href="http://github.com/EvanMisshula/rr" target="_blank">rr repo</a></p>
-    </div><!-- /.entry-content -->
+<p>I switched to the Mac last summer.  I was given one for work.  I would 
+never buy one because they put corporate <a href="https://defectivebydesign.org/apple">malware</a> on your machine.  However,
+it is convenient to have one because I can test my tutorials on this machine.</p>
+<p>Mac does not support a package manager to manage free software which
+people install on the Mac.  So there is a community based one called
+homebrew through which I installed Emacs.  I started switching between
+my Linux laptop and my Mac.  Almost immediately, I ran across a bug.
+When I typed Command-p on the Mac instead of M-p, a popup appeared and
+asked if I wanted to print.  This happened often because of the different
+layouts of the two keyboards.</p>
+<p>I could not dismiss the popup.  The only way to continue working was to 
+force-quit Emacs and lose my unsaved work.</p>
+<p>I finally found the right answer <a href="http://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x">here</a>.  Unfortunately, I don't have the 
+points on SuperUser to vote it up.  The solution is:</p>
+<div class="highlight"><pre>(defadvice yes-or-no-p (around prevent-dialog activate)
+  &quot;Prevent yes-or-no-p from activating a dialog&quot;
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(defadvice y-or-n-p (around prevent-dialog-yorn activate)
+  &quot;Prevent y-or-n-p from activating a dialog&quot;
+  (let ((use-dialog-box nil))
+    ad-do-it))
+</pre></div>
 
-  </article>
-</section>
+
+<p>The two functions are almost the same.  One takes care of ``yes or no'' and the other ``y or n''.</p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

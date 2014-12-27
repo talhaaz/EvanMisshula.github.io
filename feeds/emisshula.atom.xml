@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2014-11-03T00:00:00-05:00</updated><entry><title>Reproducible-research-org-mode</title><link href="/emacsnyc-rr.html" rel="alternate"></link><updated>2014-11-03T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:,2014-11-03:emacsnyc-rr.html</id><summary type="html">&lt;p&gt;o* Update&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2014-12-27T00:00:00-05:00</updated><entry><title>Emacs dies on popup</title><link href="/death-by-pop-up.html" rel="alternate"></link><updated>2014-12-27T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:,2014-12-27:death-by-pop-up.html</id><summary type="html">&lt;h1&gt;Switched to Mac&lt;/h1&gt;
+&lt;p&gt;My switch to the Mac meant that I was making more typing mistakes and on one 
+them I was always getting to Emacs to freeze.  I looked like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Computer-Freezes.jpg" width="450px" alt="img" title="Computer-Freezes.jpg"&gt;&lt;/p&gt;
+
+&lt;p&gt;I switched to the Mac last summer.  I was given one for work.  I would 
+never buy one because they put corporate &lt;a href="https://defectivebydesign.org/apple"&gt;malware&lt;/a&gt; on your machine.  However,
+it is convenient to have one because I can test my tutorials on this machine.&lt;/p&gt;
+&lt;p&gt;Mac does not support a package manager to manage free software which
+people install on the Mac.  So there is a community based one called
+homebrew through which I installed Emacs.  I started switching between
+my Linux laptop and my Mac.  Almost immediately, I ran across a bug.
+When I typed Command-p on the Mac instead of M-p, a popup appeared and
+asked if I wanted to print.  This happened often because of the different
+layouts of the two keyboards.&lt;/p&gt;
+&lt;p&gt;I could not dismiss the popup.  The only way to continue working was to 
+force-quit Emacs and lose my unsaved work.&lt;/p&gt;
+&lt;p&gt;I finally found the right answer &lt;a href="http://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x"&gt;here&lt;/a&gt;.  Unfortunately, I don't have the 
+points on SuperUser to vote it up.  The solution is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(defadvice yes-or-no-p (around prevent-dialog activate)
+  &amp;quot;Prevent yes-or-no-p from activating a dialog&amp;quot;
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(defadvice y-or-n-p (around prevent-dialog-yorn activate)
+  &amp;quot;Prevent y-or-n-p from activating a dialog&amp;quot;
+  (let ((use-dialog-box nil))
+    ad-do-it))
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The two functions are almost the same.  One takes care of ``yes or no'' and the other ``y or n''.&lt;/p&gt;</summary><category term="Emacs"></category><category term="homebrew"></category><category term="Mac"></category><category term="OS X"></category><category term="Mavericks"></category><category term="Darwin"></category></entry><entry><title>Reproducible-research-org-mode</title><link href="/emacsnyc-rr.html" rel="alternate"></link><updated>2014-11-03T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:,2014-11-03:emacsnyc-rr.html</id><summary type="html">&lt;p&gt;o* Update&lt;/p&gt;
 &lt;p&gt;On November 3, I gave a talk at the Emacsnyc meetup on reproducible
 research.  I will get a link to the presentation up soon.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt_PWoM5Y" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;You can view the presentation:&lt;/p&gt;
-&lt;p&gt;&lt;a href="rr.html" target="&lt;sub&gt;blank&lt;/sub&gt;"&amp;gt;new tab&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="rr.html" target="_blank"&gt;new tab&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;And here is the github:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://github.com/EvanMisshula/rr" target="_blank"&gt;rr repo&lt;/a&gt;&lt;/p&gt;</summary><category term="Emacs"></category><category term="reproducibility"></category><category term="open-science"></category></entry><entry><title>Mac OS X Installation</title><link href="/mac-dev-env.html" rel="alternate"></link><updated>2014-07-30T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2014-07-30:mac-dev-env.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;I have developed a Zen-like approach to the operating systems that
