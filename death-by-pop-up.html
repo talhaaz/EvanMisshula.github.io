@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Emacs dies on popup</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<a href="http://github.com/EvanMisshula/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Evan Misshula </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/bio.html">Bio</a></li>
+                    <li><a href="/pages/academic.html">Academic</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li><a href="/category/r-course.html">R-course</a></li>
+                    <li class="active"><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/death-by-pop-up.html" rel="bookmark"
+           title="Permalink to Emacs dies on popup">Emacs dies on popup</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="EMisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-12-27T00:00:00-05:00">
+                Published: Sat 27 December 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/homebrew.html">homebrew</a> <a href="/tag/mac.html">Mac</a> <a href="/tag/os-x.html">OS X</a> <a href="/tag/mavericks.html">Mavericks</a> <a href="/tag/darwin.html">Darwin</a> </p>
+</footer><!-- /.post-info -->      <h1>Switched to Mac</h1>
+<p>My switch to the Mac meant that I was making more typing mistakes and on one 
+them I was always getting to Emacs to freeze.  I looked like this:</p>
+<p><img src="../images/Computer-Freezes.jpg" width="450px" alt="img" title="Computer-Freezes.jpg"></p>
+
+<p>I switched to the Mac last summer.  I was given one for work.  I would 
+never buy one because they put corporate <a href="https://defectivebydesign.org/apple">malware</a> on your machine.  However,
+it is convenient to have one because I can test my tutorials on this machine.</p>
+<p>Mac does not support a package manager to manage free software which
+people install on the Mac.  So there is a community based one called
+homebrew through which I installed Emacs.  I started switching between
+my Linux laptop and my Mac.  Almost immediately, I ran across a bug.
+When I typed Command-p on the Mac instead of M-p, a popup appeared and
+asked if I wanted to print.  This happened often because of the different
+layouts of the two keyboards.</p>
+<p>I could not dismiss the popup.  The only way to continue working was to 
+force-quit Emacs and lose my unsaved work.</p>
+<p>I finally found the right answer <a href="http://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x">here</a>.  Unfortunately, I don't have the 
+points on SuperUser to vote it up.  The solution is:</p>
+<div class="highlight"><pre>(defadvice yes-or-no-p (around prevent-dialog activate)
+  &quot;Prevent yes-or-no-p from activating a dialog&quot;
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(defadvice y-or-n-p (around prevent-dialog-yorn activate)
+  &quot;Prevent y-or-n-p from activating a dialog&quot;
+  (let ((use-dialog-box nil))
+    ad-do-it))
+</pre></div>
+
+
+<p>The two functions are almost the same.  One takes care of ``yes or no'' and the other ``y or n''.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://juanreyero.com/about/">juan reyero</a></li>
+                            <li><a href="http://sachachua.com/blog/">Sasha Chua</a></li>
+                            <li><a href="http://orgmode.org/worg/org-tutorials/index.html">org-mode tutorials</a></li>
+                            <li><a href="http://emacsnyc.org">emacsnyc.org</a></li>
+                            <li><a href="http://bzg.fr/index.en.html">Bastien Guerry</a></li>
+                            <li><a href="http://ianbarton.net/">ian barton</a></li>
+                            <li><a href="http://blog.fperez.org/">Fernando Perez</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/emisshula">twitter</a></li>
+                            <li><a href="https://github.com/EvanMisshula">github</a></li>
+                            <li><a href="http://www.linkedin.com/pub/evan-misshula/20/5b/810‎">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

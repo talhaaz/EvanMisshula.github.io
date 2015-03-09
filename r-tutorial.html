@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Intro to R with Emacs-Speaks-Statistics</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<a href="http://github.com/EvanMisshula/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Evan Misshula </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/bio.html">Bio</a></li>
+                    <li><a href="/pages/academic.html">Academic</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li class="active"><a href="/category/r-course.html">R-course</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/r-tutorial.html" rel="bookmark"
+           title="Permalink to Intro to R with Emacs-Speaks-Statistics">Intro to R with Emacs-Speaks-Statistics</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="EMisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-06-29T00:00:00-04:00">
+                Published: Sun 29 June 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/r-course.html">R-course</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> </p>
+</footer><!-- /.post-info -->      <h1>Intro</h1>
+<p>A number of my colleagues need to analyze data and are learning a
+programming language for the first time.  It does not need to be said,
+this is a very heavy lift and occurs in the presence of a wide diversity
+of well intentioned opinion.  It also occurs in the presence of academic
+bullshit.  This is not well intentioned.  It is designed to sell books and 
+software licenses.  It is my opinion that the appropriate first scripting 
+language to learn for the aspiring social scientist is <a href="http://www.r-project.org/">R</a>. Arguements could 
+be made for perl, python or lisp.  I think these great languages can be learned
+later.  For describing relationships with data and graphing results, <a href="http://www.r-project.org/">R</a> has a great
+set of libraries.</p>
+<h1>R Front ends</h1>
+<p>There are a number of front-ends for <a href="http://www.r-project.org/">R</a>.  The most popular of which is
+R-studio. I think it leaves much to be desired.  It is also produced
+by a company that sells enhancements to <a href="http://www.r-project.org/">R</a> that most users will never
+need.  I find the better and more cost effective solution to be
+<a href="http://ess.r-project.org/">Emacs-Speaks-Statistics (ESS)</a>. Much of the power of the language comes
+from being able to read from files and streams.  Combining this with 
+the uber editor <a href="http://www.gnu.org/software/emacs/">Emacs</a> only makes sense.  For many data manipulation 
+problems the student can solve it either with either tool.</p>
+<p>The intellectual history of this tutorial is taken from Charles
+DiMaggio's excellent <a href="http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/styled-4/styled-6/">introduction to R</a> and two brilliant tutorials
+from Stephen Elgen <a href="http://web.warwick.ac.uk/statsdept/user2011/tutorials/Eglen.html">An introduction to ESS from 2011</a> and <a href="http://sje30.github.io/2014-01-07-cam/">Caimbridge R
+bootcamp</a>.</p>
+<p>Here is our introduction:</p>
+<h3>Emacs</h3>
+<ul>
+<li>Why Emacs</li>
+<li>History of Emacs</li>
+<li>Moving around</li>
+<li>Cut and paste</li>
+<li>Loading/saving files</li>
+<li>Windows</li>
+<li>Search and replace</li>
+<li>Macros</li>
+<li>Modes</li>
+<li>Completion</li>
+<li>Getting help</li>
+<li>libraries</li>
+<li>Hooks</li>
+<li>Philosophy</li>
+</ul>
+<h3>ESS</h3>
+<ul>
+<li>Why ESS?</li>
+<li>History of ESS</li>
+<li>ESS Installation</li>
+<li>Editing and viewing R code</li>
+<li>Making comments</li>
+<li>Indenting your code.</li>
+<li>Viewing help files</li>
+<li>Making help files (.Rd)</li>
+<li>Inferior ESS Processes (<code>*R*</code>)</li>
+<li>Which version of R will it find?</li>
+<li>What can I do in <code>*R*</code>?</li>
+<li>What is emacsclient?</li>
+<li>Transcripts</li>
+<li>How many versions of R can I run?</li>
+<li>Sending code from an R buffer to <code>*R*</code></li>
+<li>Customizing ESS</li>
+<li>When things go wrong with ESS</li>
+</ul>
+<h3>Org Mode</h3>
+<ul>
+<li>intro</li>
+<li>exporting to LaTeX or html</li>
+<li>R examples</li>
+</ul>
+<h3>R language</h3>
+<ul>
+<li>introduction</li>
+<li>foundations</li>
+<li>functions</li>
+<li>packages</li>
+<li>graphics</li>
+<li>data</li>
+<li>variables</li>
+</ul>
+<h3>Advanced stats</h3>
+<ul>
+<li>power</li>
+<li>web/online</li>
+<li>bayes (multilevel, hierarchical)</li>
+<li>spatial</li>
+<li>meta-analysis</li>
+</ul>
+<p>More to come&#x2026;</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://juanreyero.com/about/">juan reyero</a></li>
+                            <li><a href="http://sachachua.com/blog/">Sasha Chua</a></li>
+                            <li><a href="http://orgmode.org/worg/org-tutorials/index.html">org-mode tutorials</a></li>
+                            <li><a href="http://emacsnyc.org">emacsnyc.org</a></li>
+                            <li><a href="http://bzg.fr/index.en.html">Bastien Guerry</a></li>
+                            <li><a href="http://ianbarton.net/">ian barton</a></li>
+                            <li><a href="http://blog.fperez.org/">Fernando Perez</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/emisshula">twitter</a></li>
+                            <li><a href="https://github.com/EvanMisshula">github</a></li>
+                            <li><a href="http://www.linkedin.com/pub/evan-misshula/20/5b/810‎">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

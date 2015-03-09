@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Evan Misshula - Evan Misshula</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<a href="http://github.com/EvanMisshula/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Evan Misshula </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/bio.html">Bio</a></li>
+                    <li><a href="/pages/academic.html">Academic</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li><a href="/category/r-course.html">R-course</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/python-dev-env.html">Python Dev Env</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-01-20T20:10:47-05:00">
+                Published: Mon 20 January 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/evan-misshula.html">Evan Misshula</a>
+        </address>
+<p>In <a href="/category/tutorials.html">Tutorials</a>. </p>
+<p>tags: <a href="/tag/python.html">Python</a> <a href="/tag/environments.html">environments</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info --><h1>Ubuntu: Set up a virtual environment with IPython, numpy and pandas</h1>
+<p>So this is a much needed update for an earlier post on setting up a
+virtual environment. The original post was based on one I found
+<a href="http://technomilk.wordpress.com/2011/07/27/setting-up-our-django-site-environment-with-pythonbrew-and-virtualenv/">technomilk-setup</a>. My prior post is <a href="http://mofj.commons.gc.cuny.edu/2013/06/25/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas/">mofj-setup</a>. Most of the time you
+read about setting up virtual environments, it is in the context of
+web development. But the same benefits hold for analysis and research
+software. You want to be able to reproduce results. It also increases
+security not to be adding all the unverified libraries with root level
+privileges. This post is a minor modification of the outstanding
+tutorial I have been using for the last few months. There are three
+reasons why this needs to be updated:</p>
+<ol>
+<li>
+<p>there is another version of python</p>
+</li>
+<li>
+<p>it does not cover IPython</p>
+</li>
+<li>
+<p>pythonbrew which managed the versions of python is longer maintained</p>
+<p>I will repeat the steps here. First install the c libraries that
+python needs to function.</p>
+<p>I use apt-get in ubuntu so type</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+
+<span class="nv">$ </span>sudo apt-get install libsqlite3-dev libbz2-dev libxml2-dev libxslt-dev curl
+</pre></div>
+
+
+</li>
+</ol>
+<h2>Get a non-system version of python.</h2>
+<p>Then install the pyenv scripts from source. Here is the link for
+<a href="https://github.com/yyuu/pyenv#basic-github-checkout">pyenv</a>. Pyenv is in many ways more sophsticated than pythonbrew. It is
+written in <a href="http://en.wikipedia.org/wiki/Bash_shell">bash</a> not any particular version of python. The advantage is
+that it is not dependent on anything in the language itself. The
+disadvantage is that it is much harder to read the code and understand
+the nature of a bug. One important trick is to turn on the <code>debug</code>
+flag. As my advisor always used to tell me there was nothing more
+brain-dead than a shell, I have spent most of my time avoiding them. I
+use the Bourne Again Shell that comes with Ubuntu. The syntax is
+tricky because everything is a string. Variable definitions can’t have
+any spaces. There are some good tutorials which I will include
+later. For now, here are three links that can tell you the differences
+between bash and an interpreted language like Python.</p>
+<ol>
+<li>
+<p><a href="http://askubuntu.com/questions/110907/python****compared-to-bash">python-bash</a></p>
+</li>
+<li>
+<p><a href="http://superuser.com/questions/414965/when-to-use-bash-and-when-to-use-perl-python-ruby">when-to-use</a></p>
+</li>
+<li>
+<p><a href="http://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement">can-i-replace</a></p>
+<p>I am assuming you have git installed. If not, <a href="https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04">git-tutorial</a> is a good
+tutorial for installing git.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>git clone git://github.com/yyuu/pyenv.git .pyenv
+</pre></div>
+
+
+<p>Define environment variable <code>PYENV_ROOT</code> to point to the path where
+pyenv repo is cloned and add <code>$PYENV_ROOT/bin</code> to your <code>$PATH</code> for access
+to the pyenv command-line utility.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> ‘export <span class="nv">PYENV_ROOT</span><span class="o">=</span>”<span class="nv">$HOME</span>/.pyenv”‘ &gt;&gt; ~/.bashrc
+<span class="nv">$ </span><span class="nb">echo</span> ‘export <span class="nv">PATH</span><span class="o">=</span>”<span class="nv">$PYENV_ROOT</span>/bin:<span class="nv">$PATH</span>”‘ &gt;&gt; ~/.bashrc
+</pre></div>
+
+
+<p>Add pyenv init to your shell to enable shims and autocompletion. Shims
+and binstubs are worth knowing about.  You can read up on them
+<a href="https://github.com/yyuu/pyenv#understanding-shims">understand-shims</a>.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> ‘eval “<span class="k">$(</span>pyenv init -<span class="k">)</span>”‘ &gt;&gt; ~/.bashrc
+</pre></div>
+
+
+<p>Restart your shell so the path changes take effect. You can now begin using pyenv.</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">exec</span> <span class="nv">$SHELL</span>
+</pre></div>
+
+
+<p>Install Python versions into <code>$PYENV_ROOT/versions</code>. For example, to
+install Python 2.7.5, download and unpack the source, then run:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv install 2.7.5
+<span class="nv">$ </span>pyenv rehash
+</pre></div>
+
+
+<p>And now we have to tell the system to use this new version of python</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv <span class="nb">local </span>2.7.5
+</pre></div>
+
+
+</li>
+</ol>
+<h2>Install virtualenv</h2>
+<p>We are going to do two tricky things we are going to install
+virtualenv in the version of python AND install the pyenv plugin virtualenv.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install virtualenv
+</pre></div>
+
+
+<p>and to install the pyenv plugin.</p>
+<div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+</pre></div>
+
+
+<p>You are now ready to create a virtual environment in a non-system version of python. I don’t understand why this will not work if you are anywhere else.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv virtualenv
+<span class="nv">$ </span>pyenv virtualenv 2.7.5 no-more-drug-war
+</pre></div>
+
+
+<p>We can list all of the virtual environments. Change directory to the
+one you want to work in and in my case the virtual environment is
+no-more-drug-war:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv activate no-more-drug-war:
+</pre></div>
+
+
+<p>We can list the virtualenvs:</p>
+<p>#+BEGIN<sub>SRC</sub> 
+$ pyenv virtualenvs
+dssg (created from /usr)
+lc (created from /usr</p>
+<h1>no-more-drug-war (created from /usr)</h1>
+<p>scrp (created from /usr)
+seek (created from /usr)
+\#+END<sub>SRC</sub></p>
+<p>To review, we can activate the virtual environment with the following command.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv activate no-more-drug-war
+</pre></div>
+
+
+<p>You can deactivate the activate’d virtualenv by pyenv deactivate.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv deactivate
+</pre></div>
+
+
+<p>So, in order to know what packages we have installed at any time, we install yolk.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install yolk
+</pre></div>
+
+
+<p>Do not type sudo! To see what it installed at any time:</p>
+<div class="highlight"><pre><span class="nv">$ </span>yolk -l
+</pre></div>
+
+
+<p>A list of further packages for IPython are available here. Type these individually and they each may take a few minutes to install.</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install jinja2
+
+<span class="nv">$ </span>pip install pyzmq
+
+<span class="nv">$ </span>pip install pygments
+
+<span class="nv">$ </span>pip install tornado
+
+<span class="nv">$ </span>pip install nose
+
+<span class="nv">$ </span>pip install numpy
+
+<span class="nv">$ </span>pip install scipy
+
+<span class="nv">$ </span>pip install matplotlib
+
+<span class="nv">$ </span>pip install pandas
+
+<span class="nv">$ </span>pip install ipython
+</pre></div>
+
+
+<p>Turning it on and off</p>
+<p>Now to get out of your virtual environment, just type</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv deactivate
+</pre></div>
+
+
+<p>To get back in, type:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pyenv activate no-more-drug-war
+</pre></div>
+
+
+<p>Good luck!</p>
+<p>I will try to send a pull request to add some of this to pyenv and
+correct my question on stack overlfow.</p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://juanreyero.com/about/">juan reyero</a></li>
+                            <li><a href="http://sachachua.com/blog/">Sasha Chua</a></li>
+                            <li><a href="http://orgmode.org/worg/org-tutorials/index.html">org-mode tutorials</a></li>
+                            <li><a href="http://emacsnyc.org">emacsnyc.org</a></li>
+                            <li><a href="http://bzg.fr/index.en.html">Bastien Guerry</a></li>
+                            <li><a href="http://ianbarton.net/">ian barton</a></li>
+                            <li><a href="http://blog.fperez.org/">Fernando Perez</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/emisshula">twitter</a></li>
+                            <li><a href="https://github.com/EvanMisshula">github</a></li>
+                            <li><a href="http://www.linkedin.com/pub/evan-misshula/20/5b/810‎">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

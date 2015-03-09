@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Mac OS X Installation</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+<a href="http://github.com/EvanMisshula/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="/">Evan Misshula </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/bio.html">Bio</a></li>
+                    <li><a href="/pages/academic.html">Academic</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/category/criminal-justice.html">Criminal Justice</a></li>
+                    <li class="active"><a href="/category/r-course.html">R-course</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/mac-dev-env.html" rel="bookmark"
+           title="Permalink to Mac OS X Installation">Mac OS X Installation</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="EMisshula">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-07-30T15:03:00-04:00">
+                Published: Wed 30 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/emisshula.html">emisshula</a>
+        </address>
+<p>In <a href="/category/r-course.html">R-course</a>. </p>
+<p>tags: <a href="/tag/emacs.html">Emacs</a> <a href="/tag/rstats.html">Rstats</a> <a href="/tag/ess.html">ESS</a> <a href="/tag/os-x.html">OS X</a> </p>
+</footer><!-- /.post-info -->      <blockquote>
+<p>I have developed a Zen-like approach to the operating systems that
+people use: 'When you're ready, the right operating system will appear
+in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
+online graphic design tool. Formerly, he was an advisor to the
+Motorola business unit of Google and chief evangelist of Apple.</p>
+</blockquote>
+<p><img src="../../images/guy.jpeg" width="350px" alt="guy" title="guy"></p>
+
+<h1>Dev Environment</h1>
+<p>A development environment is one where you can make the software you
+need to run.  You need this to run the latest free software which is
+often only implemented in source code.  Particularly to take advantage
+of common mathematical libraries you need a Fortran, C and C++
+compiler even if you never use those languages directly.  Apple does
+not include it in their default configuration because it does not want
+you to create your own software, it want you to buy their software
+products (rant over).</p>
+<h1>Obtain the compilers</h1>
+<p>First you need to make sure that you have the latest operating system.
+To do that, you need to left click on the Apple icon and read the release.</p>
+<p><img src="../../images/osRelease.png" width="350px" alt="os" title="os"></p>
+
+<p>Then we have to obtain an <a href="https://appleid.apple.com/">appleID</a> including submitting a credit card.
+The good news is that they won't charge you.  We just need to obtain
+the xcode which has Apple's development tools.  The only ones I have
+ever used are the compilers which are FREE software.  Bottom line is,
+legally they can't charge for them (<a href="https://www.gnu.org/philosophy/apsl.html">copyleft</a>). Search in Google for 
+"xCode download".  It will automatically detect your OS and if you have
+Mac OS X installed, it will include the free button you need to press
+to download it.</p>
+<p><img src="../../images/xCode.png" width="350px" alt="xCode" title="xCode"></p>
+
+<p>When it finishes downloading it will automatically install and and you 
+will see the picture below. The only difference is a small button which 
+now says installed. (Yay!)</p>
+<p><img src="../../images/xCodeInstalled.png" width="350px" alt="xCodeInstalled" title="xCodeInstalled"></p>
+
+<blockquote>
+<p>If you have any trouble sounding condescending, find a Unix user to
+show you how it's done. ~Scott Adams</p>
+</blockquote>
+<h1>Obtain an alternate windowing library</h1>
+<p>The next step is to download the xQuartz project which let's the free
+software on your machine open new windows.  Software needs to open new
+windows if it needs to warn you about something so this is an
+essential function.  You can find it at this <a href="http://xquartz.macosforge.org/landing/">xQuartz link</a>.  The file
+is a dmg.  Since this is not an official Apple product it will be
+saved in downloads.  <a href="http://www.ofzenandcomputing.com/how-to-install-dmg-files-mac/">Here</a> is a link that explains in detail how to
+install a dmg file.  A dmg is disc image file.  You need to left click
+on it. That will open an empty box.  See picture below.  Double click
+on the box and that will start an installer.  You will need to put in
+your password. Also see picture further below.</p>
+<p><img src="../../images/xQuartzPkg.png" width="350px" alt="xQuartzPkg" title="xQuartzPkg"></p>
+
+<p><img src="../../images/xQuartzInstaller.png" width="350px" alt="xQuartzInstalled" title="xQuartzInstalled"></p>
+
+<p>You have to log back in and out for xQuartz to take effect.</p>
+<h1>Obtain a package manager</h1>
+<p>Most distributions of Linux come with a package manager to sort out which
+software depends on which other libraries.  These were a huge innovation
+in the Linux world.  And there is a package manager for Mac OS X. It is 
+called <a href="http://brew.sh/">Homebrew</a>. To install it we are going to need the terminal which
+is hard to find on a Mac.  You need to left click the launcher icon.  See
+picture below.</p>
+<p><img src="../../images/launcher.png" width="350px" alt="launcher" title="launcher"></p>
+
+<p>Then you need to find the terminal.  It is hiding in the other icon. See
+the picture below and left click the similar image on your Mac.</p>
+<p><img src="../../images/otherIcon.png" width="350px" alt="otherIcon" title="otherIcon"></p>
+
+<p>Then left click the terminal icon, pictured below.</p>
+<p><img src="../../images/terminalIcon.png" width="350px" alt="terminalIcon" title="terminalIcon"></p>
+
+<p>Now copy the Homebrew installation script (using command-C to copy and 
+command V to paste) and paste it inside the terminal as pictured below:</p>
+<p><img src="../../images/homebrew.png" width="350px" alt="homebrew" title="homebrew"></p>
+
+<p>Now press the [enter key].  You will be prompted for your password.  When
+Homebrew finishes type <code>brew doctor</code> at the prompt. If all goes well
+you will get a positive message.  As <a href="http://zmjones.com/mac-setup/">Zed Jones</a> points out, we still need
+to manually set the path. In the terminal type:</p>
+<p><code>sudo emacs /etc/paths</code></p>
+<p>You will have to change the file to look like this:</p>
+<div class="highlight"><pre>/usr/local/bin
+/usr/bin
+/bin
+/usr/sbin
+/sbin
+</pre></div>
+
+
+<p>Type Ctrl-x Ctrl-s to save it and Ctrl-x Ctrl-c to quit.</p>
+<h1>Obtain git</h1>
+<p>The first thing we need is git. Git is the source control and
+collaboration software that is most popular in the FREE software
+world. Type</p>
+<div class="highlight"><pre>brew install git
+</pre></div>
+
+
+<h1>Obtain emacs</h1>
+<p>In order to be able to manipulate the files that contain our data and 
+present our output, we need to obtain our editor, Emacs.</p>
+<div class="highlight"><pre>brew install emacs --cocoa
+</pre></div>
+
+
+<p>Here again there are some quirks.  On Linux, we would simply use the
+Emacs package manager but on Mac we have used the package manager
+Homebrew so the Emacs package manager gui install button won't install
+because of permission problems.  So we have to use the command interactive 
+commands from Emacs.  No big deal, once you figure it out but it took a 
+while to find it. I found this <a href="http://howardabrams.com/projects/dot-files/emacs.html">post</a> helpful.  So we need to set up the 
+Emacs repositories by creating a <em>.emacs</em> file. Any file with a '.' in front
+is a hidden configuration file.  It will not appear when you type <code>ls</code> for 
+list files at the command prompt.  You can edit them in Emacs <code>C-x C-f .emacs</code>.
+Now we have to add the code below.  (Used <code>Command-C</code> to copy it and <code>Ctrl-Y</code>
+in Emacs to paste/yank it.</p>
+<div class="highlight"><pre>(require &#39;package)
+(setq package-archives &#39;((&quot;org&quot;       . &quot;http://orgmode.org/elpa/&quot;)
+                         (&quot;gnu&quot;       . &quot;http://elpa.gnu.org/packages/&quot;)
+                         (&quot;melpa&quot;     . &quot;http://melpa.milkbox.net/packages/&quot;)
+                         (&quot;marmalade&quot; . &quot;http://marmalade-repo.org/packages/&quot;)))
+(package-initialize)
+</pre></div>
+
+
+<p>Now just after this we can specify a programmatic way to check which
+packages are installed.</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nx">defun</span> <span class="nx">filter</span> <span class="p">(</span><span class="nx">condp</span> <span class="nx">lst</span><span class="p">)</span>
+  <span class="s2">&quot;Emacs Lisp doesn’t come with a ‘filter’ function to keep elements that satisfy</span>
+<span class="s2">a conditional and excise the elements that do not satisfy it. One can use ‘mapcar’</span>
+<span class="s2">to iterate over a list with a conditional, and then use ‘delq’ to remove the ‘nil’</span>
+<span class="s2">values.&quot;</span>
+  <span class="p">(</span><span class="nx">delq</span> <span class="nx">nil</span>
+        <span class="p">(</span><span class="nx">mapcar</span> <span class="p">(</span><span class="nx">lambda</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">(</span><span class="nx">and</span> <span class="p">(</span><span class="nx">funcall</span> <span class="nx">condp</span> <span class="nx">x</span><span class="p">)</span> <span class="nx">x</span><span class="p">))</span> <span class="nx">lst</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nx">defun</span> <span class="nx">inverse</span><span class="o">-</span><span class="nx">filter</span> <span class="p">(</span><span class="nx">condp</span> <span class="nx">lst</span><span class="p">)</span>
+  <span class="s2">&quot;A filter function, but returns a list of the entries that don&#39;t match the predicate.&quot;</span>
+  <span class="p">(</span><span class="nx">delq</span> <span class="nx">nil</span>
+        <span class="p">(</span><span class="nx">mapcar</span> <span class="p">(</span><span class="nx">lambda</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">(</span><span class="nx">and</span> <span class="p">(</span><span class="nx">not</span> <span class="p">(</span><span class="nx">funcall</span> <span class="nx">condp</span> <span class="nx">x</span><span class="p">))</span> <span class="nx">x</span><span class="p">))</span> <span class="nx">lst</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nx">defun</span> <span class="nx">packages</span><span class="o">-</span><span class="nx">install</span> <span class="p">(</span><span class="nx">packages</span><span class="p">)</span>
+  <span class="s2">&quot;Given a list of packages, this will install them from the standard locations.&quot;</span>
+  <span class="p">(</span><span class="kd">let</span> <span class="p">((</span><span class="nx">to</span><span class="o">-</span><span class="nx">install</span> <span class="p">(</span><span class="nx">inverse</span><span class="o">-</span><span class="nx">filter</span> <span class="err">&#39;</span><span class="kr">package</span><span class="o">-</span><span class="nx">installed</span><span class="o">-</span><span class="nx">p</span> <span class="nx">packages</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nx">when</span> <span class="nx">to</span><span class="o">-</span><span class="nx">install</span>
+      <span class="p">(</span><span class="kr">package</span><span class="o">-</span><span class="nx">refresh</span><span class="o">-</span><span class="nx">contents</span><span class="p">)</span>
+      <span class="p">(</span><span class="nx">dolist</span> <span class="p">(</span><span class="nx">it</span> <span class="nx">to</span><span class="o">-</span><span class="nx">install</span><span class="p">)</span>
+          <span class="p">(</span><span class="kr">package</span><span class="o">-</span><span class="nx">install</span> <span class="nx">it</span><span class="p">)</span>
+      <span class="p">(</span><span class="k">delete</span><span class="o">-</span><span class="nx">other</span><span class="o">-</span><span class="nx">windows</span><span class="p">)))))</span>
+</pre></div>
+
+
+<h1>Emacs package to get the right environment</h1>
+<p>Now the first thing we should do is correct for another Mac induced 
+problem. An Emacs instance started from the graphical user interface
+will have a different environment than a sell in a terminal window.
+This happens because OS X does not run a shell during login.  If the
+environment is different you will get weird behavior when Emacs calls
+external utilities like make.</p>
+<div class="highlight"><pre>M-x package-install RET exec-path-from-shell-initialize
+</pre></div>
+
+
+<p>Then in the <code>.emacs</code> file add the following code:</p>
+<div class="highlight"><pre>(require &#39;exec-path-from-shell)
+    (when (memq window-system &#39;(mac ns))
+    (exec-path-from-shell-initialize))
+</pre></div>
+
+
+<p>At this point quit emacs <code>C-x C-c</code> and restart. </p>
+<h1>Emacs package to get the communicate with R (ESS)</h1>
+<p>Here again type <code>M-x package-install RET ess RET</code>.  This will 
+install ESS. Find the <em>.emacs</em> file by typin <code>C-x C-f .emacs</code>
+and add the following code.</p>
+<div class="highlight"><pre>;;ess-mode configuration
+(setq ess-ask-for-ess-directory t) 
+(setq inferior-R-program-name &quot;/usr/local/bin/R&quot;) 
+(setq ess-local-process-name &quot;R&quot;) 
+(require &#39;ess-site)
+</pre></div>
+
+
+<h1>Install R</h1>
+<p>Another weird quirk is that xCode has removed gcc which is the most
+common set of compilers in the world.  They are what R expects to
+encounter.  There are two alternatives.  You can build a late version
+of the compilers via the instructions found at this <a href="http://apple.stackexchange.com/questions/38222/how-do-i-install-gcc-via-homebrew">link</a> </p>
+<div class="highlight"><pre>brew install [flags] https://raw.github.com/Homebrew/homebrew-versions/gcc48.rb
+</pre></div>
+
+
+<p>Where [flags] should include all the required languages,
+e.g. (&#x2013;enable-cxx &#x2013;enable-fortran).  Also see this <a href="https://coderwall.com/p/lqpp8w">link</a> for an
+example of how to create a symlink to make a newer version the
+default.  However I got away with just installing version 4.2 (a seven
+year old version of the gcc compilers by installing XCode Command Line
+Tools. These are separate from XCode which I found confusing.  You can
+install them with xcode-select &#x2013;install).  Then you can just type</p>
+<div class="highlight"><pre>brew install gcc
+</pre></div>
+
+
+<p>Now that <code>gcc</code> is installed you can install R.</p>
+<div class="highlight"><pre>brew tap homebrew/science #the R formula has been moved here
+brew install r
+</pre></div>
+
+
+<p>You can test the installation by typing <code>M-x R</code> in Emacs and 
+you should have R inside of Emacs.  Next post will get Python 
+set up.  I am betting our 4.2 version of gcc is not going to 
+be good enough.</p>
+<h1>Dedication</h1>
+<p>This post is dedicated to Matt Gold and the <a href="http://digitalfellows.commons.gc.cuny.edu/">GC Digital Fellows</a> project
+who were able to obtain for me not only access to a Mac but insured
+that I would have admin rights to install software and create this 
+tutorial. They bare no responsibility for any mistakes or omissions 
+which are solely the responsiblity of the author.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://juanreyero.com/about/">juan reyero</a></li>
+                            <li><a href="http://sachachua.com/blog/">Sasha Chua</a></li>
+                            <li><a href="http://orgmode.org/worg/org-tutorials/index.html">org-mode tutorials</a></li>
+                            <li><a href="http://emacsnyc.org">emacsnyc.org</a></li>
+                            <li><a href="http://bzg.fr/index.en.html">Bastien Guerry</a></li>
+                            <li><a href="http://ianbarton.net/">ian barton</a></li>
+                            <li><a href="http://blog.fperez.org/">Fernando Perez</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/emisshula">twitter</a></li>
+                            <li><a href="https://github.com/EvanMisshula">github</a></li>
+                            <li><a href="http://www.linkedin.com/pub/evan-misshula/20/5b/810‎">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
