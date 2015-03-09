@@ -1,0 +1,773 @@
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Org-mode as a tool for reproducible research</title>
+<meta name="author" content="(Evan Misshula)"/>
+
+<link rel="stylesheet" href="file:///../reveal.js/css/reveal.min.css"/>
+<link rel="stylesheet" href="file:///../reveal.js/css/theme/moon.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///../reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<meta name="description" content="Org-Reveal Introduction.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<h1>Org-mode as a tool for reproducible research</h1>
+<h2>Evan Misshula</h2>
+<h2><a href="mailto:emisshula@jjay.cuny.edu">emisshula@jjay.cuny.edu</a></h2>
+<h2></h2></section>
+
+
+
+
+<section id="sec-1" >
+
+<h2>Reproducible research</h2>
+<p>
+Reproducible research is the idea that scientific claims are published:
+</p>
+<ul class="org-ul">
+<li>with their data 
+</li>
+<li>software code used to analyze them
+</li>
+</ul>
+
+</section>
+<section id="sec-2" >
+
+<h2>Clarebout's principal</h2>
+<blockquote>
+<p>
+An article about computational result is advertising, not
+scholarship. The actual scholarship is the full software environment,
+code and data, that produced the result.
+</p>
+</blockquote>
+<p>
+Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992
+</p>
+
+</section>
+<section id="sec-3" >
+
+<h2>Tie code to figure</h2>
+<blockquote>
+<p>
+When we publish articles containing figures which were generated
+by computer, we also publish the complete software environment
+which generates the figures
+</p>
+</blockquote>
+<p>
+Buckheit &amp; Donoho, Wavelab and Reproducible Research, 1995.
+</p>
+
+</section>
+<section id="sec-4" >
+
+<h2>Overview</h2>
+<ul class="org-ul">
+<li>scope of the problem
+</li>
+<li>definitions
+</li>
+<li>current practice
+</li>
+<li>tools 
+</li>
+<li>changes to improve reproducibility and differentiate research
+</li>
+</ul>
+
+</section>
+<section id="sec-5" >
+
+<h2>Is <i>#Reproducibility</i> a problem?</h2>
+</section>
+<section>
+<section id="sec-5-1" >
+
+<h3>Cancer research</h3>
+<ul class="org-ul">
+<li>In 2012, an Amgen team tried to reproduce important resutls
+</li>
+<li>pre-clinical targets for cancer 
+</li>
+<li>47 out of 53 medical research papers 
+</li>
+<li>were irreproducible
+</li>
+</ul>
+
+<p>
+(<a href="http://www.nature.com/nature/journal/v483/n7391/full/483531a.html">http://www.nature.com/nature/journal/v483/n7391/full/483531a.html</a>)
+</p>
+</section>
+
+</section>
+<section>
+<section id="sec-5-2" >
+
+<h3>Psychology</h3>
+<ul class="org-ul">
+<li>Researchers explained in a 2006 study that, of 249 data sets from
+American Psychology Association (APA) empirical articles, 73% of
+contacted authors did not respond with their data over a 6-month
+period.
+</li>
+<li><a href="http://www.ncbi.nlm.nih.gov/pubmed/17032082">http://www.ncbi.nlm.nih.gov/pubmed/17032082</a>
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-5-3" >
+
+<h3>Psychology II</h3>
+<img src="./images/Screen Shot 2014-11-02 at 10.53.23 PM.png" alt="replication" width="850px" />
+
+<ul class="org-ul">
+<li>Ioannidis, <i>Why science is not necessarily self-correcting</i> 2012.
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-5-4" >
+
+<h3>Economics</h3>
+</section>
+<section id="sec-5-4-1" >
+
+<h4><b>Reinhart &amp; Rogoff</b> <i>Growth in a time of debt</i>, NBER, 2009</h4>
+<ul class="org-ul">
+<li>High debt-to-gdp and low gdp growth are associated 
+</li>
+<li>Made their calculations in Excel
+</li>
+<li>Substantial popular impact on autsterity politics
+</li>
+</ul>
+<ul class="org-ul">
+<li class="fragment roll-in highlight-red">Grad student finds an error in the coding
+</li>
+</ul>
+<ul class="org-ul">
+<li class="fragment roll-in highlight-green">Herndon, Ash and Pollin publish a rebuttal
+</li>
+</ul>
+
+</section>
+<section id="sec-5-4-2" >
+
+<h4>Advice from a statistician</h4>
+<img src="./images/Screen Shot 2014-11-03 at 12.07.36 AM.png" alt="replication" width="850px" />
+</section>
+
+
+</section>
+<section>
+<section id="sec-5-5" >
+
+<h3>Computer Science</h3>
+<p>
+Christian Collberg (<a href="http://reproducibility.cs.arizona.edu/v1/tr.pdf">http://reproducibility.cs.arizona.edu/v1/tr.pdf</a>) looked 
+at the papers in eight conferences and five ACM journals.  They were able 
+to reproduce 102 out 613 papers 24.9%
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-5-6" >
+
+<h3>History of reproducible research</h3>
+</section>
+<section id="sec-5-6-1" >
+
+<h4>Mathematics</h4>
+<ul class="org-ul">
+<li>First proofs Greeks (ca. 400 B.C.E.)
+<ul class="org-ul">
+<li>Pythagoras (569–500 B.C.E.) proofs
+</li>
+<li>Euclid of Alexandria (325 B.C.E.–265 B.C.E.) axioms and definitions
+</li>
+<li>Eudoxus (408 B.C.E–355 B.C.E.) theorems
+</li>
+<li>William of Occam (1288 C.E.–1348 C.E.) fewest steps
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-5-6-2" >
+
+<h4>Advances in mathematics and proof</h4>
+<ul class="org-ul">
+<li>Jean Baptiste Joseph Fourier (1768–1830) 
+<ul class="org-ul">
+<li>expansion of an arbitrary function into a trigonometric series
+</li>
+</ul>
+</li>
+<li>Evariste Galois (1812–1832) and Augustin Louis-Cauchy (1789–1857) 
+<ul class="org-ul">
+<li>abstract algebra by inventing group theory.
+</li>
+</ul>
+</li>
+<li>Bernhard Riemann (1826–1866) 
+<ul class="org-ul">
+<li>differential geometry, complex variable theory
+</li>
+</ul>
+</li>
+<li>Augustin-Louis Cauchy
+<ul class="org-ul">
+<li>partial differential equations
+</li>
+</ul>
+</li>
+<li>Carl Jacobi (1804–1851), Ernst Kummer (1810–1893), Niels Henrick Abel (1802–1829)
+<ul class="org-ul">
+<li>number theory
+</li>
+</ul>
+</li>
+<li>Joseph Louis Lagrange (1736–1813), Cauchy 
+<ul class="org-ul">
+<li>calculus of variations, classical mechanics, the implicit function theorem
+</li>
+</ul>
+</li>
+<li>Karl Weierstrass (1815–1897) 
+<ul class="org-ul">
+<li>real and complex analysis with numerous examples and proofs
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="sec-5-6-3" >
+
+<h4>Anti-replicatants</h4>
+<ul class="org-ul">
+<li>Gauss
+<ul class="org-ul">
+<li>inscrutible style
+</li>
+</ul>
+</li>
+<li>Bourbaki
+<ul class="org-ul">
+<li>Rejection of intuition of any kind
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-5-6-4" >
+
+<h4>Gauss</h4>
+<blockquote>
+<p>
+No self-respecting architect leaves the scaffolding in place after completing the building.
+</p>
+</blockquote>
+<p>
+attributed to Carl Friedrich Gauss (1777 C.E. - 1855 C.E.) in defense of his inscrutible style
+</p>
+
+</section>
+<section id="sec-5-6-5" >
+
+<h4>Twentieth Century Contributions</h4>
+<blockquote>
+<p>
+A proof is any completely convincing argument.
+</p>
+</blockquote>
+<p>
+Everret Bishop, inventor of <i>Constructive Analysis</i>
+E. Bishop, <i>Foundations of Constructive Analysis</i>, McGraw-Hill, New York, 1967.
+</p>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-5-7" >
+
+<h3>Experiments</h3>
+<ul class="org-ul">
+<li>Robert Grosseteste (c. 1175 C.E. –  1253 C.E.)
+<ul class="org-ul">
+<li>reasoned from universal to particular prediction
+</li>
+<li><i>Posterior Analytics</i>
+</li>
+</ul>
+</li>
+<li>Roger Bacon, (c. 1214 C.E. – 1294 C.E.)
+<ul class="org-ul">
+<li>observation, hypothesis, experimentation, and the need for independent verification. 
+</li>
+</ul>
+</li>
+<li>Galileo (1564 C.E. - 1642 C.E.),manufactured multiple <i>copies</i> of his telescopes
+</li>
+<li>Pasteur added <i>Materials and Methods</i> section to articles
+</li>
+</ul>
+</section>
+
+</section>
+<section id="sec-6" >
+
+<h2>Modern leaders of reproducibility I</h2>
+<ul class="org-ul">
+<li>Knuth (1984) "literate programming"
+<ul class="org-ul">
+<li><a href="http://comjnl.oxfordjournals.org/content/27/2/97.short">http://comjnl.oxfordjournals.org/content/27/2/97.short</a>
+</li>
+</ul>
+</li>
+<li>Stallman (1984) FREE software
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/philosophy/free-sw.html">https://www.gnu.org/philosophy/free-sw.html</a>
+</li>
+</ul>
+</li>
+<li>Lessig, Abelson and Eldred (2001) Creative Commons
+<ul class="org-ul">
+<li><a href="https://creativecommons.org/">https://creativecommons.org/</a>
+</li>
+</ul>
+</li>
+<li>Torvalds (2005) git
+<ul class="org-ul">
+<li><a href="http://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git">http://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="sec-7" >
+
+<h2>Modern leaders of reproducibility II</h2>
+<ul class="org-ul">
+<li>Iodonnis (2005)
+<ul class="org-ul">
+<li>most published research is False
+</li>
+<li>25 million papers between 1996 - 2011   
+</li>
+<li>85% of research assets are wasted
+</li>
+</ul>
+<p>
+<a href="http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.0020124">http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.0020124</a>
+</p>
+</li>
+<li>Stodden (2007)
+The Legal Framework for Reproducible Scientific Research: Licensing and Copyright
+<ul class="org-ul">
+<li><a href="http://researchcompendia.org/">http://researchcompendia.org/</a>
+</li>
+<li><a href="http://www.runmycode.org/">http://www.runmycode.org/</a>
+</li>
+<li><a href="http://scitation.aip.org/content/aip/journal/cise/11/1/10.1109/MCSE.2009.19">http://scitation.aip.org/content/aip/journal/cise/11/1/10.1109/MCSE.2009.19</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="sec-8" >
+
+<h2>Tools for computational reproduciblity</h2>
+<ul class="org-ul">
+<li>(Stodden, April 2014)
+<ul class="org-ul">
+<li><a href="http://web.stanford.edu/~vcs/Talks.html">http://web.stanford.edu/~vcs/Talks.html</a> 
+</li>
+</ul>
+</li>
+<li>(Marwick, March 2013)
+<ul class="org-ul">
+<li><a href="http://rpubs.com/benmarwick/csss-rr">http://rpubs.com/benmarwick/csss-rr</a>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section>
+<section id="sec-8-1" >
+
+<h3>Dissememination platforms</h3>
+<ul class="org-ul">
+<li><a href="http://researchcompendia.org/">ResearchCompendia.org</a> (already published articles)
+</li>
+<li><a href="http://mloss.org/software/">MLOSS.org </a> (machine learning)
+</li>
+<li><a href="http://datahub.io/">thedatahub.org</a> (data sets)
+</li>
+<li><a href="https://osf.io/">Open Science Framework</a> (planning to publishing)
+</li>
+<li><a href="http://www.ahay.org/wiki/Main_Page">Madagascar</a> (multi-dimensional analysis)
+</li>
+<li><a href="http://nanohub.org/">nanoHUB.org</a> (nano-techonology simulation platform)
+</li>
+<li><a href="http://www.runmycode.org/">runmycode.org</a> (code and data)
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-8-2" >
+
+<h3>Research Environments</h3>
+<ul class="org-ul">
+<li><a href="http://www.vistrails.org/index.php/Main_Page#VisTrails_Overview">VisTrails</a> (python libraries and \LaTex) 
+</li>
+<li><a href="https://kepler-project.org/">Kepler-project</a> (R and C wrappers though built in Java)
+</li>
+<li><a href="https://usegalaxy.org/">Galaxy</a> (biomedical data analysis)
+</li>
+<li><a href="http://www.broadinstitute.org/cancer/software/genepattern/">GenePattern</a> (gene analysis framework)
+</li>
+<li><a href="http://neuralensemble.org/sumatra/">Sumatra</a> (electronic notebook for simulations) 
+</li>
+<li><a href="http://www.taverna.org.uk/introduction/">Taverna</a> (workflow management and R)
+</li>
+<li><a href="http://www.pgbovine.net/cde.html">CDE</a> (portable linux apps with data and dependencies)
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-8-3" >
+
+<h3>Embedded Publishing</h3>
+<ul class="org-ul">
+<li><a href="http://jupyter.org/">Jupyter</a> (2014, multi-language interactive environment)
+</li>
+<li><a href="http://ipython.org/">IPython</a> (Perez and Granger, 2007, python interactive environment)
+</li>
+<li><a href="http://vcr.stanford.edu/">Verifiable Computational Research</a> (Stanford University, matlab plugin) 
+</li>
+<li><a href="https://collage.elsevier.com/">Collage</a> (Elsevier)
+</li>
+<li><a href="http://is.ieis.tue.nl/staff/pvgorp/share/">share</a> (University of Eindhoven, linux containers)
+</li>
+<li><a href="https://www.stat.uni-muenchen.de/~leisch/Sweave/">Sweave</a> (Leisch 2002, R)
+</li>
+<li><a href="http://yihui.name/knitr/">knitr</a> (Xie, 2013, R)
+</li>
+<li><a href="http://orgmode.org/">Org-mode</a> (Schulte, 2012, multi-language)
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-8-4" >
+
+<h3>Org-mode solves three problems</h3>
+<p>
+(Kitchin, <i>Emacs, Org-mode + python reproducible research</i>, 2013)
+<a href="http://www.youtube.com/watch?v=1-dUkyn_fZA">http://www.youtube.com/watch?v=1-dUkyn_fZA</a>
+</p>
+
+<ul class="org-ul">
+<li>documents computation workflow
+</li>
+<li>integrates text, math and code
+</li>
+<li>produce or modifies a figure
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-8-5" >
+
+<h3>Org mode and Emacs</h3>
+<ul class="org-ul">
+<li>Emacs is written in a full programming language
+</li>
+<li>understands LaTeX, markdown, language modes (R, Python, C, C++ and Java etc.)
+</li>
+<li>can interact with OS
+<ul class="org-ul">
+<li>execute code
+</li>
+<li>read the standard output
+</li>
+<li>read the standard error (and insert into the buffer)
+</li>
+</ul>
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-8-6" >
+
+<h3>Org-mode</h3>
+<ul class="org-ul">
+<li>note taking
+</li>
+<li>TODO lists
+</li>
+<li>differentiates between text, code and data
+</li>
+<li>code executes in the buffer
+</li>
+<li>enables links to files, urls
+</li>
+<li>#+INCLUDE allows files to be broken into reusable pieces
+</li>
+<li>exports available LaTeX, html, reveal.js etc.
+</li>
+</ul>
+</section>
+
+</section>
+<section id="sec-9" >
+
+<h2>Initialize languages        (main document)</h2>
+<div class="org-src-container">
+
+<pre  class="src src-org">** org file
+[[file:initialize.org]]
+</pre>
+</div>
+
+</section>
+<section id="sec-10" >
+
+<h2>Initialize languages</h2>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp" id="configuration">;; first it is necessary to ensure that Org-mode loads support for the
+;; languages used by code blocks in this article
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (ditaa      . t)     
+     (dot        . t)
+     (emacs-lisp . t)
+     (haskell    . t)
+     (org        . t)
+     (perl       . t)
+     (python     . t)
+     (R          . t)
+     (ruby       . t)
+     (sh         . t)
+     (sqlite     . t)))
+  ;; then we'll remove the need to confirm evaluation of each code
+  ;; block, NOTE: if you are concerned about execution of malicious code
+  ;; through code blocks, then comment out the following line
+  (setq org-confirm-babel-evaluate nil)
+  ;; finally we'll customize the default behavior of Org-mode code blocks
+  ;; so that they can be used to display examples of Org-mode syntax
+  (setf org-babel-default-header-args:org '((:exports . "code")))
+</pre>
+</div>
+
+</section>
+<section id="sec-11" >
+
+<h2>shell script tricks</h2>
+<div class="org-src-container">
+
+<pre  class="src src-sh" id="sort_files">cd ~/Documents/rr  
+ls | sort
+</pre>
+</div>
+
+</section>
+<section id="sec-12" >
+
+<h2>shell script (how it exports, code only)</h2>
+<div class="org-src-container">
+
+<pre  class="src src-sh" id="sort_files">cd ~/Documents/rr
+ls | sort
+</pre>
+</div>
+
+</section>
+<section id="sec-13" >
+
+<h2>shell script (how it looks in Emacs)</h2>
+<img src="./images/shell_org.png" alt="shell-script" width="850px" />
+
+</section>
+<section id="sec-14" >
+
+<h2>python script (code and results)</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python" id="sort_files_python">import os
+files = os.listdir('.')
+files.sort()
+for f in files: print f
+</pre>
+</div>
+
+<pre class="example">
+.Rhistory
+3dscatter.R
+3dscatter.R~
+gh
+images
+initialize.org
+initialize.org~
+mybib.bib
+mybib.bib~
+reveal.js
+rr.org
+rr.org~
+three_d_scatter.png
+threed_scatter.png
+</pre>
+
+</section>
+<section id="sec-15" >
+
+<h2>text and math (raw latex)</h2>
+<img src="./images/raw_latex_org.png" alt="raw-latex" width="850px" />
+
+</section>
+<section id="sec-16" >
+
+<h2>text and compiled LaTex</h2>
+<img src="./images/processed_latex_org.png" alt="processed-latex" width="850px" />
+
+</section>
+<section id="sec-17" >
+
+<h2>create a graph (exported code)</h2>
+<div class="org-src-container">
+
+<pre  class="src src-R" id="three_d_scatter">X = seq(1, 100, 5)
+Y = seq (1, 100, 5)
+Z = rnorm (length (X), 10, 2)
+data1 &lt;- data.frame (X, Y, Z)
+data2 &lt;- data.frame (X, Y, Z1 = Z - 5)
+data3 &lt;- data.frame (X, Y, Z1 = Z - 3)
+
+require(scatterplot3d)
+s3d &lt;- scatterplot3d(data1, color = "blue", pch = 19, xlim=NULL, ylim=NULL, zlim= c(0, 20))
+s3d$points3d(data2, col = "red", pch = 18)
+s3d$points3d(data3, col = "green4", pch = 17)
+</pre>
+</div>
+
+</section>
+<section id="sec-18" >
+
+<h2>graph (exported result)</h2>
+<img src="three_d_scatter.png" alt="processed-graph" width="650px" />
+
+</section>
+<section id="sec-19" >
+
+<h2>graph function (how it looks in Emacs)</h2>
+<img src="images/raw_graph_org.png" alt="raw-graph-function" width="850px" />
+
+</section>
+<section id="sec-20" >
+
+<h2>how do we make it better</h2>
+<p class="fragment roll-in">
+Don't submit or cite journals that don't make code and data available.
+</p>
+<p class="fragment roll-in">
+Don't review unless code and data are provided.
+</p>
+<p class="fragment roll-in">
+Promote FOSS software at your institution.
+</p>
+<p class="fragment roll-in">
+Don't work for an advisor that won't learn source control.
+</p>
+<ul class="org-ul">
+<li class="fragment roll-in">Evan Misshula
+</li>
+<li class="fragment roll-in">@emisshula
+</li>
+<li class="fragment roll-in"><a href="http://evanmisshula.github.io/">http://evanmisshula.github.io/</a>
+</li>
+</ul>
+</section>
+</div>
+</div>
+<p> Created by Evan Misshula. </p>
+
+<script src="file:///../reveal.js/lib/js/head.min.js"></script>
+<script src="file:///../reveal.js/js/reveal.min.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: true,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'cube', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+]
+});
+</script>
+</body>
+</html>
