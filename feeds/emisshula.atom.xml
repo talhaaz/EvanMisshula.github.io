@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2015-03-07T00:00:00-05:00</updated><entry><title>bugs-javascript</title><link href="/skewer-tutorial.html" rel="alternate"></link><updated>2015-03-07T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:,2015-03-07:skewer-tutorial.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/perlis.jpg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula</title><link href="/" rel="alternate"></link><link href="/feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2015-04-01T00:00:00-04:00</updated><entry><title>docview-setup</title><link href="/doc-setup.html" rel="alternate"></link><updated>2015-04-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:,2015-04-01:doc-setup.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/carolDweck.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+
+&lt;h1&gt;The problem&lt;/h1&gt;
+&lt;p&gt;We all have to complete tutorials to learn new languages.  One
+constant pain is that the tutorials are usually trapped in pdf's when
+we need to type code.  Emacs makes this problem go away through its 
+&lt;em&gt;doc-view&lt;/em&gt; mode which allows you to render pdf's in Emacs. The problem is 
+that it only works out of the box in Linux.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/mindset.jpg" width="600px" alt="mindset" title="box"&gt;&lt;/p&gt;
+
+&lt;h1&gt;The Mac OS X solution&lt;/h1&gt;
+&lt;p&gt;For mac, you need to install emacs via &lt;a href="http://brew.sh"&gt;homebrew&lt;/a&gt;.  Open a terminal by going to Finder, see the picture
+below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/utilities.png" width="550px" alt="utl" title="utlities"&gt;&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Copy the installation command from homebrew into the terminal.  Type brew doctor.  The complication
+is that you may have to modify your path.  If so, see this &lt;a href="http://stackoverflow.com/questions/10343834/homebrew-wants-me-to-amend-my-path-no-clue-how"&gt;answer&lt;/a&gt; from stack overflow.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;brew install ghostscript
+brew install emacs --with-cocoa
+brew linkapps emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Windows&lt;/h1&gt;
+&lt;p&gt;For windows, the situation is considerablely more complicated.  You must install the incredibly
+useful &lt;a href="https://cygwin.com"&gt;cygwin&lt;/a&gt; which provides the libraries for &lt;em&gt;ghostscript&lt;/em&gt; and &lt;em&gt;xpdf&lt;/em&gt;.  Watch this &lt;a href="https://www.youtube.com/watch?v=TjxEH_tr7e0"&gt;video&lt;/a&gt; by Paul
+Royer on installing cygwin and downloading the libraries.  You then need to modify the windows
+path environmental variable using these &lt;a href="https://www.java.com/en/download/help/path.xml"&gt;instructions&lt;/a&gt; to include thos libraries which are found in 
+your new home directory.  I will add to this later as these instructions are vague.&lt;/p&gt;</summary><category term="Emacs"></category><category term="pdf"></category><category term="meta-cognition"></category></entry><entry><title>bugs-javascript</title><link href="/skewer-tutorial.html" rel="alternate"></link><updated>2015-03-07T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:,2015-03-07:skewer-tutorial.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/perlis.jpg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;When someone says: 'I want a programming language in which I need only
